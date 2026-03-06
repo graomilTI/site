@@ -1027,3 +1027,11 @@ background:rgba(0,0,0,0.35);
   .pfTop{grid-template-columns:auto minmax(0,1fr);}
   .pfIcon{display:none;}
 }
+
+
+/* Ajustes mapa interativo - contato */
+.mapCanvas .uf{cursor:pointer; vector-effect:non-scaling-stroke;}
+.mapCanvas .uf:focus-visible{outline:none; stroke:#facc15; stroke-width:4; fill-opacity:1;}
+.mapCanvas .uf.active{stroke:#facc15; stroke-width:4; fill-opacity:1; filter:drop-shadow(0 0 20px rgba(250,204,21,.18));}
+.contactCard__fone{display:inline-flex; align-items:center; text-decoration:none; font-weight:800;}
+.contactCard__fone:hover{text-decoration:underline;}

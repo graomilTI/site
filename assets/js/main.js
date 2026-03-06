@@ -109,13 +109,8 @@
 
   const initMaps = async () => {
     const mapConfigs = [
-      {
-        canvasId: "brMap", titleId: "stateTitle", hintId: "stateHint", contactsId: "stateContacts"
-      },
-      {
-        canvasId: "brMapQualidade", titleId: "stateTitleQualidade", hintId: "stateHintQualidade", contactsId: "stateContactsQualidade"
-      }
-    ].filter(cfg => document.getElementById(cfg.canvasId));
+      { canvasId: "brMap", titleId: "stateTitle", hintId: "stateHint", contactsId: "stateContacts" }
+    ].filter((cfg) => document.getElementById(cfg.canvasId));
 
     if (!mapConfigs.length || !window.RESPONSAVEIS_MAPA) return;
 
@@ -143,15 +138,21 @@
         ? `${rows.length} responsável(is) disponível(is) para esta região.`
         : "Ainda sem responsável cadastrado nesta região. Chame no WhatsApp para direcionarmos o atendimento.";
 
+      const toWaLink = (phone) => {
+        const digits = String(phone || "").replace(/\D+/g, "");
+        const normalized = digits.startsWith("55") ? digits : `55${digits}`;
+        return `https://wa.me/${normalized}`;
+      };
+
       contacts.innerHTML = rows.length
         ? rows.map((row) => `
             <article class="contactCard">
               <div class="contactCard__name">${row.nome || "Equipe Grão 1000"}</div>
               <div class="contactCard__hint">${row.sub || "Atendimento regional"}</div>
-              <div class="contactCard__fone">${row.fone || LINKS.wpp.replace("https://wa.me/", "+")}</div>
+              <a class="contactCard__fone" href="${toWaLink(row.fone || '(45) 99834-1000')}" target="_blank" rel="noopener">${row.fone || "(45) 99834-1000"}</a>
             </article>
           `).join("")
-        : `<article class="contactCard"><div class="contactCard__name">Atendimento Grão 1000</div><div class="contactCard__hint">Direcionamento rápido para sua região.</div><div class="contactCard__fone">(45) 99834-1000</div></article>`;
+        : `<article class="contactCard"><div class="contactCard__name">Atendimento Grão 1000</div><div class="contactCard__hint">Direcionamento rápido para sua região.</div><a class="contactCard__fone" href="${LINKS.wpp}" target="_blank" rel="noopener">(45) 99834-1000</a></article>`;
     };
 
     mapConfigs.forEach((cfg) => {
@@ -181,7 +182,7 @@
         });
       });
 
-      const firstUF = Object.keys(window.RESPONSAVEIS_MAPA)[0] || 'PR';
+      const firstUF = window.RESPONSAVEIS_MAPA.PR ? 'PR' : (Object.keys(window.RESPONSAVEIS_MAPA)[0] || 'PR');
       activate(firstUF);
     });
   };
