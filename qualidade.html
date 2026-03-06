@@ -30,7 +30,7 @@
 <a aria-label="WhatsApp" class="iconbtn iconbtn--wpp" href="#" id="wppTop"></a>
 <a aria-label="Facebook" class="iconbtn iconbtn--fb" href="https://www.facebook.com/grao1000" id="fbTop" rel="noopener" target="_blank"></a>
 <a aria-label="Instagram" class="iconbtn iconbtn--ig" href="https://www.instagram.com/grao.1000" id="igTop" rel="noopener" target="_blank"></a>
-<a class="pillbtn" href="#" href="assets/docs/apresentacao-grao1000.pdf" id="grainitBtn" rel="noopener" target="_blank">Apresentação</a>
+<a class="pillbtn" href="assets/docs/apresentacao-grao1000.pdf" id="grainitBtn" rel="noopener" target="_blank">Apresentação</a>
 <a class="pillbtn pillbtn--ghost" href="https://grao1000.com.br/painel/" id="painelBtn">Painel</a>
 </div>
 <button aria-label="Abrir menu" class="burger" id="burger">
@@ -49,7 +49,7 @@
 <a aria-label="Instagram" class="iconbtn iconbtn--ig" href="https://www.instagram.com/grao.1000" id="igTop_m" rel="noopener" target="_blank"></a>
 </div>
 <div class="mobileNav__row">
-<a class="pillbtn" href="#" href="assets/docs/apresentacao-grao1000.pdf" id="grainitBtn_m" rel="noopener" target="_blank">Apresentação</a>
+<a class="pillbtn" href="assets/docs/apresentacao-grao1000.pdf" id="grainitBtn_m" rel="noopener" target="_blank">Apresentação</a>
 <a class="pillbtn pillbtn--ghost" href="https://grao1000.com.br/painel/" id="painelBtn_m">Painel</a>
 </div>
 </div>
@@ -110,62 +110,34 @@
 </div>
 </div>
 </section>
-<section class="section section--muted" id="servicosQualidade">
+<section class="section section--muted" id="cobertura">
 <div class="container">
 <div class="sectionHead">
-<h2>Serviços</h2>
-<p>Pacotes e atuação sob demanda, conforme o tipo de grão e o cenário operacional.</p>
+<h2>Cobertura nacional com responsáveis por região</h2>
+<p>Atendimento em diferentes estados com operação alinhada ao campo. Selecione um estado para visualizar os responsáveis disponíveis.</p>
 </div>
-<div class="cards3">
-<div class="serviceCard">
-<div class="serviceCard__top">
-<div class="serviceCard__icon">🧪</div>
+<div class="mapWrap mapWrap--compact" id="mapaQualidade">
+<div class="mapLeft">
+<div class="mapHead">
 <div>
-<h3>Classificação e análise de grãos</h3>
-<p class="muted">Critérios consistentes e laudos padronizados para recebimento e decisão.</p>
+<div class="mapTitle">Mapa do Brasil</div>
+<div class="muted">Cobertura operacional e responsáveis por estado.</div>
 </div>
+<span class="badge">Atendimento Brasil</span>
 </div>
-<ul class="bullets">
-<li>Soja • Milho • Trigo • Sorgo</li>
-<li>Padronização por tipo de grão</li>
-<li>Registro de evidências</li>
-</ul>
+<div class="mapCanvas" id="brMapQualidade" aria-label="Mapa do Brasil (interativo)"></div>
 </div>
-<div class="serviceCard">
-<div class="serviceCard__top">
-<div class="serviceCard__icon">🛡️</div>
-<div>
-<h3>Controle de qualidade operacional</h3>
-<p class="muted">Rotinas replicáveis para reduzir variações e retrabalho na cadeia.</p>
-</div>
-</div>
-<ul class="bullets">
-<li>Checklist e acompanhamento</li>
-<li>Treinamento operacional</li>
-<li>Suporte em pico de safra</li>
-</ul>
-</div>
-<div class="serviceCard">
-<div class="serviceCard__top">
-<div class="serviceCard__icon">📄</div>
-<div>
-<h3>Rastreabilidade e evidências</h3>
-<p class="muted">Organização de registros para conformidade, auditoria e transparência.</p>
-</div>
-</div>
-<ul class="bullets">
-<li>Documentação e auditoria</li>
-<li>Relatórios resumidos</li>
-<li>Visão por período</li>
-</ul>
-</div>
-</div>
-<div class="ctaStrip">
-<div>
-<strong>Precisa padronizar rápido?</strong>
-<span class="muted">Solicite uma cotação e direcionamos o escopo ideal para sua operação.</span>
-</div>
+<div class="mapRight">
+<div class="panelTag">Cobertura Grão 1000</div>
+<h3 id="stateTitleQualidade">Selecione um estado</h3>
+<div class="muted" id="stateHintQualidade">Clique em um estado no mapa para ver o responsável da região.</div>
+<div class="contactsList" id="stateContactsQualidade"></div>
+<div class="panelNote">Precisa de apoio rápido? Fale com nosso time e direcionamos a melhor frente para sua operação.</div>
+<div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
 <a class="btn btn--primary" href="contato.html">Solicitar cotação</a>
+<a class="btn btn--ghost" href="contato.html#mapa">Ver contato completo</a>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -197,6 +169,7 @@
 </div>
 </div>
 </footer>
+<script src="assets/js/data/responsaveis-mapa.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
