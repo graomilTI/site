@@ -107,6 +107,29 @@
 
 
 
+  const initReveal = () => {
+    const items = $$('[data-anim]');
+    if (!items.length) return;
+
+    if (typeof IntersectionObserver === 'undefined') {
+      items.forEach((el) => el.classList.add('is-in'));
+      return;
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-in');
+        io.unobserve(entry.target);
+      });
+    }, { threshold: 0.16, rootMargin: '0px 0px -40px 0px' });
+
+    items.forEach((el, idx) => {
+      el.style.transitionDelay = `${Math.min(idx * 50, 220)}ms`;
+      io.observe(el);
+    });
+  };
+
   const initMaps = async () => {
     const mapConfigs = [
       { canvasId: "brMap", titleId: "stateTitle", hintId: "stateHint", contactsId: "stateContacts" }
@@ -159,7 +182,8 @@
       const canvas = document.getElementById(cfg.canvasId);
       if (!canvas) return;
       canvas.innerHTML = svgMarkup;
-      const ufs = Array.from(canvas.querySelectorAll('.uf'));
+      const ufs = Array.from(canvas.querySelectorAll('[data-uf]'));
+      ufs.forEach((el) => el.classList.add('uf'));
       if (!ufs.length) return;
 
       const activate = (uf) => {
@@ -173,6 +197,7 @@
         el.setAttribute('tabindex', '0');
         el.setAttribute('role', 'button');
         el.setAttribute('aria-label', `Selecionar estado ${ufLabels[uf] || uf}`);
+        el.setAttribute('title', ufLabels[uf] || uf);
         el.addEventListener('click', () => activate(uf));
         el.addEventListener('keydown', (ev) => {
           if (ev.key === 'Enter' || ev.key === ' ') {
@@ -203,6 +228,7 @@
     initMobileNav();
     initLinks();
     initCounters();
+    initReveal();
     initMaps();
   });
 })();
