@@ -9,7 +9,6 @@
     fb: "https://www.facebook.com/grao1000",
     ig: "https://www.instagram.com/grao.1000/",
     painel: "https://grao1000.com.br/painel/",
-    apresentacao: "assets/docs/apresentacao-grao1000.pdf",
   };
 
   const path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
@@ -217,7 +216,6 @@
     bindHref(["#fbTop", "#fbTop_m", "#fbFooter", "#fbLink"], LINKS.fb, { target: "_blank", rel: "noopener" });
     bindHref(["#igTop", "#igTop_m", "#igFooter", "#igLink"], LINKS.ig, { target: "_blank", rel: "noopener" });
     bindHref(["#painelBtn", "#painelBtn_m", "#painelFooter"], LINKS.painel, { target: "_blank", rel: "noopener" });
-    bindHref(["#grainitBtn", "#grainitBtn_m"], LINKS.apresentacao, { target: "_blank", rel: "noopener" });
 
     const vagas = $("#vagasFooter");
     if (vagas) vagas.style.display = "none";

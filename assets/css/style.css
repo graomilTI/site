@@ -1105,3 +1105,240 @@ background:rgba(0,0,0,0.35);
 @media (max-width: 980px){
   .flowStep{min-height:auto;}
 }
+
+
+/* =========================
+   V5 — contraste, limpeza e mapa premium
+   ========================= */
+:root{
+  --card-v5: rgba(6, 17, 20, 0.88);
+  --card-v5-2: rgba(8, 22, 28, 0.94);
+  --stroke-v5: rgba(148, 163, 184, 0.18);
+  --stroke-v5-strong: rgba(34, 197, 94, 0.28);
+  --shadow-v5: 0 24px 60px rgba(0,0,0,.34);
+}
+
+.section{padding:34px 0 64px;}
+.section--field,
+.section--grain{
+  position:relative;
+  isolation:isolate;
+}
+.section--field::before,
+.section--grain::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(180deg, rgba(2,8,11,.30), rgba(2,8,11,.48));
+}
+
+.topbar__actions{gap:12px;}
+.topbar__actions .pillbtn--ghost{min-width:92px; text-align:center;}
+.mobileNav__row .pillbtn--ghost{min-width:100%; text-align:center;}
+
+.cardLink,
+.infoCard,
+.metricCard,
+.serviceCard,
+.q-card,
+.contactCard,
+.mapLeft,
+.mapRight,
+.proposalWrap,
+.proposalCTA,
+.fbPost,
+.kpi,
+.flowStep,
+.pfCard,
+.ctaStrip{
+  background:linear-gradient(180deg, rgba(7,18,22,.94), rgba(6,15,19,.88)) !important;
+  border:1px solid var(--stroke-v5) !important;
+  box-shadow:var(--shadow-v5) !important;
+  backdrop-filter:blur(10px);
+}
+
+.cardLink,
+.infoCard,
+.metricCard,
+.serviceCard,
+.q-card,
+.contactCard,
+.pfCard,
+.flowStep,
+.fbPost{
+  position:relative;
+  overflow:hidden;
+}
+.cardLink::before,
+.infoCard::before,
+.metricCard::before,
+.serviceCard::before,
+.q-card::before,
+.contactCard::before,
+.pfCard::before,
+.flowStep::before,
+.fbPost::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(34,197,94,.10), transparent 34%, transparent 64%, rgba(245,158,11,.06));
+  pointer-events:none;
+}
+
+.cardLink:hover,
+.infoCard:hover,
+.metricCard:hover,
+.serviceCard:hover,
+.q-card:hover,
+.contactCard:hover,
+.pfCard:hover,
+.flowStep:hover,
+.fbPost:hover{
+  border-color:var(--stroke-v5-strong) !important;
+  box-shadow:0 28px 68px rgba(0,0,0,.42), 0 0 0 1px rgba(34,197,94,.06) inset !important;
+}
+
+.cardLink__text,
+.cardLink__meta,
+.metricLabel,
+.metricHelp,
+.infoCard .muted,
+.serviceCard .muted,
+.q-card .muted,
+.panelNote,
+.contactCard__hint,
+.muted{
+  color:rgba(226,232,240,.82) !important;
+}
+
+.metricValue,
+.infoCard__big,
+.cardLink__title,
+.serviceCard h3,
+.q-card h3,
+.mapTitle,
+.panelTag,
+#stateTitle,
+.pfCard h3,
+.flowStep h3,
+h1,h2,h3,strong{
+  color:rgba(248,250,252,.98);
+}
+
+.metricIcon,
+.serviceCard__icon,
+.q-icon,
+.pfBadge,
+.listRow .uf{
+  box-shadow:0 12px 28px rgba(0,0,0,.22);
+}
+.metricIcon,
+.q-icon,
+.pfBadge,
+.listRow .uf{
+  background:rgba(22,101,52,.22) !important;
+  border-color:rgba(34,197,94,.26) !important;
+}
+.serviceCard__icon{
+  background:rgba(245,158,11,.14);
+  border:1px solid rgba(245,158,11,.24);
+}
+
+.ctaStrip{
+  background:linear-gradient(90deg, rgba(8,22,28,.94), rgba(11,28,20,.92)) !important;
+  border:1px solid rgba(34,197,94,.22) !important;
+}
+
+/* Proposta mais limpa após remover conteúdo lateral */
+.proposalHead{align-items:stretch;}
+.proposalWrap{
+  padding:24px;
+  border-radius:30px;
+}
+.proposalFlow{gap:18px;}
+
+/* Mapa com contraste forte */
+.mapWrap{
+  grid-template-columns: 1.28fr .92fr;
+  gap:20px;
+}
+.mapLeft,
+.mapRight{
+  background:linear-gradient(180deg, rgba(6,17,20,.96), rgba(7,20,25,.92)) !important;
+}
+.mapHead{
+  background:linear-gradient(90deg, rgba(10,30,20,.92), rgba(13,24,30,.88));
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.mapCanvas{
+  position:relative;
+  min-height:640px;
+  padding:22px;
+  background:
+    linear-gradient(180deg, rgba(2,10,12,.52), rgba(2,10,12,.56)),
+    radial-gradient(760px 420px at 25% 14%, rgba(245,158,11,.24), transparent 64%),
+    radial-gradient(680px 420px at 82% 65%, rgba(34,197,94,.24), transparent 62%),
+    url("../img/bg-field.webp") center/cover no-repeat;
+}
+.mapCanvas::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00) 35%, rgba(255,255,255,.03));
+  pointer-events:none;
+}
+.mapCanvas svg{
+  position:relative;
+  z-index:1;
+  filter:brightness(1.12) contrast(1.22) saturate(1.08);
+}
+.mapCanvas .uf{
+  fill:rgba(253, 224, 71, 0.18) !important;
+  fill-opacity:.88;
+  stroke:rgba(255,255,255,.48) !important;
+  stroke-width:1.7 !important;
+  transition:fill .18s ease, fill-opacity .18s ease, stroke .18s ease, stroke-width .18s ease, transform .18s ease, filter .18s ease !important;
+}
+.mapCanvas .uf:hover{
+  fill:rgba(250,204,21,.28) !important;
+  stroke:rgba(255,255,255,.92) !important;
+  stroke-width:2.6 !important;
+  filter:drop-shadow(0 0 18px rgba(250,204,21,.28));
+}
+.mapCanvas .uf.active,
+.mapCanvas .uf:focus-visible{
+  fill:rgba(34,197,94,.36) !important;
+  fill-opacity:1 !important;
+  stroke:#facc15 !important;
+  stroke-width:3.2 !important;
+  filter:drop-shadow(0 0 8px rgba(250,204,21,.36)) drop-shadow(0 0 22px rgba(34,197,94,.28));
+}
+
+.contactsList .contactCard,
+.contactsList .card{
+  background:linear-gradient(180deg, rgba(12,25,32,.92), rgba(8,18,24,.88)) !important;
+  border:1px solid rgba(255,255,255,.12) !important;
+}
+.contactCard__fone,
+.contactsList .card strong{
+  color:#bbf7d0 !important;
+}
+
+.footer__links a{
+  background:rgba(255,255,255,.06);
+}
+
+@media (max-width: 1120px){
+  .mapCanvas{min-height:560px;}
+}
+@media (max-width: 980px){
+  .topbar__actions{display:none;}
+  .mapWrap{grid-template-columns:1fr;}
+  .mapCanvas{min-height:520px;}
+}
+@media (max-width: 640px){
+  .section{padding:28px 0 56px;}
+  .mapCanvas{min-height:420px; padding:16px;}
+  .proposalWrap{padding:16px;}
+}
