@@ -11,7 +11,7 @@ window.RESPONSAVEIS_MAPA = {
     { nome: "Jean Pablo", sub: "MT2 - Rondonópolis/Primavera do Leste", fone: "(66) 9 9607-6403" },
     { nome: "Vanuza Pereira", sub: "MT3 - Confresa", fone: "(66) 9 8457-8435" },
     { nome: "Marllon Machado", sub: "MT3 - Querência", fone: "(66) 9 8128-4238" },
-    { nome: "Cleuton", sub: "MT4 - Campo Novo do Parecis", fone: "(66) 9 9999-9999" },
+    { nome: "Cleuton", sub: "MT4 - Campo Novo do Parecis", fone: "(66) 9 9690-9921" },
   ],
   "MS": [
     { nome: "Elizeu Lopes", sub: "Mato Grosso do Sul", fone: "(67) 9643-1000" },
