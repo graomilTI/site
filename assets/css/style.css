@@ -1342,3 +1342,58 @@ h1,h2,h3,strong{
   .mapCanvas{min-height:420px; padding:16px;}
   .proposalWrap{padding:16px;}
 }
+
+
+/* v5.1 - alinhamento fino dos cards */
+.flow{
+  align-items:stretch;
+}
+.flowStep{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  min-height:252px;
+}
+.flowStep .ribbon{
+  width:fit-content;
+}
+.flowStep h3{
+  min-height:52px;
+  display:flex;
+  align-items:flex-start;
+}
+.flowStep .pillRow{
+  margin-top:auto;
+}
+
+.proposalFlow{
+  align-items:stretch;
+}
+.pfCard{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  min-height:246px;
+}
+.pfTop{
+  align-items:start;
+}
+.pfCard h3{
+  min-height:62px;
+  display:flex;
+  align-items:flex-start;
+}
+.pfChips{
+  margin-top:auto;
+}
+
+@media (max-width: 1120px){
+  .flowStep,
+  .pfCard{
+    min-height:auto;
+  }
+  .flowStep h3,
+  .pfCard h3{
+    min-height:0;
+  }
+}
