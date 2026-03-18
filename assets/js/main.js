@@ -11,9 +11,18 @@
     painel: "https://grao1000.com.br/painel/",
   };
 
-  const path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+  const normalizePath = (raw) => {
+    let value = String(raw || "").toLowerCase().split("?")[0].split("#")[0];
+    value = value.replace(/\/+/g, "/").replace(/\/+$|^\/+?/g, "");
+    if (!value || value.endsWith("/")) return "index.html";
+    const last = value.split("/").pop() || "index.html";
+    return last || "index.html";
+  };
+
+  const path = normalizePath(location.pathname);
   const navKey = {
     "index.html": "home",
+    "": "home",
     "solucoes.html": "solucoes",
     "qualidade.html": "qualidade",
     "sobre.html": "sobre",
@@ -32,10 +41,26 @@
   };
 
   const initActiveNav = () => {
+    const current = normalizePath(location.pathname);
     $$(".nav__link").forEach((a) => {
-      if ((a.getAttribute("data-nav") || "") === navKey) a.classList.add("is-active");
+      a.classList.remove("is-active");
+
+      const href = a.getAttribute("href") || "";
+      const hrefFile = normalizePath(href);
+      const dataNav = (a.getAttribute("data-nav") || "").trim().toLowerCase();
+
+      const matchedByHref = hrefFile === current || (current === "index.html" && hrefFile in ["", "index.html"]);
+      const matchedByData = dataNav && dataNav === navKey;
+
+      if (matchedByHref || matchedByData) {
+        a.classList.add("is-active");
+        a.setAttribute("aria-current", "page");
+      } else {
+        a.removeAttribute("aria-current");
+      }
     });
   };
+
 
   const initMobileNav = () => {
     const burger = $("#burger");
