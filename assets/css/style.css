@@ -1614,3 +1614,50 @@ h1,h2,h3,strong{
     padding:22px;
   }
 }
+
+
+/* ===== Ajuste final do topo: logo maior sem compressão ===== */
+.site-header{
+  min-height:108px !important;
+  padding:12px 28px !important;
+  overflow:visible !important;
+}
+.nav{
+  min-height:96px !important;
+  align-items:center !important;
+  overflow:visible !important;
+}
+.brand{
+  display:flex !important;
+  align-items:center !important;
+  min-height:88px !important;
+  overflow:visible !important;
+  gap:0 !important;
+}
+.brand__text{
+  display:none !important;
+}
+.brand__logo{
+  display:block !important;
+  height:80px !important;
+  width:auto !important;
+  max-width:320px !important;
+  object-fit:contain !important;
+  transform:none !important;
+}
+@media (max-width: 900px){
+  .site-header{
+    min-height:88px !important;
+    padding:10px 16px !important;
+  }
+  .nav{
+    min-height:78px !important;
+  }
+  .brand{
+    min-height:72px !important;
+  }
+  .brand__logo{
+    height:64px !important;
+    max-width:240px !important;
+  }
+}
