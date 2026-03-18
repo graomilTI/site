@@ -1616,48 +1616,225 @@ h1,h2,h3,strong{
 }
 
 
-/* ===== Ajuste final do topo: logo maior sem compressão ===== */
-.site-header{
-  min-height:108px !important;
-  padding:12px 28px !important;
-  overflow:visible !important;
+/* =========================================================
+   HEADER PREMIUM — topo integrado ao hero, logo maior,
+   barra suave ao rolar
+   ========================================================= */
+
+.topbar{
+  position: fixed !important;
+  inset: 0 0 auto 0 !important;
+  width: 100% !important;
+  z-index: 80 !important;
+  background: transparent !important;
+  border-bottom: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  transition:
+    background .28s ease,
+    border-color .28s ease,
+    backdrop-filter .28s ease,
+    box-shadow .28s ease,
+    transform .28s ease;
 }
-.nav{
-  min-height:96px !important;
-  align-items:center !important;
-  overflow:visible !important;
+
+.topbar::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(3,16,19,.48), rgba(3,16,19,0));
+  pointer-events:none;
 }
+
+.topbar__inner{
+  position: relative;
+  display:flex;
+  align-items:center;
+  gap: 18px;
+  min-height: 128px !important;
+  padding: 18px 0 !important;
+  transition: min-height .28s ease, padding .28s ease;
+}
+
 .brand{
+  position: relative;
+  z-index: 1;
   display:flex !important;
   align-items:center !important;
-  min-height:88px !important;
-  overflow:visible !important;
   gap:0 !important;
+  min-width: 320px !important;
+  overflow: visible !important;
 }
+
+.brand__logo{
+  height: 118px !important;
+  width: auto !important;
+  max-width: 440px !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 10px 28px rgba(0,0,0,.28));
+  transition: height .28s ease, max-width .28s ease, filter .28s ease, transform .28s ease;
+}
+
 .brand__text{
   display:none !important;
 }
-.brand__logo{
-  display:block !important;
-  height:80px !important;
-  width:auto !important;
-  max-width:320px !important;
-  object-fit:contain !important;
-  transform:none !important;
+
+.nav{
+  position: relative;
+  z-index: 1;
+  margin-left: auto !important;
+  gap: 10px !important;
 }
-@media (max-width: 900px){
-  .site-header{
-    min-height:88px !important;
-    padding:10px 16px !important;
-  }
-  .nav{
-    min-height:78px !important;
-  }
+
+.nav__link{
+  color: rgba(255,255,255,.94) !important;
+  font-weight: 800 !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,.32);
+  padding: 12px 14px !important;
+}
+
+.nav__link:hover{
+  background: rgba(255,255,255,.08) !important;
+  border-color: rgba(255,255,255,.12) !important;
+}
+
+.nav__link.is-active{
+  box-shadow: 0 0 0 5px rgba(34,197,94,.18) !important;
+}
+
+.topbar__actions{
+  position: relative;
+  z-index: 1;
+  gap: 12px !important;
+}
+
+.iconbtn{
+  width: 40px !important;
+  height: 40px !important;
+  background: rgba(255,255,255,.10) !important;
+  border-color: rgba(255,255,255,.16) !important;
+  backdrop-filter: blur(10px);
+}
+
+.pillbtn{
+  padding: 11px 18px !important;
+  font-size: 14px !important;
+  box-shadow: 0 12px 26px rgba(0,0,0,.18);
+}
+
+.pillbtn--ghost{
+  background: rgba(255,255,255,.08) !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+}
+
+main{
+  position: relative;
+  z-index: 1;
+}
+
+.hero.hero--campo,
+.pageHero{
+  padding-top: 158px !important;
+}
+
+.hero.hero--campo{
+  margin-top: 0 !important;
+}
+
+.topbar.topbar--scrolled{
+  background: linear-gradient(90deg, rgba(3,16,19,.92), rgba(3,16,19,.74)) !important;
+  border-bottom: 1px solid rgba(255,255,255,.10) !important;
+  backdrop-filter: blur(16px) !important;
+  box-shadow: 0 14px 40px rgba(0,0,0,.26) !important;
+}
+
+.topbar.topbar--scrolled::before{
+  opacity: 0;
+}
+
+.topbar.topbar--scrolled .topbar__inner{
+  min-height: 92px !important;
+  padding: 10px 0 !important;
+}
+
+.topbar.topbar--scrolled .brand__logo{
+  height: 86px !important;
+  max-width: 340px !important;
+}
+
+.topbar.topbar--scrolled .nav__link{
+  text-shadow: none;
+}
+
+@media (max-width: 1180px){
   .brand{
-    min-height:72px !important;
+    min-width: 260px !important;
   }
   .brand__logo{
-    height:64px !important;
-    max-width:240px !important;
+    height: 104px !important;
+    max-width: 380px !important;
+  }
+  .topbar__inner{
+    min-height: 118px !important;
+  }
+  .hero.hero--campo,
+  .pageHero{
+    padding-top: 148px !important;
+  }
+}
+
+@media (max-width: 980px){
+  .topbar::before{
+    background: linear-gradient(180deg, rgba(3,16,19,.62), rgba(3,16,19,.08));
+  }
+  .topbar__inner{
+    min-height: 104px !important;
+    padding: 14px 0 !important;
+  }
+  .brand{
+    min-width: auto !important;
+  }
+  .brand__logo{
+    height: 94px !important;
+    max-width: 320px !important;
+  }
+  .topbar__actions{
+    margin-left: auto !important;
+  }
+  .mobileNav{
+    background: rgba(3,16,19,.92) !important;
+    backdrop-filter: blur(18px) !important;
+  }
+  .hero.hero--campo,
+  .pageHero{
+    padding-top: 136px !important;
+  }
+  .topbar.topbar--scrolled .topbar__inner{
+    min-height: 84px !important;
+  }
+  .topbar.topbar--scrolled .brand__logo{
+    height: 76px !important;
+    max-width: 280px !important;
+  }
+}
+
+@media (max-width: 640px){
+  .topbar__inner{
+    min-height: 92px !important;
+    padding: 12px 0 !important;
+  }
+  .brand__logo{
+    height: 82px !important;
+    max-width: 260px !important;
+  }
+  .hero.hero--campo,
+  .pageHero{
+    padding-top: 122px !important;
+  }
+  .topbar.topbar--scrolled .brand__logo{
+    height: 68px !important;
+    max-width: 220px !important;
   }
 }

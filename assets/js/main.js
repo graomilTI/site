@@ -106,6 +106,21 @@
 
 
 
+
+
+  const initPremiumHeader = () => {
+    const topbar = document.querySelector(".topbar");
+    if (!topbar) return;
+
+    const sync = () => {
+      if (window.scrollY > 18) topbar.classList.add("topbar--scrolled");
+      else topbar.classList.remove("topbar--scrolled");
+    };
+
+    sync();
+    window.addEventListener("scroll", sync, { passive: true });
+  };
+
   const initReveal = () => {
     const items = $$('[data-anim]');
     if (!items.length) return;
@@ -220,7 +235,8 @@
   };
 
   document.addEventListener("DOMContentLoaded", () => {
-    initActiveNav();
+    initPremiumHeader();
+  initActiveNav();
     initMobileNav();
     initLinks();
     initCounters();
