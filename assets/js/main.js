@@ -217,8 +217,6 @@
     bindHref(["#igTop", "#igTop_m", "#igFooter", "#igLink"], LINKS.ig, { target: "_blank", rel: "noopener" });
     bindHref(["#painelBtn", "#painelBtn_m", "#painelFooter"], LINKS.painel, { target: "_blank", rel: "noopener" });
 
-    const vagas = $("#vagasFooter");
-    if (vagas) vagas.style.display = "none";
   };
 
   document.addEventListener("DOMContentLoaded", () => {
