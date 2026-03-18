@@ -1922,3 +1922,135 @@ body.page-qualidade .pageHero{
     padding-top: 145px !important;
   }
 }
+
+
+/* =========================================================
+   HOTFIX FINAL — páginas internas estáveis
+   mantém premium na home e evita quebra nas internas
+   ========================================================= */
+
+body.page-inner .topbar{
+  position: sticky !important;
+  top: 0 !important;
+  background: linear-gradient(90deg, rgba(3,16,19,.94), rgba(3,16,19,.78)) !important;
+  border-bottom: 1px solid rgba(255,255,255,.10) !important;
+  backdrop-filter: blur(16px) !important;
+  box-shadow: 0 14px 40px rgba(0,0,0,.24) !important;
+}
+
+body.page-inner .topbar::before{
+  display: none !important;
+}
+
+body.page-inner .topbar__inner{
+  min-height: 96px !important;
+  padding: 10px 0 !important;
+}
+
+body.page-inner .brand{
+  min-width: 260px !important;
+}
+
+body.page-inner .brand__logo{
+  height: 82px !important;
+  max-width: 320px !important;
+}
+
+body.page-inner .nav__link{
+  text-shadow: none !important;
+}
+
+body.page-inner .hero,
+body.page-inner .pageHero{
+  padding-top: 40px !important;
+}
+
+body.page-inner .hero.hero--service{
+  padding: 26px 0 10px !important;
+}
+
+body.page-inner .hero.hero--service .container{
+  position: relative;
+  z-index: 2;
+}
+
+body.page-inner .hero__content,
+body.page-inner .hero__content--single,
+body.page-inner .hero__copy{
+  max-width: 980px;
+}
+
+body.page-inner .kicker{
+  display: block;
+  margin: 0 0 10px !important;
+  color: rgba(255,255,255,.80);
+  font-size: 14px;
+  font-weight: 850;
+  letter-spacing: .02em;
+}
+
+body.page-inner .hero.hero--service h1{
+  margin: 0 0 10px !important;
+  max-width: 1120px;
+  font-size: clamp(38px, 5.4vw, 64px) !important;
+  line-height: 1.04 !important;
+}
+
+body.page-inner .hero.hero--service .lead{
+  display: block !important;
+  max-width: 860px;
+  margin: 0 0 18px !important;
+  font-size: 18px;
+  color: rgba(255,255,255,.86);
+}
+
+body.page-inner .hero__actions{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+@media (max-width: 980px){
+  body.page-inner .topbar__inner{
+    min-height: 84px !important;
+    padding: 8px 0 !important;
+  }
+
+  body.page-inner .brand__logo{
+    height: 72px !important;
+    max-width: 260px !important;
+  }
+
+  body.page-inner .hero,
+  body.page-inner .pageHero{
+    padding-top: 28px !important;
+  }
+
+  body.page-inner .hero.hero--service h1{
+    font-size: clamp(32px, 6vw, 48px) !important;
+  }
+
+  body.page-inner .hero.hero--service .lead{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px){
+  body.page-inner .topbar__inner{
+    min-height: 76px !important;
+  }
+
+  body.page-inner .brand__logo{
+    height: 64px !important;
+    max-width: 220px !important;
+  }
+
+  body.page-inner .hero.hero--service{
+    padding-top: 20px !important;
+  }
+
+  body.page-inner .hero.hero--service h1{
+    font-size: clamp(28px, 8vw, 40px) !important;
+  }
+}

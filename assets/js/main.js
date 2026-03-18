@@ -20,6 +20,8 @@
     "contato.html": "contato",
   }[path] || "home";
 
+  document.body.classList.add(path === "index.html" ? "page-home" : "page-inner");
+
   const bindHref = (selectors, href, extra = {}) => {
     selectors.forEach((selector) => {
       const el = $(selector);
