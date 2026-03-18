@@ -537,7 +537,7 @@ h3{font-size:20px;line-height:1.25}
 }
 @media (max-width: 640px){
   .container{width:min(var(--container), calc(100% - 32px))}
-  .brand__logo{height:46px; width:auto; max-width:180px}
+  .brand__logo{height:64px; width:auto; max-width:220px}
   .cards3,.grid3{grid-template-columns:1fr}
   .ctaStrip{border-radius:22px}
 }
@@ -1542,10 +1542,12 @@ h1,h2,h3,strong{
 }
 .brand__text{display:none !important;}
 .brand__logo{
-  height:58px;
-  max-width:240px;
+  height:80px;
+  width:auto;
+  max-width:320px;
   border-radius:0;
   box-shadow:none;
+  object-fit:contain;
 }
 .pillbtn--careers{
   white-space:nowrap;
