@@ -481,3 +481,96 @@ body{overflow-x:hidden}
   .kpi{min-height:auto}
   .mapCanvas{min-height:420px}
 }
+
+
+/* ===== targeted final layout refinements ===== */
+.essenceHead{margin-bottom:22px}
+.essenceHead .eyebrow{display:inline-flex}
+.cards3--essence{align-items:stretch}
+.cards3--essence .cardLink{min-height:200px}
+
+.split--homeFlow{
+  grid-template-columns:minmax(0, 1.02fr) minmax(0, 1.12fr);
+  gap:40px;
+  align-items:start;
+}
+.split--homeFlow > div:first-child{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+.split--homeFlow > div:last-child .cards3{
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:18px;
+}
+.split--homeFlow .cards3 .cardLink{
+  min-height:330px;
+}
+.split--homeFlow .cards3 .cardLink__title{
+  min-height:2.5em;
+}
+.split--homeFlow .cards3 .cardLink__meta{
+  margin-top:auto;
+}
+
+.proposalWrap--aligned{
+  grid-template-columns:minmax(0, 1.6fr) minmax(320px, .95fr);
+  align-items:start;
+  gap:24px;
+}
+.proposalFlow--aligned{
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:18px;
+  align-items:stretch;
+}
+.proposalFlow--aligned .pfCard{
+  min-height:460px;
+}
+.proposalFlow--aligned .pfTop{
+  display:grid;
+  grid-template-rows:auto auto 1fr;
+  align-content:start;
+  gap:12px;
+}
+.proposalFlow--aligned .pfTop h3{
+  min-height:2.4em;
+  max-width:8ch;
+}
+.proposalFlow--aligned .pfChips{
+  margin-top:auto;
+}
+
+.mapWrap + .grid3--contactAfterMap{
+  margin-top:24px;
+}
+.grid3--contactAfterMap .infoCard{
+  min-height:220px;
+}
+.grid3--contactAfterMap .infoCard__actions,
+.grid3--contactAfterMap .pillRow{
+  margin-top:auto;
+}
+.careerCallout{
+  margin-top:24px;
+}
+
+@media (max-width: 1180px){
+  .split--homeFlow{grid-template-columns:1fr}
+  .split--homeFlow > div:last-child .cards3{grid-template-columns:repeat(3, minmax(0,1fr))}
+}
+@media (max-width: 1024px){
+  .proposalWrap--aligned{grid-template-columns:1fr}
+  .proposalFlow--aligned{grid-template-columns:repeat(3, minmax(0,1fr))}
+}
+@media (max-width: 900px){
+  .split--homeFlow > div:last-child .cards3,
+  .proposalFlow--aligned,
+  .grid3--contactAfterMap{
+    grid-template-columns:1fr;
+  }
+  .split--homeFlow .cards3 .cardLink,
+  .proposalFlow--aligned .pfCard,
+  .grid3--contactAfterMap .infoCard{
+    min-height:auto;
+  }
+}
