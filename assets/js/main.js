@@ -1,115 +1,119 @@
-
 (function(){
-  const WPP_URL = 'https://wa.me/5545998341000';
-  const FB_URL = 'https://www.facebook.com/grao1000';
-  const IG_URL = 'https://www.instagram.com/grao.1000';
+  const WHATSAPP_NUMBER = '5545998341000';
+  const WHATSAPP_TEXT = encodeURIComponent('Olá! Vim pelo site da Grão 1000 e gostaria de falar com um especialista.');
+  const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_TEXT}`;
+  const FB_LINK = 'https://www.facebook.com/grao1000';
+  const IG_LINK = 'https://www.instagram.com/grao.1000';
+
+  function setLinks(){
+    ['wppTop','wppTop_m','wppCta','wppProposta'].forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) { el.href = WHATSAPP_LINK; el.target = '_blank'; el.rel = 'noopener'; }
+    });
+    ['fbLink','fbTop','fbTop_m'].forEach(id=>{ const el=document.getElementById(id); if(el){ el.href=FB_LINK; el.target='_blank'; el.rel='noopener'; }});
+    ['igLink','igTop','igTop_m'].forEach(id=>{ const el=document.getElementById(id); if(el){ el.href=IG_LINK; el.target='_blank'; el.rel='noopener'; }});
+  }
 
   function setActiveNav(){
-    const links = document.querySelectorAll('.nav__link');
-    let path = location.pathname.split('/').pop().toLowerCase();
-    if(!path) path = 'index.html';
-    links.forEach(link => {
+    const path = (window.location.pathname.toLowerCase().split('/').pop() || 'index.html');
+    document.querySelectorAll('.nav__link').forEach(link=>{
       const href = (link.getAttribute('href') || '').toLowerCase();
-      if(href === path) link.classList.add('active');
-      else link.classList.remove('active');
+      link.classList.toggle('active', href === path || (path === '' && href === 'index.html'));
     });
   }
 
-  function initMobileMenu(){
+  function mobileMenu(){
     const burger = document.getElementById('burger');
-    const mobile = document.getElementById('mobileNav');
-    if(!burger || !mobile) return;
-    burger.addEventListener('click', () => {
-      mobile.classList.toggle('is-open');
-      burger.setAttribute('aria-expanded', mobile.classList.contains('is-open') ? 'true' : 'false');
+    const mobileNav = document.getElementById('mobileNav');
+    if(!burger || !mobileNav) return;
+    burger.addEventListener('click', ()=>{
+      const open = mobileNav.classList.toggle('is-open');
+      mobileNav.setAttribute('aria-hidden', open ? 'false' : 'true');
     });
-  }
-
-  function wireLinks(){
-    ['wppTop','wppTop_m','wppCta','wppProposta'].forEach(id => {
-      const el = document.getElementById(id);
-      if(el) el.href = WPP_URL;
-    });
-    ['fbLink'].forEach(id => {
-      const el = document.getElementById(id);
-      if(el) { el.href = FB_URL; el.target = '_blank'; el.rel = 'noopener'; }
-    });
-    ['igLink'].forEach(id => {
-      const el = document.getElementById(id);
-      if(el) { el.href = IG_URL; el.target = '_blank'; el.rel = 'noopener'; }
-    });
+    mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=> mobileNav.classList.remove('is-open')));
   }
 
   function animateCounts(){
-    const items = document.querySelectorAll('.count');
-    if(!items.length) return;
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
+    const els = document.querySelectorAll('.count[data-count]');
+    if(!els.length) return;
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
         if(!entry.isIntersecting) return;
         const el = entry.target;
         const end = Number(el.dataset.count || 0);
-        const duration = 1200;
+        const duration = 1100;
         const start = performance.now();
-        const step = (now) => {
-          const p = Math.min((now - start) / duration, 1);
-          el.textContent = Math.round(end * (1 - Math.pow(1-p, 3)));
-          if(p < 1) requestAnimationFrame(step);
-        };
-        requestAnimationFrame(step);
+        function frame(now){
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = String(Math.round(end * eased));
+          if(progress < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
         io.unobserve(el);
       });
-    }, {threshold:.45});
-    items.forEach(el => io.observe(el));
+    }, {threshold: .45});
+    els.forEach(el=>io.observe(el));
   }
 
-  async function initMap(){
-    const host = document.getElementById('brMap');
-    if(!host) return;
-    try{
+  async function loadMap(){
+    const mapHost = document.getElementById('brMap');
+    if(!mapHost) return;
+    try {
       const resp = await fetch('assets/img/br-states.svg');
       const svgText = await resp.text();
-      host.innerHTML = svgText;
-      const svg = host.querySelector('svg');
-      if(!svg) throw new Error('SVG não encontrado');
-      const title = document.getElementById('stateTitle');
-      const hint = document.getElementById('stateHint');
-      const list = document.getElementById('stateContacts');
+      mapHost.innerHTML = svgText;
+      const svg = mapHost.querySelector('svg');
+      if(!svg) return;
+      svg.setAttribute('id', 'mapa-brasil');
+      const titleEl = document.getElementById('stateTitle');
+      const hintEl = document.getElementById('stateHint');
+      const contactsEl = document.getElementById('stateContacts');
       const data = window.RESPONSAVEIS_MAPA || {};
 
-      function telHref(fone){
-        return 'https://wa.me/55' + String(fone || '').replace(/\D/g,'');
+      function normalizePhone(phone){
+        return '55' + String(phone).replace(/\D+/g, '');
       }
-      function renderUF(uf){
-        const people = data[uf] || [];
-        title.textContent = uf + ' • responsáveis';
-        hint.textContent = people.length ? 'Clique no telefone para abrir no WhatsApp.' : 'Ainda sem responsável cadastrado para este estado.';
-        list.innerHTML = people.length ? people.map(p => `\n          <article class="contactCard">\n            <strong>${p.nome}</strong>\n            <span class="muted">${p.sub || ''}</span>\n            <a href="${telHref(p.fone)}" target="_blank" rel="noopener">${p.fone}</a>\n          </article>\n        `).join('') : '<article class="contactCard"><strong>Sem cadastro</strong><span class="muted">Chame no WhatsApp e direcionamos o atendimento.</span><a href="'+WPP_URL+'" target="_blank" rel="noopener">(45) 99834-1000</a></article>';
+      function renderState(uf){
+        const list = data[uf] || [];
+        if(titleEl) titleEl.textContent = list.length ? `${uf} • responsáveis` : `${uf} • sem responsável cadastrado`;
+        if(hintEl) hintEl.textContent = list.length ? 'Clique no telefone para abrir no WhatsApp.' : 'Chame no WhatsApp e direcionamos o atendimento.';
+        if(!contactsEl) return;
+        contactsEl.innerHTML = '';
+        if(!list.length) return;
+        list.forEach(item=>{
+          const wrap = document.createElement('article');
+          wrap.className = 'contactItem';
+          wrap.innerHTML = `
+            <div class="contactItem__name">${item.nome}</div>
+            <div class="contactItem__sub">${item.sub}</div>
+            <a class="contactItem__phone" href="https://wa.me/${normalizePhone(item.fone)}" target="_blank" rel="noopener">${item.fone}</a>
+          `;
+          contactsEl.appendChild(wrap);
+        });
       }
 
       const states = svg.querySelectorAll('[data-uf]');
-      states.forEach(node => {
-        node.addEventListener('mouseenter', () => node.classList.add('is-hover'));
-        node.addEventListener('mouseleave', () => node.classList.remove('is-hover'));
-        node.addEventListener('click', () => {
-          states.forEach(n => n.classList.remove('active'));
-          node.classList.add('active');
-          renderUF(node.dataset.uf);
+      states.forEach(path=>{
+        path.addEventListener('click', ()=>{
+          states.forEach(p=>p.classList.remove('active'));
+          path.classList.add('active');
+          renderState(path.getAttribute('data-uf'));
         });
       });
-      renderUF('PR');
-      const pr = svg.querySelector('[data-uf="PR"]');
-      if(pr) pr.classList.add('active');
-    }catch(err){
-      host.innerHTML = '<div class="muted">Não foi possível carregar o mapa agora.</div>';
-      console.error(err);
+      const defaultUf = 'PR';
+      const def = svg.querySelector(`[data-uf="${defaultUf}"]`);
+      if(def){ def.classList.add('active'); renderState(defaultUf); }
+    } catch (err) {
+      mapHost.innerHTML = '<div class="muted">Não foi possível carregar o mapa agora.</div>';
     }
   }
 
-  document.addEventListener('DOMContentLoaded', function(){
+  document.addEventListener('DOMContentLoaded', ()=>{
+    setLinks();
     setActiveNav();
-    initMobileMenu();
-    wireLinks();
+    mobileMenu();
     animateCounts();
-    initMap();
+    loadMap();
   });
 })();
