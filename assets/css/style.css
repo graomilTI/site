@@ -712,3 +712,21 @@ body{overflow-x:hidden}
     min-height:auto;
   }
 }
+
+
+/* proposta: checks animados */
+#proposta .pfTop{grid-template-rows:auto 1fr; gap:10px;}
+#proposta .pfTop > div:last-child{min-height:0; display:block;}
+#proposta .pfTop h3{max-width:10ch; min-height:0; margin-bottom:0;}
+#proposta .pfIcon{display:none !important;}
+#proposta .pfTop .muted{display:none !important;}
+#proposta .pfCard{grid-template-rows:auto 1fr auto;}
+#proposta .pfChecks{display:grid; gap:12px; margin-top:auto; align-content:end;}
+#proposta .pfCheckItem{display:inline-flex; width:fit-content; max-width:100%; align-items:center; gap:10px; padding:10px 16px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.10); font-weight:800; color:#f8fafc; box-shadow:inset 0 1px 0 rgba(255,255,255,.03); opacity:0; transform:translateY(10px); animation:pfCheckIn .45s ease forwards; transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;}
+#proposta .pfCheckItem:hover{transform:translateY(-1px); box-shadow:0 0 0 1px rgba(34,197,94,.12), 0 12px 24px rgba(34,197,94,.12); border-color:rgba(34,197,94,.28); background:rgba(255,255,255,.06);}
+#proposta .pfCheckItem:nth-child(1){animation-delay:.1s;}
+#proposta .pfCheckItem:nth-child(2){animation-delay:.32s;}
+#proposta .pfCheckItem:nth-child(3){animation-delay:.54s;}
+#proposta .pfCheckIcon{width:22px; height:22px; min-width:22px; border-radius:999px; display:inline-flex; align-items:center; justify-content:center; background:linear-gradient(180deg,#22c55e,#16a34a); color:#fff; font-size:12px; line-height:1; box-shadow:0 8px 20px rgba(34,197,94,.22);}
+@keyframes pfCheckIn{to{opacity:1; transform:translateY(0);}}
+@media (prefers-reduced-motion: reduce){#proposta .pfCheckItem{animation:none; opacity:1; transform:none;}}
