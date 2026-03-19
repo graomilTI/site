@@ -108,6 +108,11 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         mapMount.querySelectorAll(".uf").forEach(path => {
+          path.style.cursor = "pointer";
+          path.style.fill = "#39586b";
+          path.style.stroke = "#93b1bf";
+          path.style.strokeWidth = "2.2";
+
           path.addEventListener("click", () => {
             mapMount.querySelectorAll(".uf.active").forEach(el => el.classList.remove("active"));
             path.classList.add("active");

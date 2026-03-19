@@ -436,3 +436,56 @@ main{padding-top:104px}
   .mapCanvas{min-height:420px}
   .pfPill{font-size:16px}
 }
+
+
+/* ===== AJUSTES FINAIS ===== */
+.brand__logo{height:108px}
+.hero__copy{max-width:680px}
+.hero__copy h1{
+  font-size:clamp(38px,5.4vw,72px);
+  max-width:10ch;
+}
+.hero__copy p{
+  font-size:clamp(16px,1.25vw,22px);
+  max-width:32ch;
+}
+.proposalHead--compact{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:18px;
+}
+.proposalHead--compact .proposalHead__copy{max-width:none}
+.proposalHead--compact .eyebrow{margin-bottom:0}
+.proposalHead--compact h2,
+.proposalHead--compact p{display:none}
+.richTextBlock--justify p{
+  text-align:justify;
+  text-justify:inter-word;
+}
+.mapCanvas{
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.025));
+}
+.mapCanvas .uf{
+  fill:#39586b !important;
+  stroke:#93b1bf !important;
+  stroke-width:2.2 !important;
+  fill-opacity:1 !important;
+}
+.mapCanvas .uf:hover{
+  fill:#2f855a !important;
+  stroke:#d6fbe2 !important;
+}
+.mapCanvas .uf.active{
+  fill:#22c55e !important;
+  stroke:#f0fff4 !important;
+}
+@media (max-width: 760px){
+  .brand__logo{height:84px}
+  .hero__copy h1{max-width:none}
+  .proposalHead--compact{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+}
