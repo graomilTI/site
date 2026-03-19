@@ -11,10 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const burger = document.getElementById("burger");
   const mobileNav = document.getElementById("mobileNav");
   if (burger && mobileNav) {
-    burger.addEventListener("click", () => {
-      mobileNav.classList.toggle("is-open");
-      burger.classList.toggle("is-open");
-    });
+    burger.addEventListener("click", () => mobileNav.classList.toggle("is-open"));
   }
 
   const whatsapp = "5545998341000";
@@ -22,11 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const wppHref = `https://wa.me/${whatsapp}?text=${wppText}`;
   ["wppTop","wppTop_m","wppCta","wppProposta"].forEach(id => {
     const el = document.getElementById(id);
-    if (el) {
-      el.href = wppHref;
-      el.target = "_blank";
-      el.rel = "noopener";
-    }
+    if (el) { el.href = wppHref; el.target = "_blank"; el.rel = "noopener"; }
   });
 
   const fb = "https://www.facebook.com/grao1000";
@@ -47,12 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.16 });
   document.querySelectorAll("[data-anim]").forEach(el => io.observe(el));
 
-  const counts = document.querySelectorAll(".count");
-  if (counts.length) {
-    const countObserver = new IntersectionObserver((entries) => {
+  document.querySelectorAll(".count").forEach(el => {
+    const obs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
-        const el = entry.target;
         const target = Number(el.dataset.count || 0);
         const duration = 1200;
         const start = performance.now();
@@ -62,11 +53,11 @@ document.addEventListener("DOMContentLoaded", () => {
           if (p < 1) requestAnimationFrame(step);
         };
         requestAnimationFrame(step);
-        countObserver.unobserve(el);
+        obs.unobserve(el);
       });
     }, { threshold: 0.6 });
-    counts.forEach(el => countObserver.observe(el));
-  }
+    obs.observe(el);
+  });
 
   const mapMount = document.getElementById("brMap");
   if (mapMount) {
@@ -74,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(r => r.text())
       .then(svg => {
         mapMount.innerHTML = svg;
+
         const data = {
           PR: [
             { name: "Marcos Mota", city: "Cascavel", phone: "(44) 99711-9843" },
@@ -82,9 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
             { name: "José Boa Ventura", city: "Maringá", phone: "(44) 99836-1000" }
           ]
         };
-        const defaultContacts = [
-          { name: "Atendimento Grão 1000", city: "Atendimento nacional", phone: "(45) 99834-1000" }
-        ];
+        const defaultContacts = [{ name: "Atendimento Grão 1000", city: "Atendimento nacional", phone: "(45) 99834-1000" }];
         const title = document.getElementById("stateTitle");
         const hint = document.getElementById("stateHint");
         const list = document.getElementById("stateContacts");
@@ -107,15 +97,36 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         };
 
-        mapMount.querySelectorAll(".uf").forEach(path => {
+        const states = mapMount.querySelectorAll(".uf");
+        states.forEach(path => {
           path.style.cursor = "pointer";
-          path.style.fill = "#39586b";
-          path.style.stroke = "#93b1bf";
-          path.style.strokeWidth = "2.2";
+          path.style.fill = "#3c596b";
+          path.style.stroke = "#9fbcce";
+          path.style.strokeWidth = "2.4";
+
+          path.addEventListener("mouseenter", () => {
+            if (!path.classList.contains("active")) {
+              path.style.fill = "#2f855a";
+              path.style.stroke = "#eefef4";
+            }
+          });
+
+          path.addEventListener("mouseleave", () => {
+            if (!path.classList.contains("active")) {
+              path.style.fill = "#3c596b";
+              path.style.stroke = "#9fbcce";
+            }
+          });
 
           path.addEventListener("click", () => {
-            mapMount.querySelectorAll(".uf.active").forEach(el => el.classList.remove("active"));
+            states.forEach(el => {
+              el.classList.remove("active");
+              el.style.fill = "#3c596b";
+              el.style.stroke = "#9fbcce";
+            });
             path.classList.add("active");
+            path.style.fill = "#22c55e";
+            path.style.stroke = "#ffffff";
             render((path.dataset.uf || "").toUpperCase());
           });
         });
@@ -123,6 +134,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const defaultUf = mapMount.querySelector('[data-uf="PR"]');
         if (defaultUf) {
           defaultUf.classList.add("active");
+          defaultUf.style.fill = "#22c55e";
+          defaultUf.style.stroke = "#ffffff";
           render("PR");
         }
       })

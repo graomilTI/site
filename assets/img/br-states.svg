@@ -8,9 +8,9 @@
     </filter>
   </defs>
   <style>
-    .uf{fill:#39586b; stroke:#93b1bf; stroke-width:2.2; filter:url(#softShadow); transition:fill .2s ease, transform .2s ease, stroke .2s ease; cursor:pointer;}
-    .uf:hover{fill:#2f855a; stroke:#d6fbe2; transform:translateY(-1px);}
-    .uf.active{fill:#22c55e; stroke:#f0fff4;}
+    .uf{fill:#3c596b; stroke:#9fbcce; stroke-width:2.4; transition:fill .2s ease, transform .2s ease, stroke .2s ease; cursor:pointer;}
+    .uf:hover{fill:#2f855a; stroke:#eefef4; transform:translateY(-1px);}
+    .uf.active{fill:#22c55e; stroke:#ffffff;}
   </style>
 
 
