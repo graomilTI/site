@@ -574,3 +574,107 @@ body{overflow-x:hidden}
     min-height:auto;
   }
 }
+
+
+/* ===== solutions alignment hotfix ===== */
+#proposta .proposalHead{
+  align-items:end;
+  margin-bottom:8px;
+}
+#proposta .proposalWrap,
+#proposta .proposalWrap--aligned{
+  grid-template-columns:minmax(0,1.55fr) minmax(320px,.9fr);
+  gap:28px;
+  align-items:start;
+}
+#proposta .proposalFlow,
+#proposta .proposalFlow--aligned{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:18px;
+  align-items:stretch;
+}
+#proposta .pfCard{
+  min-height:440px;
+  height:100%;
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+  align-content:start;
+  padding:24px 22px;
+}
+#proposta .pfTop{
+  display:grid;
+  grid-template-rows:auto auto 1fr;
+  align-content:start;
+  gap:14px;
+}
+#proposta .pfTop > div:last-child{
+  display:grid;
+  grid-template-rows:auto 1fr;
+  min-height:152px;
+}
+#proposta .pfTop h3{
+  margin:0;
+  min-height:2.5em;
+  max-width:8ch;
+  font-size:clamp(20px,1.9vw,28px);
+  line-height:1.08;
+}
+#proposta .pfTop .muted{
+  font-size:15px;
+  line-height:1.55;
+}
+#proposta .pfChips{
+  margin-top:auto;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-content:flex-start;
+}
+#proposta .pfChips .chip{
+  min-height:36px;
+  padding:0 12px;
+  font-size:13px;
+  line-height:1.15;
+}
+#proposta .proposalSide--modern{
+  padding:24px;
+}
+#proposta .deliverablesModern{
+  display:grid;
+  gap:14px;
+}
+#proposta .deliverablesModern__card{
+  min-height:200px;
+  display:grid;
+  grid-template-rows:auto auto 1fr auto;
+  align-content:start;
+}
+#proposta .deliverablesModern__card h3{
+  min-height:2.2em;
+  line-height:1.1;
+}
+#proposta .psHint{
+  margin-top:14px;
+}
+@media (max-width: 1180px){
+  #proposta .proposalWrap,
+  #proposta .proposalWrap--aligned{
+    grid-template-columns:1fr;
+  }
+}
+@media (max-width: 900px){
+  #proposta .proposalFlow,
+  #proposta .proposalFlow--aligned{
+    grid-template-columns:1fr;
+  }
+  #proposta .pfCard,
+  #proposta .deliverablesModern__card{
+    min-height:auto;
+  }
+  #proposta .pfTop > div:last-child,
+  #proposta .pfTop h3{
+    min-height:0;
+    max-width:none;
+  }
+}
