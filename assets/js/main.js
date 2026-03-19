@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         };
 
-        const states = mapMount.querySelectorAll(".uf");
+        const states = mapMount.querySelectorAll(".uf, [data-uf]");
         states.forEach(path => {
           path.style.cursor = "pointer";
           path.style.fill = "#3c596b";
