@@ -1,3 +1,4 @@
+
 (function(){
   const WHATSAPP_NUMBER = '5545998341000';
   const WHATSAPP_TEXT = encodeURIComponent('Olá! Vim pelo site da Grão 1000 e gostaria de falar com um especialista.');
@@ -56,6 +57,20 @@
     els.forEach(el=>io.observe(el));
   }
 
+  function styleMapStates(svg){
+    const states = svg.querySelectorAll('[data-uf]');
+    states.forEach((path)=>{
+      path.classList.add('uf');
+      path.style.fill = '#1f3a4a';
+      path.style.stroke = '#5a7686';
+      path.style.strokeWidth = '1.5';
+      path.style.opacity = '1';
+      path.style.filter = 'none';
+      path.style.vectorEffect = 'non-scaling-stroke';
+    });
+    return states;
+  }
+
   async function loadMap(){
     const mapHost = document.getElementById('brMap');
     if(!mapHost) return;
@@ -66,10 +81,13 @@
       const svg = mapHost.querySelector('svg');
       if(!svg) return;
       svg.setAttribute('id', 'mapa-brasil');
+      svg.querySelectorAll('style').forEach(el => el.remove());
+      svg.querySelectorAll('filter').forEach(el => el.remove());
       const titleEl = document.getElementById('stateTitle');
       const hintEl = document.getElementById('stateHint');
       const contactsEl = document.getElementById('stateContacts');
       const data = window.RESPONSAVEIS_MAPA || {};
+      const states = styleMapStates(svg);
 
       function normalizePhone(phone){
         return '55' + String(phone).replace(/\D+/g, '');
@@ -93,17 +111,40 @@
         });
       }
 
-      const states = svg.querySelectorAll('[data-uf]');
       states.forEach(path=>{
+        path.addEventListener('mouseenter', ()=>{
+          if(!path.classList.contains('active')){
+            path.style.fill = '#27d36b';
+            path.style.stroke = '#b8ffd5';
+          }
+        });
+        path.addEventListener('mouseleave', ()=>{
+          if(!path.classList.contains('active')){
+            path.style.fill = '#1f3a4a';
+            path.style.stroke = '#5a7686';
+          }
+        });
         path.addEventListener('click', ()=>{
-          states.forEach(p=>p.classList.remove('active'));
+          states.forEach(p=>{
+            p.classList.remove('active');
+            p.style.fill = '#1f3a4a';
+            p.style.stroke = '#5a7686';
+          });
           path.classList.add('active');
+          path.style.fill = '#f5a400';
+          path.style.stroke = '#ffe29e';
           renderState(path.getAttribute('data-uf'));
         });
       });
+
       const defaultUf = 'PR';
       const def = svg.querySelector(`[data-uf="${defaultUf}"]`);
-      if(def){ def.classList.add('active'); renderState(defaultUf); }
+      if(def){
+        def.classList.add('active');
+        def.style.fill = '#f5a400';
+        def.style.stroke = '#ffe29e';
+        renderState(defaultUf);
+      }
     } catch (err) {
       mapHost.innerHTML = '<div class="muted">Não foi possível carregar o mapa agora.</div>';
     }
