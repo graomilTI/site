@@ -66,34 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(svg => {
         mapMount.innerHTML = svg;
 
-        const data = {
-          PR: [
-            { name: "Marcos Mota", city: "Cascavel", phone: "(44) 99711-9843" },
-            { name: "Michael Gonçalves", city: "Londrina", phone: "(43) 99182-6733" },
-            { name: "Michael Ribas", city: "Ponta Grossa", phone: "(42) 99834-4303" },
-            { name: "José Boa Ventura", city: "Maringá", phone: "(44) 99836-1000" }
-          ],
-          BA: [
-            { name: "Douglas Candido", city: "Bahia", phone: "(77) 9 9999-3585" }
-          ],
-          GO: [
-            { name: "Dilson Riebau", city: "Goiás", phone: "(64) 9 9344-0641" },
-            { name: "Sidnei Ribeiro", city: "Goiás", phone: "(64) 9 9223-3113" }
-          ],
-          MG: [
-            { name: "Ricardo Araújo", city: "Minas Gerais", phone: "(34) 9 9729-7489" }
-          ],
-          MT: [
-            { name: "Elizeu Lopes", city: "Sinop", phone: "(66) 9 9918-4053" },
-            { name: "Jean Pablo", city: "Rondonópolis", phone: "(66) 9 9607-6403" },
-            { name: "Vanuza Pereira", city: "Confresa", phone: "(66) 9 8457-8435" },
-            { name: "Marllon Machado", city: "Querência", phone: "(66) 9 8128-4238" },
-            { name: "Cleuton Albernaz", city: "Campo Novo do Parecis", phone: "(66) 9 9690-9921" }
-          ],
-          PA: [
-            { name: "Elizeu Lopes", city: "Pará", phone: "(66) 9 9918-4053" }
-          ]
-        };
+        const data = {"PR": [{"name": "Marcos Mota", "city": "Cascavel", "phone": "(44) 99711-9843"}, {"name": "Michael Gonçalves", "city": "Londrina", "phone": "(43) 99182-6733"}, {"name": "Michael Ribas", "city": "Ponta Grossa", "phone": "(42) 99834-4303"}, {"name": "José Boa Ventura", "city": "Maringá", "phone": "(44) 99836-1000"}], "BA": [{"name": "Douglas Candido", "city": "Bahia", "phone": "(77) 9 9999-3585"}], "GO": [{"name": "Dilson Riebau", "city": "Goiás", "phone": "(64) 9 9344-0641"}], "MG": [{"name": "Ricardo Araújo", "city": "Minas Gerais", "phone": "(34) 9 9729-7489"}], "MT": [{"name": "Elizeu Lopes", "city": "Sinop", "phone": "(66) 9 9918-4053"}, {"name": "Jean Pablo", "city": "Rondonópolis", "phone": "(66) 9 9607-6403"}, {"name": "Vanuza Pereira", "city": "Confresa", "phone": "(66) 9 8457-8435"}, {"name": "Marllon Machado", "city": "Querência", "phone": "(66) 9 8128-4238"}, {"name": "Cleuton Albernaz", "city": "Campo Novo do Parecis", "phone": "(66) 9 9690-9921"}], "PA": [{"name": "Elizeu Lopes", "city": "Pará", "phone": "(66) 9 9918-4053"}]};
         const defaultContacts = [{ name: "Atendimento Grão 1000", city: "Atendimento nacional", phone: "(45) 99834-1000" }];
         const title = document.getElementById("stateTitle");
         const hint = document.getElementById("stateHint");
@@ -117,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         };
 
-        const states = mapMount.querySelectorAll(".uf");
+        const states = mapMount.querySelectorAll(".uf, [data-uf]");
         states.forEach(path => {
           path.style.cursor = "pointer";
           path.style.fill = "#3c596b";
