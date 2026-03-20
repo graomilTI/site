@@ -593,3 +593,70 @@ main{ padding-top:110px; }
   .band--alt .cardLink, .pfCard--pro{ min-height:auto; }
   .richTextBlock--narrow{ padding:28px 24px; }
 }
+
+
+/* ===== AJUSTE DOS CARDS - COMO ENTREGAMOS ===== */
+.band--alt .split{
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.band--alt .cards3{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.band--alt .cardLink{
+  min-height: 360px;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.band--alt .cardLink__title{
+  font-size: clamp(18px, 1.5vw, 26px);
+  line-height: 1.05;
+  max-width: 9ch;
+}
+
+.band--alt .cardLink__text{
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.65;
+  max-width: 20ch;
+}
+
+.band--alt .cardLink__meta{
+  margin-top: auto;
+  padding-top: 18px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1180px){
+  .band--alt .split{
+    grid-template-columns: 1fr;
+  }
+
+  .band--alt .cards3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px){
+  .band--alt .cards3{
+    grid-template-columns: 1fr;
+  }
+
+  .band--alt .cardLink{
+    min-height: auto;
+  }
+
+  .band--alt .cardLink__title,
+  .band--alt .cardLink__text{
+    max-width: none;
+  }
+}
