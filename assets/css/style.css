@@ -660,3 +660,124 @@ main{ padding-top:110px; }
     max-width: none;
   }
 }
+
+
+/* ===== HOME - COMO ENTREGAMOS EM QUADRADO ===== */
+.band--alt .split{
+  display:grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 28px !important;
+  align-items:start !important;
+}
+
+.band--alt .split > div:first-child{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "titulo titulo"
+    "texto texto"
+    "kpis cards";
+  gap: 22px;
+  align-items:start;
+}
+
+.band--alt .split > div:first-child .ribbon{
+  grid-area: titulo;
+  margin-bottom: 0;
+}
+
+.band--alt .split > div:first-child h2{
+  grid-area: titulo;
+  margin-top: 46px !important;
+  margin-bottom: 0 !important;
+}
+
+.band--alt .split > div:first-child .lead{
+  grid-area: texto;
+  max-width: none !important;
+  margin-top: 8px;
+}
+
+.band--alt .split > div:first-child .kpiRow{
+  grid-area: kpis;
+  display:flex !important;
+  flex-direction:column;
+  gap: 16px;
+  max-width: none !important;
+  margin-top: 0 !important;
+}
+
+.band--alt .split > div:first-child .kpi{
+  min-height: 132px;
+}
+
+.band--alt .split > div:first-child > div[style*="margin-top:14px"]{
+  grid-column: 1 / -1;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top: 2px !important;
+}
+
+.band--alt .split > div:last-child{
+  align-self:start;
+}
+
+.band--alt .split > div:last-child .cards3{
+  display:flex !important;
+  flex-direction:column;
+  gap: 16px !important;
+}
+
+.band--alt .split > div:last-child .cardLink{
+  min-height: 132px !important;
+  padding: 22px 22px !important;
+}
+
+.band--alt .split > div:last-child .cardLink__title{
+  max-width:none !important;
+  font-size: clamp(20px, 1.5vw, 26px) !important;
+  margin-bottom: 10px !important;
+}
+
+.band--alt .split > div:last-child .cardLink__text{
+  max-width:none !important;
+  margin-top: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+.band--alt .split > div:last-child .cardLink__meta{
+  padding-top: 12px !important;
+  margin-top: auto !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+}
+
+@media (max-width: 1100px){
+  .band--alt .split{
+    grid-template-columns: 1fr !important;
+  }
+
+  .band--alt .split > div:first-child{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "titulo"
+      "texto"
+      "kpis";
+  }
+
+  .band--alt .split > div:first-child h2{
+    margin-top: 14px !important;
+  }
+
+  .band--alt .split > div:first-child .kpiRow{
+    flex-direction:column;
+  }
+}
+
+@media (max-width: 768px){
+  .band--alt .split > div:last-child .cards3{
+    flex-direction:column;
+  }
+}
