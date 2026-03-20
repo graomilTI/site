@@ -781,3 +781,29 @@ main{ padding-top:110px; }
     flex-direction:column;
   }
 }
+
+
+/* ===== AJUSTE KPI LADO A LADO ===== */
+.band--alt .split > div:first-child .kpiRow{
+  display:grid !important;
+  grid-template-columns: repeat(3, minmax(0,1fr)) !important;
+  gap:16px !important;
+}
+
+.band--alt .split > div:first-child .kpi{
+  min-height:140px;
+}
+
+/* tablet */
+@media (max-width: 900px){
+  .band--alt .split > div:first-child .kpiRow{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* mobile */
+@media (max-width: 600px){
+  .band--alt .split > div:first-child .kpiRow{
+    grid-template-columns: 1fr;
+  }
+}
