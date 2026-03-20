@@ -955,3 +955,17 @@ main{ padding-top:110px; }
     grid-template-columns: 1fr !important;
   }
 }
+
+
+/* ===== FIX ÍCONES SOBRE TEXTO ===== */
+.band--alt .split > div:first-child .kpi::before{
+  top:16px !important;
+  left:auto !important;
+  right:16px !important;
+  z-index:1;
+}
+
+.band--alt .split > div:first-child .kpi .muted{
+  padding-right:70px !important;
+}
+
