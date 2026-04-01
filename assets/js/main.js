@@ -90,20 +90,17 @@ document.addEventListener("DOMContentLoaded", () => {
     { "name": "Mayckon Inoue", "city": "São Paulo", "phone": "(43) 99604-1000" }
   ],
   "PA": [
-    { "name": "Elizeu Lopes", "city": "Pará", "phone": "(67) 9643-1000" },
-    { "name": "Kairo Oliveira", "city": "Pará", "phone": "(63) 99120-1087" }
+    { "name": "Ronaldo Santos", "city": "Pará", "phone": " (94) 99236-5299" }
   ],
   "TO": [
-    { "name": "Elizeu Lopes", "city": "Tocantins", "phone": "(67) 9643-1000" },
     { "name": "Kairo Oliveira", "city": "Tocantins", "phone": "(63) 99120-1087" }
   ],
   "PI": [
-    { "name": "Elizeu Lopes", "city": "Piauí", "phone": "(67) 9643-1000" },
-    { "name": "Kairo Oliveira", "city": "Piauí", "phone": "(63) 99120-1087" }
+    { "name": "Douglas Candido", "city": "Piauí", "phone": "(77) 9 9999-3585" }
   ],
   "MA": [
-    { "name": "Kairo Oliveira", "city": "Maranhão", "phone": "(63) 99120-1087" },
-    { "name": "Elizeu Lopes", "city": "Maranhão", "phone": "(67) 9643-1000" }
+    { "name": "Manuel Martins", "city": "Maranhão", "phone": "(99) 98848-6088" }
+    
   ],
   "BA": [
     { "name": "Douglas Candido", "city": "Bahia", "phone": "(77) 9 9999-3585" }
