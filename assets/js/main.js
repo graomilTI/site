@@ -66,7 +66,56 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(svg => {
         mapMount.innerHTML = svg;
 
-        const data = {"PR": [{"name": "Marcos Mota", "city": "Cascavel", "phone": "(44) 99711-9843"}, {"name": "Michael Gonçalves", "city": "Londrina", "phone": "(43) 99182-6733"}, {"name": "Michael Ribas", "city": "Ponta Grossa", "phone": "(42) 99834-4303"}, {"name": "José Boa Ventura", "city": "Maringá", "phone": "(44) 99836-1000"}], "BA": [{"name": "Douglas Candido", "city": "Bahia", "phone": "(77) 9 9999-3585"}], "GO": [{"name": "Dilson Riebau", "city": "Goiás", "phone": "(64) 9 9344-0641"}], "MG": [{"name": "Ricardo Araújo", "city": "Minas Gerais", "phone": "(34) 9 9729-7489"}], "MT": [{"name": "Elizeu Lopes", "city": "Sinop", "phone": "(66) 9 9918-4053"}, {"name": "Jean Pablo", "city": "Rondonópolis", "phone": "(66) 9 9607-6403"}, {"name": "Vanuza Pereira", "city": "Confresa", "phone": "(66) 9 8457-8435"}, {"name": "Marllon Machado", "city": "Querência", "phone": "(66) 9 8128-4238"}, {"name": "Cleuton Albernaz", "city": "Campo Novo do Parecis", "phone": "(66) 9 9690-9921"}], "PA": [{"name": "Elizeu Lopes", "city": "Pará", "phone": "(66) 9 9918-4053"}]};
+        const data = {
+  "MT": [
+    { "name": "Elizeu Lopes", "city": "Sinop", "phone": "(66) 9 9918-4053" },
+    { "name": "Jean Pablo", "city": "Rondonópolis/Primavera do Leste", "phone": "(66) 9 9607-6403" },
+    { "name": "Vanuza Pereira", "city": "Confresa", "phone": "(66) 9 8457-8435" },
+    { "name": "Marllon Machado", "city": "Querência", "phone": "(66) 9 8128-4238" },
+    { "name": "Cleuton", "city": "MT4 - Campo Novo do Parecis", "phone": "(66) 9 9690-9921" }
+  ],
+  "MS": [
+    { "name": "Elizeu Lopes", "city": "Mato Grosso do Sul", "phone": "(67) 9643-1000" }
+  ],
+  "RS": [
+    { "name": "Sergio Leandro", "city": "Rio Grande do Sul", "phone": "(54) 99607-3809" }
+  ],
+  "PR": [
+    { "name": "Marcos Mota", "city": "Cascavel", "phone": "(44) 99711-9843" },
+    { "name": "Michael Gonçalves", "city": "Londrina", "phone": "(43) 99182-6733" },
+    { "name": "Michael Ribas", "city": "Ponta Grossa", "phone": "(42) 99834-4303" },
+    { "name": "José Boa Ventura", "city": "Maringá", "phone": "(44) 99836-1000" }
+  ],
+  "SP": [
+    { "name": "Mayckon Inoue", "city": "São Paulo", "phone": "(43) 99604-1000" }
+  ],
+  "PA": [
+    { "name": "Elizeu Lopes", "city": "Pará", "phone": "(67) 9643-1000" },
+    { "name": "Kairo Oliveira", "city": "Pará", "phone": "(63) 99120-1087" }
+  ],
+  "TO": [
+    { "name": "Elizeu Lopes", "city": "Tocantins", "phone": "(67) 9643-1000" },
+    { "name": "Kairo Oliveira", "city": "Tocantins", "phone": "(63) 99120-1087" }
+  ],
+  "PI": [
+    { "name": "Elizeu Lopes", "city": "Piauí", "phone": "(67) 9643-1000" },
+    { "name": "Kairo Oliveira", "city": "Piauí", "phone": "(63) 99120-1087" }
+  ],
+  "MA": [
+    { "name": "Kairo Oliveira", "city": "Maranhão", "phone": "(63) 99120-1087" },
+    { "name": "Elizeu Lopes", "city": "Maranhão", "phone": "(67) 9643-1000" }
+  ],
+  "BA": [
+    { "name": "Douglas Candido", "city": "Bahia", "phone": "(77) 9 9999-3585" }
+  ],
+  "GO": [
+    { "name": "Dilson Riebau", "city": "Goiás", "phone": "(64) 9 9344-0641" },
+    { "name": "Sidnei Ribeiro", "city": "Goiás", "phone": "(64) 9 9223-3113" }
+  ],
+  "MG": [
+    { "name": "Ricardo Araújo", "city": "Minas Gerais", "phone": "(34) 9 9729-7489" }
+  ]
+};
         const defaultContacts = [{ name: "Atendimento Grão 1000", city: "Atendimento nacional", phone: "(45) 99834-1000" }];
         const title = document.getElementById("stateTitle");
         const hint = document.getElementById("stateHint");
