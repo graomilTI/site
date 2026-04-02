@@ -392,13 +392,25 @@ main{padding-top:104px}
 .mapRight h3{font-size:clamp(28px,3vw,44px);line-height:.98;margin:10px 0 10px}
 .contactsList{display:flex;flex-direction:column;gap:14px;margin-top:18px}
 .contactsList .contactItem{
-  padding:18px 18px 16px; border-radius:22px; border:1px solid rgba(255,255,255,.08);
-  background:rgba(255,255,255,.04)
+  padding:22px; border-radius:24px; border:1px solid rgba(32,59,43,.08);
+  background:rgba(255,255,255,.88); display:grid; grid-template-columns:72px 1fr; gap:16px; align-items:center;
+  box-shadow:0 12px 28px rgba(24,39,31,.06)
 }
-.contactsList .contactName{font-size:18px;font-weight:900}
+.contactsList .contactAvatar{
+  width:72px; height:72px; border-radius:20px; display:grid; place-items:center;
+  background:linear-gradient(180deg,#eef6ef,#ddebe0); color:var(--brand-700); font-weight:900; font-size:22px;
+  border:1px solid rgba(32,59,43,.08)
+}
+.contactsList .contactBody{display:flex; flex-direction:column; align-items:flex-start}
+.contactsList .contactName{font-size:18px;font-weight:900;color:var(--ink-900)}
 .contactsList .contactCity{font-size:16px;color:var(--muted);margin-top:4px}
-.contactsList .contactPhone{display:inline-flex;margin-top:10px;font-weight:900;color:#fff}
-.panelNote{margin-top:14px;padding:18px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+.contactsList .contactPhone{
+  display:inline-flex; align-items:center; justify-content:center; margin-top:14px; min-height:48px; padding:0 20px;
+  border-radius:16px; background:linear-gradient(135deg,#1f7a45,#166534); color:#fff; font-weight:900;
+  box-shadow:0 14px 30px rgba(22,101,52,.22)
+}
+.contactsList .contactPhone:hover{transform:translateY(-1px); filter:brightness(1.03)}
+.panelNote{margin-top:14px;padding:18px;border-radius:20px;background:rgba(255,255,255,.7);border:1px solid rgba(32,59,43,.08); color:var(--muted)}
 .careerCallout__email{display:inline-flex;margin-top:8px;font-size:clamp(22px,2vw,32px);font-weight:900;color:#fff}
 
 .richTextBlock{padding:30px}
@@ -1624,4 +1636,10 @@ h1,h2,h3,.cardLink__title,.serviceCard h3,.card h3,.trustCard h3,
   .hero__copy p,.pageHero p{font-size:17px !important; max-width:none;}
   .conversionBar{padding:22px 20px;}
   .conversionBar strong{font-size:24px;}
+}
+
+@media (max-width: 760px){
+  .contactsList .contactItem{grid-template-columns:56px 1fr; padding:18px}
+  .contactsList .contactAvatar{width:56px;height:56px;border-radius:16px;font-size:18px}
+  .contactsList .contactPhone{width:100%}
 }

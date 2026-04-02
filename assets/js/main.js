@@ -66,70 +66,48 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(svg => {
         mapMount.innerHTML = svg;
 
-        const data = {
-  "MT": [
-    { "name": "Elizeu Lopes", "city": "Sinop", "phone": "(66) 9 9918-4053" },
-    { "name": "Jean Pablo", "city": "Rondonópolis/Primavera do Leste", "phone": "(66) 9 9607-6403" },
-    { "name": "Vanuza Pereira", "city": "Confresa", "phone": "(66) 9 8457-8435" },
-    { "name": "Marllon Machado", "city": "Querência", "phone": "(66) 9 8128-4238" },
-    { "name": "Cleuton", "city": "MT4 - Campo Novo do Parecis", "phone": "(66) 9 9690-9921" }
-  ],
-  "MS": [
-    { "name": "Elizeu Lopes", "city": "Mato Grosso do Sul", "phone": "(67) 9643-1000" }
-  ],
-  "RS": [
-    { "name": "Sergio Leandro", "city": "Rio Grande do Sul", "phone": "(54) 99607-3809" }
-  ],
-  "PR": [
-    { "name": "Marcos Mota", "city": "Cascavel", "phone": "(44) 99711-9843" },
-    { "name": "Michael Gonçalves", "city": "Londrina", "phone": "(43) 99182-6733" },
-    { "name": "Michael Ribas", "city": "Ponta Grossa", "phone": "(42) 99834-4303" },
-    { "name": "José Boa Ventura", "city": "Maringá", "phone": "(44) 99836-1000" }
-  ],
-  "SP": [
-    { "name": "Mayckon Inoue", "city": "São Paulo", "phone": "(43) 99604-1000" }
-  ],
-  "PA": [
-    { "name": "Ronaldo Santos", "city": "Pará", "phone": " (94) 99236-5299" }
-  ],
-  "TO": [
-    { "name": "Kairo Oliveira", "city": "Tocantins", "phone": "(63) 99120-1087" }
-  ],
-  "PI": [
-    { "name": "Douglas Candido", "city": "Piauí", "phone": "(77) 9 9999-3585" }
-  ],
-  "MA": [
-    { "name": "Manuel Martins", "city": "Maranhão", "phone": "(99) 98848-6088" }
-    
-  ],
-  "BA": [
-    { "name": "Douglas Candido", "city": "Bahia", "phone": "(77) 9 9999-3585" }
-  ],
-  "GO": [
-    { "name": "Dilson Riebau", "city": "Goiás", "phone": "(64) 9 9344-0641" },
-    { "name": "Sidnei Ribeiro", "city": "Goiás", "phone": "(64) 9 9223-3113" }
-  ],
-  "MG": [
-    { "name": "Ricardo Araújo", "city": "Minas Gerais", "phone": "(34) 9 9729-7489" }
-  ]
-};
-        const defaultContacts = [{ name: "Atendimento Grão 1000", city: "Atendimento nacional", phone: "(45) 99834-1000" }];
+        const data = window.RESPONSAVEIS_MAPA || {};
+        const defaultContacts = [{ nome: "Atendimento Grão 1000", sub: "Atendimento nacional", fone: "(45) 99834-1000" }];
+        const stateNames = {
+          AC: "Acre", AL: "Alagoas", AP: "Amapá", AM: "Amazonas", BA: "Bahia", CE: "Ceará", DF: "Distrito Federal",
+          ES: "Espírito Santo", GO: "Goiás", MA: "Maranhão", MT: "Mato Grosso", MS: "Mato Grosso do Sul", MG: "Minas Gerais",
+          PA: "Pará", PB: "Paraíba", PR: "Paraná", PE: "Pernambuco", PI: "Piauí", RJ: "Rio de Janeiro", RN: "Rio Grande do Norte",
+          RS: "Rio Grande do Sul", RO: "Rondônia", RR: "Roraima", SC: "Santa Catarina", SP: "São Paulo", SE: "Sergipe", TO: "Tocantins"
+        };
         const title = document.getElementById("stateTitle");
         const hint = document.getElementById("stateHint");
         const list = document.getElementById("stateContacts");
 
+        const toWhatsappHref = (phone) => {
+          const digits = String(phone || "").replace(/\D/g, "");
+          const normalized = digits.startsWith("55") ? digits : `55${digits}`;
+          const msg = encodeURIComponent("Olá! Vim pelo mapa do site da Grão 1000 e gostaria de falar com o responsável da minha região.");
+          return `https://wa.me/${normalized}?text=${msg}`;
+        };
+
         const render = (uf) => {
           const items = data[uf] || defaultContacts;
-          if (title) title.textContent = `${uf} • responsáveis`;
-          if (hint) hint.textContent = "Clique no telefone para abrir no WhatsApp.";
+          if (title) title.textContent = stateNames[uf] || uf || "Atendimento nacional";
+          if (hint) {
+            const count = items.length;
+            hint.textContent = count === 1
+              ? `1 contato disponível · clique em entrar em contato para abrir no WhatsApp.`
+              : `${count} contatos disponíveis · clique em entrar em contato para abrir no WhatsApp.`;
+          }
           if (list) {
             list.innerHTML = items.map(item => {
-              const phoneDigits = item.phone.replace(/\D/g, "");
+              const name = item.nome || item.name || "Responsável";
+              const sub = item.sub || item.city || item.cidade || "Região";
+              const phone = item.fone || item.phone || "";
+              const initials = name.split(/\s+/).filter(Boolean).slice(0,2).map(part => part[0]).join("").toUpperCase();
               return `
                 <div class="contactItem">
-                  <div class="contactName">${item.name}</div>
-                  <div class="contactCity">${item.city}</div>
-                  <a class="contactPhone" target="_blank" rel="noopener" href="https://wa.me/55${phoneDigits}?text=${encodeURIComponent("Olá! Vim pelo mapa do site da Grão 1000.")}">${item.phone}</a>
+                  <div class="contactAvatar">${initials}</div>
+                  <div class="contactBody">
+                    <div class="contactName">${name}</div>
+                    <div class="contactCity">${sub}</div>
+                    <a class="contactPhone" target="_blank" rel="noopener" href="${toWhatsappHref(phone)}">Entrar em contato</a>
+                  </div>
                 </div>
               `;
             }).join("");
@@ -138,10 +116,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const states = mapMount.querySelectorAll(".uf, [data-uf]");
         states.forEach(path => {
-          path.style.cursor = "pointer";
-          path.style.fill = "#3c596b";
-          path.style.stroke = "#9fbcce";
-          path.style.strokeWidth = "2.4";
+          path.setAttribute("tabindex", "0");
+          path.setAttribute("role", "button");
+          path.setAttribute("aria-label", `Selecionar estado ${stateNames[(path.dataset.uf || "").toUpperCase()] || (path.dataset.uf || "")}`);
+
+          const activate = () => {
+            states.forEach(el => {
+              el.classList.remove("active");
+              el.style.fill = "#3c596b";
+              el.style.stroke = "#9fbcce";
+            });
+            path.classList.add("active");
+            path.style.fill = "#22c55e";
+            path.style.stroke = "#ffffff";
+            render((path.dataset.uf || "").toUpperCase());
+          };
 
           path.addEventListener("mouseenter", () => {
             if (!path.classList.contains("active")) {
@@ -149,6 +138,31 @@ document.addEventListener("DOMContentLoaded", () => {
               path.style.stroke = "#eefef4";
             }
           });
+
+          path.addEventListener("mouseleave", () => {
+            if (!path.classList.contains("active")) {
+              path.style.fill = "#3c596b";
+              path.style.stroke = "#9fbcce";
+            }
+          });
+
+          path.addEventListener("click", activate);
+          path.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              activate();
+            }
+          });
+        });
+
+        const defaultUf = mapMount.querySelector('[data-uf="PR"]');
+        if (defaultUf) defaultUf.click();
+      })
+      .catch(() => {
+        mapMount.innerHTML = '<div class="muted">Não foi possível carregar o mapa agora.</div>';
+      });
+  }
+});
 
           path.addEventListener("mouseleave", () => {
             if (!path.classList.contains("active")) {
