@@ -1365,231 +1365,218 @@ h2{line-height:.98}
 }
 
 
-/* ===== ABSURDO LEVEL 2026 ===== */
-:root{
-  --safe-title:#173727;
-  --safe-text:#44555f;
-  --safe-meta:#5d6d65;
-  --safe-soft:#6f8078;
-  --safe-surface:#fffdf9;
-  --safe-surface-2:#f7f1e7;
-  --safe-border:rgba(31,56,40,.10);
-  --safe-shadow:0 24px 54px rgba(88,73,46,.10);
+/* ===== BIG TECH MAP EXPERIENCE ===== */
+.section--contactMain{
+  background:
+    radial-gradient(900px 320px at 8% 0%, rgba(46,123,85,.06), transparent 60%),
+    radial-gradient(900px 360px at 100% 12%, rgba(33,94,63,.05), transparent 56%),
+    linear-gradient(180deg, rgba(255,252,247,.98), rgba(246,239,228,.88));
 }
-
-.topbar__inner{min-height:96px}
-.brand__logo{height:92px}
-.nav{gap:34px}
-.nav__link{font-size:18px;font-weight:700}
-.pillbtn{min-height:58px;padding-inline:26px}
-.pillbtn--careers{box-shadow:0 16px 32px rgba(31,91,59,.18)}
-.burger,.burger span{color:#163828;background:#163828}
-.mobileNav{
-  background:linear-gradient(180deg, rgba(255,252,247,.98), rgba(245,236,223,.98));
-  border-top:1px solid rgba(35,55,42,.08);
-  box-shadow:0 20px 48px rgba(74,62,42,.10);
+.section--contactMain .mapWrap{
+  gap:24px;
+  grid-template-columns:minmax(0,1.3fr) minmax(360px,.82fr);
+  align-items:stretch;
 }
-.mobileNav>a{color:#173727}
-.mobileNav .pillbtn--ghost{background:#fff;color:#1f5b3b}
-
-.hero{min-height:calc(100vh - 104px)}
-.hero__inner{padding-block:92px 86px}
-.hero__copy{max-width:760px}
-.hero__copy h1,.pageHero h1{max-width:13.5ch;letter-spacing:-.04em}
-.hero__copy p,.pageHero p{max-width:33ch}
-.hero__cta{margin-top:26px}
-
-/* contrast-safe text on all light surfaces */
-.kpi .muted,
-.cardLink__text,
-.cardLink__meta,
-.serviceCard p,
-.serviceCard .muted,
-.card p,
-.card .muted,
-.card .bullets li,
-.bullets li,
-.trustCard p,
-.infoCard .muted,
-.infoCard__title,
-.fbPost__meta,
-.fbPost__text,
-.fbPost__link,
-.panelNote,
-.panelNote .muted,
-.mapHint,
-.proposalCTA__hint,
-.proposalDeliver__head .muted,
-.deliverablesModern__card p,
-.deliverablesModern__card .muted,
-.contactsList .contactCity,
-.contactsList .contactPhone,
-.careerCallout__email,
-.pfPill,
-.pfBadge,
-.sectionHead p,
-.richTextBlock p,
-.lead,
-.muted{
-  color:var(--safe-text) !important;
-  opacity:1 !important;
+.section--contactMain .mapLeft,
+.section--contactMain .mapRight,
+.section--contactMain .careerCallout{
+  background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(247,240,230,.96));
+  border:1px solid rgba(23,55,39,.09);
+  box-shadow:0 28px 60px rgba(84,69,44,.08);
 }
-.cardLink__meta,
-.proposalCTA__hint,
-.contactsList .contactCity,
-.panelNote,
-.kpi .muted,
-.pfBadge,
-.fbPost__meta,
-.infoCard__title{
-  color:var(--safe-soft) !important;
+.section--contactMain .mapLeft::before,
+.section--contactMain .mapRight::before,
+.section--contactMain .careerCallout::before{
+  background:linear-gradient(135deg, rgba(255,255,255,.4), transparent 48%, transparent 60%, rgba(31,91,59,.04));
 }
-.contactsList .contactPhone,
-.careerCallout__email,
-.fbPost__link{
+.section--contactMain .mapHead{
+  align-items:flex-start;
+  margin-bottom:20px;
+}
+.section--contactMain .mapTitle{
+  font-size:clamp(34px, 2.6vw, 54px);
+  line-height:.92;
+  letter-spacing:-.04em;
+  color:#153625;
+}
+.section--contactMain .mapHead .muted,
+.section--contactMain #stateHint,
+.section--contactMain .panelNote,
+.section--contactMain .careerCallout .muted{
+  color:#5a6b74 !important;
+}
+.section--contactMain .badge,
+.section--contactMain .panelTag,
+.section--contactMain .eyebrow{
+  background:linear-gradient(180deg, #edf5ef, #e0ecdf);
+  border-color:rgba(31,91,59,.10);
   color:#1f5b3b !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.82);
 }
-.bullets li,
-#servicos .bullets li,
-.card .bullets li,
-.process-steps li,
-.card li{
-  color:#44555f !important;
-  opacity:1 !important;
-}
-
-.pfCard--pro{
-  min-height:390px;
+.section--contactMain .mapCanvas{
+  min-height:620px;
+  padding:28px;
+  border:1px solid rgba(23,55,39,.08);
   border-radius:32px;
   background:
-    linear-gradient(180deg, rgba(255,253,249,.99), rgba(246,239,228,.98)),
-    radial-gradient(circle at top left, rgba(31,91,59,.06), transparent 48%);
-  border:1px solid var(--safe-border);
-  box-shadow:var(--safe-shadow);
+    radial-gradient(circle at 50% 45%, rgba(255,255,255,.95), rgba(245,239,230,.96) 68%),
+    linear-gradient(180deg, rgba(255,255,255,.45), rgba(241,233,222,.72));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.86);
 }
-.pfTop--clean{gap:14px}
-.pfTop--clean h3{
-  max-width:8ch;
-  font-size:clamp(34px,2.4vw,48px);
-  line-height:.92;
-}
-.pfBadge{
-  width:auto;
-  height:auto;
-  border:none;
-  padding:0;
-  border-radius:0;
-  background:transparent;
-  font-size:28px;
-  font-weight:800;
-}
-.pfChecks{gap:14px;margin-top:28px}
-.pfPill{
-  width:100%;
-  max-width:none;
-  display:flex;
-  align-items:center;
-  min-height:64px;
-  padding:16px 20px 16px 58px;
-  background:rgba(255,255,255,.82);
-  border:1px solid rgba(31,56,40,.10);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.84);
-  font-size:18px;
-  font-weight:700;
-  transform:none;
-}
-.pfPill::before{
-  left:18px;
-  width:24px;
-  height:24px;
-  box-shadow:0 0 0 8px rgba(31,91,59,.10);
-}
-
-.section--pain,
-.section--executive,
-.section--sectors{position:relative}
-.sectionHead--wide{max-width:920px;margin-bottom:26px}
-.cards3--executive .cardLink,
-.section--executive .infoCard,
-.finalCta,
-.section--sectors .trustCard{
-  background:
-    linear-gradient(180deg, rgba(255,253,249,.99), rgba(246,239,228,.98)),
-    radial-gradient(circle at top left, rgba(31,91,59,.05), transparent 48%);
-  border:1px solid var(--safe-border);
-  box-shadow:var(--safe-shadow);
-}
-.cardLink--pain{min-height:280px;padding:32px;border-radius:32px}
-.cardLink--pain .cardLink__title{font-size:clamp(34px,2.4vw,46px);line-height:.92;max-width:9ch}
-.cardLink--pain .cardLink__text{font-size:18px;line-height:1.66;max-width:28ch}
-.cardLink--pain .cardLink__meta{padding-top:18px;border-top:1px solid rgba(31,56,40,.08)}
-
-.split--executive{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:28px;align-items:start}
-.executiveList{display:grid;gap:14px;margin:22px 0 0;padding:0;list-style:none}
-.executiveList li{
-  position:relative;
-  padding:16px 18px 16px 58px;
-  border-radius:22px;
-  background:rgba(255,255,255,.72);
-  border:1px solid rgba(31,56,40,.08);
-  color:var(--safe-text);
-  font-weight:600;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.85);
-}
-.executiveList li::before{
-  content:"✓";
+.section--contactMain .mapCanvas::after{
+  content:"";
   position:absolute;
-  left:18px;
-  top:50%;
-  transform:translateY(-50%);
-  width:24px;
-  height:24px;
+  inset:18px;
+  border-radius:24px;
+  border:1px dashed rgba(23,55,39,.06);
+  pointer-events:none;
+}
+.section--contactMain .mapCanvas .uf{
+  fill:#446378 !important;
+  stroke:#b9cedd !important;
+  stroke-width:2.35 !important;
+  transition:fill .2s ease, stroke .2s ease, filter .2s ease, transform .2s ease !important;
+}
+.section--contactMain .mapCanvas .uf:hover{
+  fill:#1e6f4b !important;
+  stroke:#effbf4 !important;
+  filter:drop-shadow(0 10px 16px rgba(23,55,39,.18));
+  transform:translateY(-1px);
+}
+.section--contactMain .mapCanvas .uf.active{
+  fill:#22c55e !important;
+  stroke:#ffffff !important;
+  filter:drop-shadow(0 14px 20px rgba(34,197,94,.28));
+}
+.section--contactMain .mapRight{
+  display:flex;
+  flex-direction:column;
+  position:sticky;
+  top:128px;
+  min-height:620px;
+}
+.section--contactMain .mapRight h3{
+  font-size:clamp(34px,2.6vw,46px);
+  line-height:.95;
+  color:#153625;
+  margin:16px 0 10px;
+}
+.section--contactMain #stateHint{
+  font-size:15px;
+  line-height:1.65;
+  max-width:38ch;
+}
+.section--contactMain .contactsList{
+  margin-top:18px;
+  gap:14px;
+}
+.section--contactMain .contactsList .contactItem{
+  padding:16px;
+  border-radius:24px;
+  border:1px solid rgba(23,55,39,.08);
+  background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(243,236,226,.92));
+  box-shadow:0 16px 28px rgba(84,69,44,.06);
+}
+.section--contactMain .contactTop{
+  display:grid;
+  grid-template-columns:56px 1fr;
+  gap:14px;
+  align-items:start;
+}
+.section--contactMain .contactAvatar{
+  width:56px;
+  height:56px;
+  border-radius:18px;
   display:grid;
   place-items:center;
-  border-radius:999px;
-  background:#1f5b3b;
-  color:#fff;
-  font-size:12px;
+  font-size:18px;
   font-weight:800;
-  box-shadow:0 0 0 8px rgba(31,91,59,.10);
+  color:#134029;
+  background:linear-gradient(180deg,#edf5ef,#deebdf);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
 }
-.executiveStats{display:grid;grid-template-columns:1fr;gap:18px}
-.executiveStats .infoCard{padding:26px 28px;border-radius:28px}
-.executiveStats .infoCard__big{font-size:clamp(34px,2.2vw,48px);line-height:.92}
-.executiveStats .muted{max-width:28ch}
-
-.section--grain .sectionHead h2{max-width:12ch}
-.section--grain .cards3{margin-top:8px}
-.section--grain .ctaStrip{margin-top:28px;border-radius:28px;padding:28px 30px}
-.section--grain .ctaStrip .muted{max-width:46ch}
-
-.trustGrid--executive .trustCard{padding:28px;border-radius:30px}
-.finalCta{
-  margin-top:32px;
-  border-radius:34px;
-  padding:34px;
-  display:grid;
-  grid-template-columns:minmax(0,1fr) auto;
-  gap:26px;
-  align-items:end;
+.section--contactMain .contactName{
+  font-size:20px;
+  line-height:1.1;
+  font-weight:800;
+  color:#173727;
 }
-.finalCta h2{max-width:13ch;margin-bottom:12px}
-.finalCta .muted{max-width:54ch}
-.finalCta__actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
-
+.section--contactMain .contactCity{
+  margin-top:4px;
+  color:#5e6d76 !important;
+  font-size:15px;
+  line-height:1.5;
+}
+.section--contactMain .contactTags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:12px;
+}
+.section--contactMain .contactTag{
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:0 10px;
+  border-radius:999px;
+  background:#eef5ef;
+  color:#1f5b3b;
+  border:1px solid rgba(31,91,59,.08);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.01em;
+}
+.section--contactMain .contactActions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+.section--contactMain .contactPhone,
+.section--contactMain .contactSecondaryBtn{
+  min-height:42px;
+  padding:0 14px;
+  border-radius:12px;
+  font-weight:800;
+  font-size:14px;
+}
+.section--contactMain .contactPhone{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff !important;
+  background:linear-gradient(135deg,#1f6c49,#185738);
+  box-shadow:0 12px 24px rgba(31,91,59,.18);
+}
+.section--contactMain .contactSecondaryBtn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(23,55,39,.08);
+  background:#fff;
+  color:#234535;
+}
+.section--contactMain .panelNote{
+  margin-top:auto;
+  background:linear-gradient(180deg, #f4f7f3, #edf3ec);
+  border:1px solid rgba(31,91,59,.08);
+  color:#51636d !important;
+}
+.section--contactMain .careerCallout h2,
+.section--contactMain .careerCallout__email{
+  color:#153625;
+}
+.section--contactMain .careerCallout__email{
+  font-size:clamp(24px,1.85vw,34px);
+}
 @media (max-width: 1180px){
-  .split--executive,
-  .finalCta{grid-template-columns:1fr}
-  .finalCta__actions{justify-content:flex-start}
+  .section--contactMain .mapWrap{grid-template-columns:1fr;}
+  .section--contactMain .mapRight{position:relative;top:auto;min-height:auto;}
 }
-@media (max-width: 900px){
-  .brand__logo{height:76px}
-  .topbar__inner{min-height:86px}
-  .hero{min-height:auto}
-  .hero__inner{padding-block:76px 70px}
-  .cardLink--pain,
-  .finalCta,
-  .executiveStats .infoCard,
-  .pfCard--pro{padding:24px;border-radius:26px}
-  .pfPill{font-size:16px;padding-left:54px;min-height:58px}
+@media (max-width: 760px){
+  .section--contactMain .mapCanvas{min-height:420px;padding:18px;}
+  .section--contactMain .mapRight h3,
+  .section--contactMain .mapTitle{font-size:clamp(28px,9vw,38px);}
+  .section--contactMain .contactTop{grid-template-columns:46px 1fr;}
+  .section--contactMain .contactAvatar{width:46px;height:46px;border-radius:14px;font-size:15px;}
 }
