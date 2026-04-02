@@ -139,7 +139,7 @@ function initContactMap() {
     if (titleEl) titleEl.textContent = formatStateName(stateUf);
     if (hintEl) {
       const count = contacts.length;
-      hintEl.textContent = `${count} contato${count > 1 ? "s disponíveis" : " disponível"} · clique em falar agora para abrir no WhatsApp.`;
+      hintEl.textContent = `${count} contato${count > 1 ? "s disponíveis" : " disponível"} · clique em entrar em contato para abrir no WhatsApp.`;
     }
 
     if (!listEl) return;
@@ -161,8 +161,7 @@ function initContactMap() {
               <div class="contactName">${item.name}</div>
               <div class="contactCity">${item.city}</div>
               <div class="contactActions">
-                <a class="contactPhone" target="_blank" rel="noopener" href="${buildWhatsappLink(item.phone)}">Falar agora</a>
-                <a class="contactGhost" target="_blank" rel="noopener" href="tel:${String(item.phone).replace(/\D/g, "")}">${item.phone}</a>
+                <a class="contactPhone" target="_blank" rel="noopener" href="${item.link || buildWhatsappLink(item.phone)}">Entrar em contato</a>
               </div>
             </div>
           </article>
