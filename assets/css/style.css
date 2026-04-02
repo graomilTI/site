@@ -1364,219 +1364,69 @@ h2{line-height:.98}
   }
 }
 
-
-/* ===== BIG TECH MAP EXPERIENCE ===== */
-.section--contactMain{
+/* ===== FIX CONTATO MAPA / BIG TECH ===== */
+.mapCanvas{
   background:
-    radial-gradient(900px 320px at 8% 0%, rgba(46,123,85,.06), transparent 60%),
-    radial-gradient(900px 360px at 100% 12%, rgba(33,94,63,.05), transparent 56%),
-    linear-gradient(180deg, rgba(255,252,247,.98), rgba(246,239,228,.88));
+    radial-gradient(circle at 50% 40%, rgba(255,255,255,.78), rgba(249,245,236,.98) 58%),
+    linear-gradient(180deg, #f7f2e8 0%, #eee6d8 100%) !important;
+  border:1px solid rgba(31,91,59,.10) !important;
 }
-.section--contactMain .mapWrap{
-  gap:24px;
-  grid-template-columns:minmax(0,1.3fr) minmax(360px,.82fr);
-  align-items:stretch;
+.mapRight{
+  background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(248,244,236,.96));
+  border:1px solid rgba(31,91,59,.10);
+  border-radius:28px;
 }
-.section--contactMain .mapLeft,
-.section--contactMain .mapRight,
-.section--contactMain .careerCallout{
-  background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(247,240,230,.96));
-  border:1px solid rgba(23,55,39,.09);
-  box-shadow:0 28px 60px rgba(84,69,44,.08);
-}
-.section--contactMain .mapLeft::before,
-.section--contactMain .mapRight::before,
-.section--contactMain .careerCallout::before{
-  background:linear-gradient(135deg, rgba(255,255,255,.4), transparent 48%, transparent 60%, rgba(31,91,59,.04));
-}
-.section--contactMain .mapHead{
-  align-items:flex-start;
-  margin-bottom:20px;
-}
-.section--contactMain .mapTitle{
-  font-size:clamp(34px, 2.6vw, 54px);
-  line-height:.92;
-  letter-spacing:-.04em;
-  color:#153625;
-}
-.section--contactMain .mapHead .muted,
-.section--contactMain #stateHint,
-.section--contactMain .panelNote,
-.section--contactMain .careerCallout .muted{
-  color:#5a6b74 !important;
-}
-.section--contactMain .badge,
-.section--contactMain .panelTag,
-.section--contactMain .eyebrow{
-  background:linear-gradient(180deg, #edf5ef, #e0ecdf);
-  border-color:rgba(31,91,59,.10);
-  color:#1f5b3b !important;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.82);
-}
-.section--contactMain .mapCanvas{
-  min-height:620px;
-  padding:28px;
-  border:1px solid rgba(23,55,39,.08);
-  border-radius:32px;
-  background:
-    radial-gradient(circle at 50% 45%, rgba(255,255,255,.95), rgba(245,239,230,.96) 68%),
-    linear-gradient(180deg, rgba(255,255,255,.45), rgba(241,233,222,.72));
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.86);
-}
-.section--contactMain .mapCanvas::after{
-  content:"";
-  position:absolute;
-  inset:18px;
-  border-radius:24px;
-  border:1px dashed rgba(23,55,39,.06);
-  pointer-events:none;
-}
-.section--contactMain .mapCanvas .uf{
-  fill:#446378 !important;
-  stroke:#b9cedd !important;
-  stroke-width:2.35 !important;
-  transition:fill .2s ease, stroke .2s ease, filter .2s ease, transform .2s ease !important;
-}
-.section--contactMain .mapCanvas .uf:hover{
-  fill:#1e6f4b !important;
-  stroke:#effbf4 !important;
-  filter:drop-shadow(0 10px 16px rgba(23,55,39,.18));
-  transform:translateY(-1px);
-}
-.section--contactMain .mapCanvas .uf.active{
-  fill:#22c55e !important;
-  stroke:#ffffff !important;
-  filter:drop-shadow(0 14px 20px rgba(34,197,94,.28));
-}
-.section--contactMain .mapRight{
-  display:flex;
-  flex-direction:column;
-  position:sticky;
-  top:128px;
-  min-height:620px;
-}
-.section--contactMain .mapRight h3{
-  font-size:clamp(34px,2.6vw,46px);
-  line-height:.95;
-  color:#153625;
-  margin:16px 0 10px;
-}
-.section--contactMain #stateHint{
-  font-size:15px;
-  line-height:1.65;
-  max-width:38ch;
-}
-.section--contactMain .contactsList{
-  margin-top:18px;
-  gap:14px;
-}
-.section--contactMain .contactsList .contactItem{
-  padding:16px;
-  border-radius:24px;
-  border:1px solid rgba(23,55,39,.08);
-  background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(243,236,226,.92));
-  box-shadow:0 16px 28px rgba(84,69,44,.06);
-}
-.section--contactMain .contactTop{
+.contactsList .contactItem{
   display:grid;
   grid-template-columns:56px 1fr;
   gap:14px;
   align-items:start;
+  padding:18px;
+  border-radius:20px;
+  background:#ffffff;
+  border:1px solid rgba(31,91,59,.09);
+  box-shadow:0 10px 30px rgba(24,43,32,.06);
 }
-.section--contactMain .contactAvatar{
+.contactAvatar{
   width:56px;
   height:56px;
-  border-radius:18px;
+  border-radius:16px;
   display:grid;
   place-items:center;
   font-size:18px;
-  font-weight:800;
-  color:#134029;
-  background:linear-gradient(180deg,#edf5ef,#deebdf);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
+  font-weight:900;
+  color:#1f5b3b;
+  background:linear-gradient(135deg, #e6f6ec, #f4fbf7);
+  border:1px solid rgba(31,91,59,.10);
 }
-.section--contactMain .contactName{
-  font-size:20px;
-  line-height:1.1;
-  font-weight:800;
-  color:#173727;
-}
-.section--contactMain .contactCity{
-  margin-top:4px;
-  color:#5e6d76 !important;
-  font-size:15px;
-  line-height:1.5;
-}
-.section--contactMain .contactTags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:12px;
-}
-.section--contactMain .contactTag{
+.contactBody{min-width:0;}
+.contactsList .contactName{font-size:20px;font-weight:900;color:#183527;}
+.contactsList .contactCity{font-size:15px;color:#607168;margin-top:4px;}
+.contactActions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+.contactsList .contactPhone,
+.contactsList .contactGhost{
   display:inline-flex;
   align-items:center;
-  min-height:28px;
-  padding:0 10px;
-  border-radius:999px;
-  background:#eef5ef;
-  color:#1f5b3b;
-  border:1px solid rgba(31,91,59,.08);
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:.01em;
-}
-.section--contactMain .contactActions{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:14px;
-}
-.section--contactMain .contactPhone,
-.section--contactMain .contactSecondaryBtn{
+  justify-content:center;
   min-height:42px;
   padding:0 14px;
   border-radius:12px;
+  text-decoration:none;
   font-weight:800;
-  font-size:14px;
 }
-.section--contactMain .contactPhone{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff !important;
-  background:linear-gradient(135deg,#1f6c49,#185738);
-  box-shadow:0 12px 24px rgba(31,91,59,.18);
+.contactsList .contactPhone{
+  color:#ffffff !important;
+  background:linear-gradient(135deg, #1f7a4d, #166534);
+  box-shadow:0 10px 22px rgba(31,122,77,.22);
 }
-.section--contactMain .contactSecondaryBtn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid rgba(23,55,39,.08);
-  background:#fff;
-  color:#234535;
+.contactsList .contactGhost{
+  color:#1f5b3b !important;
+  background:#f4fbf7;
+  border:1px solid rgba(31,91,59,.10);
 }
-.section--contactMain .panelNote{
-  margin-top:auto;
-  background:linear-gradient(180deg, #f4f7f3, #edf3ec);
-  border:1px solid rgba(31,91,59,.08);
-  color:#51636d !important;
-}
-.section--contactMain .careerCallout h2,
-.section--contactMain .careerCallout__email{
-  color:#153625;
-}
-.section--contactMain .careerCallout__email{
-  font-size:clamp(24px,1.85vw,34px);
-}
-@media (max-width: 1180px){
-  .section--contactMain .mapWrap{grid-template-columns:1fr;}
-  .section--contactMain .mapRight{position:relative;top:auto;min-height:auto;}
-}
-@media (max-width: 760px){
-  .section--contactMain .mapCanvas{min-height:420px;padding:18px;}
-  .section--contactMain .mapRight h3,
-  .section--contactMain .mapTitle{font-size:clamp(28px,9vw,38px);}
-  .section--contactMain .contactTop{grid-template-columns:46px 1fr;}
-  .section--contactMain .contactAvatar{width:46px;height:46px;border-radius:14px;font-size:15px;}
+#stateTitle{color:#1f5b3b !important;}
+#stateHint{color:#607168 !important;opacity:1 !important;}
+.panelNote{
+  background:#f7fbf8 !important;
+  border:1px solid rgba(31,91,59,.08) !important;
 }
