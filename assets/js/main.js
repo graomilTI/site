@@ -169,15 +169,22 @@ document.addEventListener("DOMContentLoaded", () => {
     mapMount.innerHTML = svg;
 
     const states = Array.from(mapMount.querySelectorAll(".uf, [data-uf]"));
+    mapMount.querySelectorAll("svg, .uf, [data-uf]").forEach(el => {
+      if (el && el.style) {
+        el.style.outline = "none";
+        el.style.boxShadow = "none";
+      }
+    });
     if (!states.length) {
       throw new Error("Nenhum estado encontrado no SVG.");
     }
 
     states.forEach(stateEl => {
       const uf = String(stateEl.dataset.uf || "").toUpperCase();
-      stateEl.setAttribute("tabindex", "0");
-      stateEl.setAttribute("role", "button");
+      stateEl.removeAttribute("tabindex");
+      stateEl.removeAttribute("role");
       stateEl.setAttribute("aria-label", `Selecionar estado ${stateNames[uf] || uf}`);
+      stateEl.style.outline = "none";
 
       stateEl.addEventListener("mouseenter", () => {
         if (!stateEl.classList.contains("active")) {
@@ -193,12 +200,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      stateEl.addEventListener("click", () => activateState(states, stateEl));
-      stateEl.addEventListener("keydown", (event) => {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          activateState(states, stateEl);
-        }
+      stateEl.addEventListener("click", () => {
+        activateState(states, stateEl);
+        if (typeof stateEl.blur === "function") stateEl.blur();
       });
     });
 
