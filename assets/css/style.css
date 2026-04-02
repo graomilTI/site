@@ -1364,82 +1364,174 @@ h2{line-height:.98}
   }
 }
 
-/* ===== FIX CONTATO MAPA / BIG TECH ===== */
-.mapCanvas{
+/* ===== DESIGN SYSTEM BIG TECH 2026 ===== */
+:root{
+  --ds-bg:#f6f1e8;
+  --ds-surface:#fffdfa;
+  --ds-surface-soft:#f3ece0;
+  --ds-surface-strong:#ffffff;
+  --ds-text:#193628;
+  --ds-text-soft:#4b5f56;
+  --ds-text-faint:#6c7d75;
+  --ds-border:rgba(25,54,40,.10);
+  --ds-border-strong:rgba(25,54,40,.16);
+  --ds-brand:#1f5b3b;
+  --ds-brand-strong:#17462d;
+  --ds-brand-soft:#e7f0ea;
+  --ds-gold:#c89b3c;
+  --ds-shadow-sm:0 8px 20px rgba(76,63,41,.06);
+  --ds-shadow-md:0 16px 38px rgba(76,63,41,.08);
+  --ds-shadow-lg:0 26px 64px rgba(76,63,41,.10);
+}
+
+html,body{background:var(--ds-bg)}
+body{
+  color:var(--ds-text);
   background:
-    radial-gradient(circle at 50% 40%, rgba(255,255,255,.78), rgba(249,245,236,.98) 58%),
-    linear-gradient(180deg, #f7f2e8 0%, #eee6d8 100%) !important;
-  border:1px solid rgba(31,91,59,.10) !important;
-}
-.mapRight{
-  background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(248,244,236,.96));
-  border:1px solid rgba(31,91,59,.10);
-  border-radius:28px;
-}
-.contactsList .contactItem{
-  display:grid;
-  grid-template-columns:56px 1fr;
-  gap:14px;
-  align-items:start;
-  padding:18px;
-  border-radius:20px;
-  background:#ffffff;
-  border:1px solid rgba(31,91,59,.09);
-  box-shadow:0 10px 30px rgba(24,43,32,.06);
-}
-.contactAvatar{
-  width:56px;
-  height:56px;
-  border-radius:16px;
-  display:grid;
-  place-items:center;
-  font-size:18px;
-  font-weight:900;
-  color:#1f5b3b;
-  background:linear-gradient(135deg, #e6f6ec, #f4fbf7);
-  border:1px solid rgba(31,91,59,.10);
-}
-.contactBody{min-width:0;}
-.contactsList .contactName{font-size:20px;font-weight:900;color:#183527;}
-.contactsList .contactCity{font-size:15px;color:#607168;margin-top:4px;}
-.contactActions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
-.contactsList .contactPhone,
-.contactsList .contactGhost{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:42px;
-  padding:0 14px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:800;
-}
-.contactsList .contactPhone{
-  color:#ffffff !important;
-  background:linear-gradient(135deg, #1f7a4d, #166534);
-  box-shadow:0 10px 22px rgba(31,122,77,.22);
-}
-.contactsList .contactGhost{
-  color:#1f5b3b !important;
-  background:#f4fbf7;
-  border:1px solid rgba(31,91,59,.10);
-}
-#stateTitle{color:#1f5b3b !important;}
-#stateHint{color:#607168 !important;opacity:1 !important;}
-.panelNote{
-  background:#f7fbf8 !important;
-  border:1px solid rgba(31,91,59,.08) !important;
+    radial-gradient(900px 420px at 0% 0%, rgba(200,155,60,.10), transparent 58%),
+    radial-gradient(900px 420px at 100% 0%, rgba(31,91,59,.08), transparent 58%),
+    linear-gradient(180deg,#faf6ef 0%, #f6f1e8 40%, #efe7da 100%);
 }
 
-
-/* remove focus rectangle on map states */
-.mapCanvas .uf:focus,
-.mapCanvas [data-uf]:focus,
-.mapCanvas .uf:focus-visible,
-.mapCanvas [data-uf]:focus-visible{
-  outline:none !important;
-  box-shadow:none !important;
+.lead,.muted,.panelNote,.mapHint,.richTextBlock p,
+.cardLink__text,.serviceCard p,.card p,.trustCard p,.fbPost__text,
+.infoCard .muted,.pageHero p,.hero__copy p{
+  color:var(--ds-text-soft)!important;
 }
-.mapCanvas svg *:focus{
-  outline:none !important;
+
+h1,h2,h3,.cardLink__title,.serviceCard h3,.card h3,.trustCard h3,
+.pageHero h1,.hero__copy h1,.mapTitle,.infoCard__big,.footer strong{
+  color:var(--ds-text)!important;
+}
+
+.topbar{
+  background:rgba(250,246,239,.92);
+  border-bottom:1px solid var(--ds-border);
+  box-shadow:0 8px 24px rgba(70,57,35,.06);
+}
+.nav__link{color:var(--ds-text)!important}
+.iconbtn{
+  background:rgba(255,255,255,.78);
+  border:1px solid var(--ds-border);
+  color:var(--ds-brand-strong);
+  box-shadow:none;
+}
+.iconbtn:hover{background:#fff;border-color:var(--ds-border-strong)}
+
+.pillbtn--careers,.btn,.btn--primary{
+  background:linear-gradient(135deg,var(--ds-brand),var(--ds-brand-strong));
+  color:#fff!important;
+  box-shadow:0 14px 30px rgba(31,91,59,.18);
+}
+.pillbtn--ghost,.btn--ghost,.pill{
+  background:rgba(255,255,255,.92);
+  color:var(--ds-brand)!important;
+  border:1px solid rgba(31,91,59,.14);
+}
+
+.kpi,.cardLink,.serviceCard,.card,.infoCard,.trustCard,.deliverablesModern__card,.pfCard,
+.fbPost,.richTextBlock,.mapLeft,.mapRight,.careerCallout,.proposalDeliver,.ctaStrip{
+  background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(249,244,236,.98))!important;
+  border:1px solid var(--ds-border)!important;
+  box-shadow:var(--ds-shadow-md)!important;
+}
+.kpi::before,.cardLink::before,.serviceCard::before,.card::before,.infoCard::before,.trustCard::before,
+.deliverablesModern__card::before,.pfCard::before,.richTextBlock::before,.mapLeft::before,.mapRight::before,
+.careerCallout::before,.proposalDeliver::before,.ctaStrip::before{
+  background:linear-gradient(135deg, rgba(255,255,255,.36), transparent 44%, transparent 60%, rgba(200,155,60,.07))!important;
+}
+
+.cardLink__meta,.chip--soft,.infoCard__title,.fbPost__tag,.fbPost__date,.panelTag,.careerCallout__email,.mapRight h3,.sectionHead .eyebrow{
+  color:var(--ds-brand)!important;
+  opacity:1!important;
+}
+
+.cardLink__meta,
+.band--alt .cardLink__meta,
+.section--grain .cardLink__meta,
+#servicos .serviceCard .bullets li,
+#servicos .bullets li,
+.process-steps li,
+.card li{
+  color:var(--ds-text-soft)!important;
+  opacity:1!important;
+}
+
+.band--alt .split > div:last-child .cardLink,
+.section--grain .cardLink,
+#servicos .serviceCard{
+  min-height:310px;
+  border-radius:30px!important;
+}
+
+.band--alt .split > div:last-child .cardLink__title,
+.section--grain .cardLink__title,
+#servicos .serviceCard h3{
+  color:var(--ds-text)!important;
+  line-height:.92!important;
+}
+
+.band--alt .split > div:last-child .cardLink__text,
+.section--grain .cardLink__text,
+#servicos .serviceCard p{
+  color:var(--ds-text-soft)!important;
+  font-size:18px!important;
+  line-height:1.65!important;
+}
+
+.band--alt .split > div:last-child .cardLink__meta,
+.section--grain .cardLink__meta{
+  margin-top:auto;
+  border-top:1px solid rgba(25,54,40,.08)!important;
+  padding-top:16px!important;
+  font-size:15px!important;
+  font-weight:700!important;
+}
+
+.sectionHead h2{max-width:12ch}
+.sectionHead p{max-width:62ch}
+
+.kpi .muted{color:var(--ds-text-faint)!important}
+.kpi b,.infoCard__big,.count{color:var(--ds-brand-strong)!important}
+
+.fbPost__body,.trustCard,.cardLink,.serviceCard,.card,.proposalDeliver,.ctaStrip{backdrop-filter:none!important}
+
+#servicos .bullets li,
+.section--grain .cardLink__meta,
+.band--alt .cardLink__meta{
+  text-shadow:none!important;
+}
+
+#servicos .bullets li::before{
+  background:var(--ds-brand)!important;
+  box-shadow:0 0 0 8px rgba(31,91,59,.10)!important;
+}
+
+.ctaStrip strong{
+  color:var(--ds-text)!important;
+  font-size:26px;
+}
+
+.footer{
+  background:linear-gradient(180deg,#153725,#0f2a1c)!important;
+}
+.footer .muted{color:rgba(255,255,255,.76)!important}
+
+.mapRight .contactCard,
+.contactsList .contactCard{
+  background:linear-gradient(180deg, #ffffff, #f8f3ea);
+  border:1px solid var(--ds-border);
+  box-shadow:var(--ds-shadow-sm);
+}
+.contactsList .contactName{color:var(--ds-text)!important}
+.contactsList .contactCity{color:var(--ds-text-soft)!important}
+.contactsList .contactAction{
+  background:linear-gradient(135deg,var(--ds-brand),var(--ds-brand-strong));
+  color:#fff!important;
+}
+
+@media (max-width: 900px){
+  .band--alt .split > div:last-child .cardLink,
+  .section--grain .cardLink,
+  #servicos .serviceCard{min-height:auto}
 }
