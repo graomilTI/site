@@ -969,3 +969,215 @@ main{ padding-top:110px; }
   padding-right:70px !important;
 }
 
+
+
+/* ===== LOVABLE-INSPIRED REBRAND ===== */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap');
+
+:root{
+  --cream:#f6f1e7;
+  --cream-2:#fbf8f1;
+  --sand:#ece3d3;
+  --forest:#1f4b35;
+  --forest-2:#2c6a49;
+  --ink:#183224;
+  --olive:#5a6c45;
+  --gold:#c58a18;
+  --gold-2:#e6b54b;
+  --card-light:rgba(255,255,255,.82);
+  --card-line:rgba(28,66,46,.08);
+  --card-shadow:0 18px 45px rgba(22,43,31,.10);
+}
+html{background:var(--cream)}
+body{
+  font-family:"DM Sans", Inter, Arial, sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(850px 360px at 0% 0%, rgba(197,138,24,.10), transparent 60%),
+    radial-gradient(900px 440px at 100% 0%, rgba(47,106,73,.10), transparent 58%),
+    linear-gradient(180deg, #fbf8f1 0%, #f6f1e7 40%, #f8f4ec 100%);
+}
+h1,h2,h3,.mapTitle,.infoCard__big,.cardLink__title,.serviceCard h3,.trustCard h3,.footer strong{
+  font-family:"Playfair Display", Georgia, serif;
+  letter-spacing:-.03em;
+  color:#183224;
+}
+p,.muted,.lead,.cardLink__text,.serviceCard .muted,.fbPost__text,.panelNote,.contactCity,.contactPhone,.infoCard__title,.breadcrumb,.chip,.pill,.pfPill,.kpi .muted{font-family:"DM Sans", Inter, sans-serif}
+
+.topbar{
+  background:rgba(250,246,238,.82);
+  border-bottom:1px solid rgba(30,60,42,.08);
+  box-shadow:0 10px 30px rgba(24,50,36,.08);
+}
+.nav__link,.mobileNav>a{color:rgba(24,50,36,.78)}
+.nav__link.active,.nav__link:hover{color:var(--forest)}
+.nav__link::after{background:linear-gradient(90deg, var(--forest-2), var(--gold-2))}
+.iconbtn{
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(30,60,42,.08);
+  box-shadow:0 8px 20px rgba(25,52,37,.08);
+  color:var(--forest);
+}
+.iconbtn:hover{background:#fff;border-color:rgba(44,106,73,.18)}
+.pillbtn--careers,.btn,.btn--primary{
+  background:linear-gradient(135deg, var(--forest), var(--forest-2));
+  box-shadow:0 14px 30px rgba(31,75,53,.18);
+}
+.pillbtn--ghost,.btn--ghost,.pill,.chip{
+  background:rgba(255,255,255,.72);
+  color:var(--forest);
+  border:1px solid rgba(30,60,42,.10);
+}
+.burger span{background:var(--forest)}
+.mobileNav{background:rgba(250,246,238,.96)}
+
+.hero::before,.pageHero::before{
+  background:
+    linear-gradient(90deg, rgba(22,36,28,.82) 0%, rgba(22,36,28,.60) 40%, rgba(22,36,28,.28) 100%),
+    linear-gradient(180deg, rgba(8,16,12,.08), rgba(8,16,12,.22));
+}
+.hero__copy .tag,.kicker,.eyebrow,.ribbon,.badge,.panelTag,.breadcrumb{
+  background:rgba(255,248,233,.14);
+  border:1px solid rgba(255,240,206,.16);
+  color:#ffe1a3;
+  backdrop-filter: blur(10px);
+}
+.hero__copy h1,.pageHero h1,.hero__copy p,.pageHero p,.pageHero .muted{color:#fff}
+.hero__copy h1 span,.pageHero h1 span{color:#f1d27b}
+.hero__copy p,.pageHero p{max-width:36ch}
+.section{padding:94px 0}
+.section--field,.band--alt,.section.section--grain,.section.section--contactMain{background:transparent}
+.sectionHead h2,.h2,.proposalDeliver__head h3,.proposalHead--pro h2,.careerCallout h2{color:#183224}
+.eyebrow,.ribbon{color:#fff3ca}
+.lead,.muted,.sectionHead p,.sectionHead .muted,.cardLink__text,.fbPost__text,.serviceCard .muted,.trustCard .muted,.infoCard .muted,.careerCallout .muted,.contactCity,.panelNote,.richTextBlock p{color:#4c6155}
+
+.kpi,.cardLink,.serviceCard,.card,.infoCard,.trustCard,.deliverablesModern__card,.pfCard,.fbPost,.richTextBlock,.mapLeft,.mapRight,.careerCallout,.proposalDeliver,.ctaStrip{
+  background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.74));
+  border:1px solid var(--card-line);
+  box-shadow:var(--card-shadow);
+}
+.kpi::before,.cardLink::before,.serviceCard::before,.card::before,.infoCard::before,.trustCard::before,.deliverablesModern__card::before,.pfCard::before,.richTextBlock::before,.mapLeft::before,.mapRight::before,.careerCallout::before,.proposalDeliver::before,.ctaStrip::before{
+  background:linear-gradient(135deg, rgba(197,138,24,.10), transparent 40%, transparent 60%, rgba(44,106,73,.08));
+}
+.cardLink__title,.serviceCard h3,.trustCard h3,.card h3,.deliverablesModern__card h3,.pfCard h3,.infoCard__big,.mapTitle,.contactName,.careerCallout__email{color:#183224}
+.cardLink__meta,.fbPost__date,.fbPost__tag,.infoCard__title{color:#6a7d72}
+.cardLink:hover,.serviceCard:hover,.trustCard:hover,.deliverablesModern__card:hover,.fbPost:hover,.infoCard:hover,.pfCard:hover{transform:translateY(-6px); box-shadow:0 24px 50px rgba(22,43,31,.14)}
+
+.sectionDivider path{fill:#f0e7d7}
+.band--alt{
+  border-top:1px solid rgba(30,60,42,.06);
+  border-bottom:1px solid rgba(30,60,42,.06);
+  background:linear-gradient(180deg, rgba(237,229,213,.55), rgba(250,247,240,.2));
+}
+.kpi{background:linear-gradient(180deg, rgba(31,75,53,.06), rgba(255,255,255,.9))}
+.kpi b,.count{color:var(--forest)}
+.kpi .muted{color:#46624f}
+
+.fbPost__img{border-bottom:1px solid rgba(30,60,42,.08)}
+.fbPost__link{color:var(--forest); font-weight:700}
+.fbPost__link:hover{color:var(--gold)}
+
+.serviceCard__icon,.trustIcon,.card__icon,.deliverablesModern__icon{
+  background:rgba(31,75,53,.08);
+  color:var(--forest);
+  border:1px solid rgba(31,75,53,.08);
+}
+.pfBadge{
+  background:rgba(31,75,53,.08);
+  border:1px solid rgba(31,75,53,.10);
+  color:var(--forest);
+}
+.pfPill{
+  background:rgba(246,241,231,.9);
+  border:1px solid rgba(30,60,42,.08);
+  color:#284432;
+}
+.pfPill::before{background:var(--forest-2); box-shadow:0 0 0 7px rgba(44,106,73,.12)}
+.chip--soft{background:rgba(31,75,53,.08); border-color:rgba(31,75,53,.12); color:var(--forest)}
+
+.footer{
+  background:linear-gradient(180deg, #1a2c23 0%, #101d17 100%);
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.footer strong,.footer .muted{color:#f8f5ef}
+.footer .muted{opacity:.8}
+
+.infoCard__big{font-size:clamp(30px, 3vw, 44px)}
+.infoCard__actions,.pillRow{margin-top:18px}
+.mapCanvas{
+  background:linear-gradient(180deg, rgba(31,75,53,.03), rgba(197,138,24,.04));
+  border:1px dashed rgba(30,60,42,.10);
+}
+.mapCanvas .uf,
+.mapCanvas [data-uf]{
+  fill:#cfd8cf !important;
+  stroke:#5f7566 !important;
+}
+.mapCanvas .uf:hover,
+.mapCanvas [data-uf]:hover{fill:#7ba788 !important; stroke:#244533 !important}
+.mapCanvas .uf.active,
+.mapCanvas [data-uf].active{fill:#2c6a49 !important; stroke:#fff !important}
+.contactItem{
+  background:rgba(246,241,231,.74);
+  border:1px solid rgba(30,60,42,.08);
+}
+.contactPhone{color:var(--forest)}
+.contactPhone:hover{color:var(--gold)}
+.careerCallout__email{color:var(--forest); text-decoration:none}
+.careerCallout__email:hover{color:var(--gold)}
+
+.richTextBlock,
+.mapLeft,
+.mapRight,
+.careerCallout,
+.proposalDeliver{border-radius:28px}
+.richTextBlock p{font-size:17px; line-height:1.9}
+
+.lovable-intro{
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);
+  gap:30px;
+  align-items:stretch;
+}
+.lovable-intro__panel{
+  padding:36px;
+}
+.lovable-intro__panel p + p{margin-top:16px}
+.lovable-intro__media{
+  min-height:100%;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:var(--card-shadow);
+  border:1px solid rgba(30,60,42,.08);
+  background:#d7d1c4;
+}
+.lovable-intro__media img{width:100%;height:100%;object-fit:cover;min-height:420px}
+.lovable-intro__stats{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:14px;
+  margin-top:26px;
+}
+.lovable-intro__stat{
+  padding:18px 18px 16px;
+  border-radius:22px;
+  background:rgba(246,241,231,.8);
+  border:1px solid rgba(30,60,42,.08);
+}
+.lovable-intro__stat b{display:block;color:var(--forest);font-size:28px;margin-bottom:6px}
+.lovable-intro__stat span{color:#5c7165;font-size:14px}
+.aboutHeroNote{color:#567063;max-width:56ch}
+
+@media (max-width: 980px){
+  .lovable-intro{grid-template-columns:1fr}
+  .lovable-intro__media img{min-height:320px}
+}
+@media (max-width: 760px){
+  body{background:linear-gradient(180deg, #fbf8f1 0%, #f6f1e7 100%)}
+  .topbar{background:rgba(250,246,238,.94)}
+  .hero__copy p,.pageHero p{max-width:none}
+  .lovable-intro__panel{padding:24px}
+  .lovable-intro__stats{grid-template-columns:1fr}
+}
+
+.aboutHeroNote{color:rgba(255,255,255,.82);margin-top:14px;line-height:1.7}
