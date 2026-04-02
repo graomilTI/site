@@ -1363,3 +1363,233 @@ h2{line-height:.98}
     margin-bottom:14px;
   }
 }
+
+
+/* ===== ABSURDO LEVEL 2026 ===== */
+:root{
+  --safe-title:#173727;
+  --safe-text:#44555f;
+  --safe-meta:#5d6d65;
+  --safe-soft:#6f8078;
+  --safe-surface:#fffdf9;
+  --safe-surface-2:#f7f1e7;
+  --safe-border:rgba(31,56,40,.10);
+  --safe-shadow:0 24px 54px rgba(88,73,46,.10);
+}
+
+.topbar__inner{min-height:96px}
+.brand__logo{height:92px}
+.nav{gap:34px}
+.nav__link{font-size:18px;font-weight:700}
+.pillbtn{min-height:58px;padding-inline:26px}
+.pillbtn--careers{box-shadow:0 16px 32px rgba(31,91,59,.18)}
+.burger,.burger span{color:#163828;background:#163828}
+.mobileNav{
+  background:linear-gradient(180deg, rgba(255,252,247,.98), rgba(245,236,223,.98));
+  border-top:1px solid rgba(35,55,42,.08);
+  box-shadow:0 20px 48px rgba(74,62,42,.10);
+}
+.mobileNav>a{color:#173727}
+.mobileNav .pillbtn--ghost{background:#fff;color:#1f5b3b}
+
+.hero{min-height:calc(100vh - 104px)}
+.hero__inner{padding-block:92px 86px}
+.hero__copy{max-width:760px}
+.hero__copy h1,.pageHero h1{max-width:13.5ch;letter-spacing:-.04em}
+.hero__copy p,.pageHero p{max-width:33ch}
+.hero__cta{margin-top:26px}
+
+/* contrast-safe text on all light surfaces */
+.kpi .muted,
+.cardLink__text,
+.cardLink__meta,
+.serviceCard p,
+.serviceCard .muted,
+.card p,
+.card .muted,
+.card .bullets li,
+.bullets li,
+.trustCard p,
+.infoCard .muted,
+.infoCard__title,
+.fbPost__meta,
+.fbPost__text,
+.fbPost__link,
+.panelNote,
+.panelNote .muted,
+.mapHint,
+.proposalCTA__hint,
+.proposalDeliver__head .muted,
+.deliverablesModern__card p,
+.deliverablesModern__card .muted,
+.contactsList .contactCity,
+.contactsList .contactPhone,
+.careerCallout__email,
+.pfPill,
+.pfBadge,
+.sectionHead p,
+.richTextBlock p,
+.lead,
+.muted{
+  color:var(--safe-text) !important;
+  opacity:1 !important;
+}
+.cardLink__meta,
+.proposalCTA__hint,
+.contactsList .contactCity,
+.panelNote,
+.kpi .muted,
+.pfBadge,
+.fbPost__meta,
+.infoCard__title{
+  color:var(--safe-soft) !important;
+}
+.contactsList .contactPhone,
+.careerCallout__email,
+.fbPost__link{
+  color:#1f5b3b !important;
+}
+.bullets li,
+#servicos .bullets li,
+.card .bullets li,
+.process-steps li,
+.card li{
+  color:#44555f !important;
+  opacity:1 !important;
+}
+
+.pfCard--pro{
+  min-height:390px;
+  border-radius:32px;
+  background:
+    linear-gradient(180deg, rgba(255,253,249,.99), rgba(246,239,228,.98)),
+    radial-gradient(circle at top left, rgba(31,91,59,.06), transparent 48%);
+  border:1px solid var(--safe-border);
+  box-shadow:var(--safe-shadow);
+}
+.pfTop--clean{gap:14px}
+.pfTop--clean h3{
+  max-width:8ch;
+  font-size:clamp(34px,2.4vw,48px);
+  line-height:.92;
+}
+.pfBadge{
+  width:auto;
+  height:auto;
+  border:none;
+  padding:0;
+  border-radius:0;
+  background:transparent;
+  font-size:28px;
+  font-weight:800;
+}
+.pfChecks{gap:14px;margin-top:28px}
+.pfPill{
+  width:100%;
+  max-width:none;
+  display:flex;
+  align-items:center;
+  min-height:64px;
+  padding:16px 20px 16px 58px;
+  background:rgba(255,255,255,.82);
+  border:1px solid rgba(31,56,40,.10);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.84);
+  font-size:18px;
+  font-weight:700;
+  transform:none;
+}
+.pfPill::before{
+  left:18px;
+  width:24px;
+  height:24px;
+  box-shadow:0 0 0 8px rgba(31,91,59,.10);
+}
+
+.section--pain,
+.section--executive,
+.section--sectors{position:relative}
+.sectionHead--wide{max-width:920px;margin-bottom:26px}
+.cards3--executive .cardLink,
+.section--executive .infoCard,
+.finalCta,
+.section--sectors .trustCard{
+  background:
+    linear-gradient(180deg, rgba(255,253,249,.99), rgba(246,239,228,.98)),
+    radial-gradient(circle at top left, rgba(31,91,59,.05), transparent 48%);
+  border:1px solid var(--safe-border);
+  box-shadow:var(--safe-shadow);
+}
+.cardLink--pain{min-height:280px;padding:32px;border-radius:32px}
+.cardLink--pain .cardLink__title{font-size:clamp(34px,2.4vw,46px);line-height:.92;max-width:9ch}
+.cardLink--pain .cardLink__text{font-size:18px;line-height:1.66;max-width:28ch}
+.cardLink--pain .cardLink__meta{padding-top:18px;border-top:1px solid rgba(31,56,40,.08)}
+
+.split--executive{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:28px;align-items:start}
+.executiveList{display:grid;gap:14px;margin:22px 0 0;padding:0;list-style:none}
+.executiveList li{
+  position:relative;
+  padding:16px 18px 16px 58px;
+  border-radius:22px;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(31,56,40,.08);
+  color:var(--safe-text);
+  font-weight:600;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85);
+}
+.executiveList li::before{
+  content:"✓";
+  position:absolute;
+  left:18px;
+  top:50%;
+  transform:translateY(-50%);
+  width:24px;
+  height:24px;
+  display:grid;
+  place-items:center;
+  border-radius:999px;
+  background:#1f5b3b;
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  box-shadow:0 0 0 8px rgba(31,91,59,.10);
+}
+.executiveStats{display:grid;grid-template-columns:1fr;gap:18px}
+.executiveStats .infoCard{padding:26px 28px;border-radius:28px}
+.executiveStats .infoCard__big{font-size:clamp(34px,2.2vw,48px);line-height:.92}
+.executiveStats .muted{max-width:28ch}
+
+.section--grain .sectionHead h2{max-width:12ch}
+.section--grain .cards3{margin-top:8px}
+.section--grain .ctaStrip{margin-top:28px;border-radius:28px;padding:28px 30px}
+.section--grain .ctaStrip .muted{max-width:46ch}
+
+.trustGrid--executive .trustCard{padding:28px;border-radius:30px}
+.finalCta{
+  margin-top:32px;
+  border-radius:34px;
+  padding:34px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:26px;
+  align-items:end;
+}
+.finalCta h2{max-width:13ch;margin-bottom:12px}
+.finalCta .muted{max-width:54ch}
+.finalCta__actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+
+@media (max-width: 1180px){
+  .split--executive,
+  .finalCta{grid-template-columns:1fr}
+  .finalCta__actions{justify-content:flex-start}
+}
+@media (max-width: 900px){
+  .brand__logo{height:76px}
+  .topbar__inner{min-height:86px}
+  .hero{min-height:auto}
+  .hero__inner{padding-block:76px 70px}
+  .cardLink--pain,
+  .finalCta,
+  .executiveStats .infoCard,
+  .pfCard--pro{padding:24px;border-radius:26px}
+  .pfPill{font-size:16px;padding-left:54px;min-height:58px}
+}
