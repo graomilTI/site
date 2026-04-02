@@ -1535,3 +1535,93 @@ h1,h2,h3,.cardLink__title,.serviceCard h3,.card h3,.trustCard h3,
   .section--grain .cardLink,
   #servicos .serviceCard{min-height:auto}
 }
+
+
+/* ===== CONVERSÃO MÁXIMA ===== */
+.hero::before,.pageHero::before{
+  background:
+    linear-gradient(90deg, rgba(9,22,17,.62) 0%, rgba(9,22,17,.44) 38%, rgba(9,22,17,.18) 100%),
+    linear-gradient(180deg, rgba(9,22,17,.18), rgba(9,22,17,.12)) !important;
+}
+.hero--campo{
+  min-height:680px !important;
+  background:
+    linear-gradient(90deg, rgba(5,15,12,.40) 0%, rgba(5,15,12,.18) 36%, rgba(5,15,12,.04) 100%),
+    url("../img/bg-field.webp") center/cover no-repeat !important;
+}
+.pageHero{
+  min-height:420px !important;
+  background:
+    linear-gradient(90deg, rgba(5,15,12,.46) 0%, rgba(5,15,12,.18) 42%, rgba(5,15,12,.06) 100%),
+    url("../img/bg-grains.webp") center/cover no-repeat !important;
+}
+.hero__inner{min-height:680px !important;}
+.hero__copy{max-width:760px !important;}
+.hero__copy h1,.pageHero h1{
+  max-width:11ch !important;
+  color:#fff !important;
+  font-size:clamp(40px,5.2vw,74px) !important;
+  line-height:.96 !important;
+  text-shadow:0 10px 30px rgba(0,0,0,.20);
+}
+.pageHero h1{max-width:12ch !important;}
+.hero__copy p,.pageHero p{
+  max-width:34ch;
+  color:rgba(255,255,255,.94) !important;
+  font-size:clamp(17px,1.45vw,24px) !important;
+  line-height:1.58 !important;
+}
+.hero__copy .tag{
+  background:rgba(18,39,29,.46) !important;
+  border-color:rgba(255,255,255,.18) !important;
+  color:#ffe0a2 !important;
+  box-shadow:none !important;
+}
+.hero__cta--conversion .btn{min-width:220px;justify-content:center;}
+.heroProofs{
+  display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;
+}
+.heroProofs span{
+  display:inline-flex; align-items:center; min-height:40px; padding:0 14px; border-radius:999px;
+  background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.16); color:#f6fbf8;
+  font-size:14px; font-weight:700; backdrop-filter:blur(8px);
+}
+.heroProofs--light span{background:rgba(255,255,255,.18);}
+.section--conversionBar{padding-top:18px;}
+.conversionBar{
+  display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  padding:24px 28px; border-radius:28px;
+  background:linear-gradient(180deg, rgba(255,255,255,.90), rgba(247,241,231,.96));
+  border:1px solid rgba(35,55,42,.08); box-shadow:0 18px 40px rgba(74,62,42,.10);
+}
+.conversionBar strong{display:block; font-size:28px; font-family:"Cormorant Garamond", Georgia, serif; color:#163828;}
+.conversionBar p{margin:8px 0 0; color:var(--muted); max-width:58ch;}
+.conversionBar__actions{display:flex; gap:12px; flex-wrap:wrap;}
+.cards3 .cardLink,.serviceCard,.pfCard--pro,.deliverablesModern__card{
+  background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(248,243,235,.98)) !important;
+  box-shadow:0 18px 40px rgba(74,62,42,.10) !important;
+}
+.cardLink__text,.serviceCard p,.deliverablesModern__card p,.pfCard p,.proposalDeliver p,.muted{
+  color:#4f6359 !important;
+}
+.cardLink__meta,.serviceCard .bullets li,.pfPill,.deliverablesModern__card .chip--soft{
+  color:#294834 !important;
+  opacity:1 !important;
+}
+.serviceCard .bullets li, .bullets li{
+  color:#34463d !important;
+  font-weight:600;
+}
+.pfPill{
+  background:rgba(31,91,59,.08) !important;
+  border:1px solid rgba(31,91,59,.14) !important;
+}
+.pageHero .hero__cta .btn{min-width:220px;justify-content:center;}
+@media (max-width: 900px){
+  .hero__inner{min-height:600px !important;}
+  .hero--campo{min-height:600px !important;}
+  .hero__copy h1,.pageHero h1{font-size:clamp(34px,10vw,54px) !important; max-width:none !important;}
+  .hero__copy p,.pageHero p{font-size:17px !important; max-width:none;}
+  .conversionBar{padding:22px 20px;}
+  .conversionBar strong{font-size:24px;}
+}
