@@ -1100,3 +1100,266 @@ h2{line-height:.98}
   .container{width:min(var(--max), calc(100% - 24px))}
   .hero__copy h1,.pageHero h1{max-width:100%}
 }
+
+
+/* ===== CONSULTORIA LEVEL OVERRIDES ===== */
+:root{
+  --consult-bg:#f6f1e7;
+  --consult-surface:#fffdf9;
+  --consult-surface-2:#f5eee2;
+  --consult-border:rgba(31,56,40,.10);
+  --consult-shadow:0 18px 44px rgba(84,69,44,.08);
+  --consult-shadow-hover:0 26px 56px rgba(84,69,44,.12);
+  --consult-title:#173727;
+  --consult-text:#44555f;
+  --consult-meta:#365345;
+  --consult-accent:#1f5b3b;
+  --consult-accent-soft:#dce8de;
+}
+
+.band--alt, .section--grain, .section#servicos{
+  background:linear-gradient(180deg, rgba(255,251,245,.25), rgba(246,239,228,.15));
+}
+
+.band--alt .split{
+  gap:36px !important;
+}
+
+.band--alt .split > div:last-child .cardLink,
+.section--grain .cardLink,
+#servicos .serviceCard{
+  background:
+    linear-gradient(180deg, rgba(255,253,249,.98), rgba(247,240,230,.98)),
+    radial-gradient(circle at top left, rgba(31,91,59,.06), transparent 42%);
+  border:1px solid var(--consult-border);
+  box-shadow:var(--consult-shadow);
+}
+
+.band--alt .split > div:last-child .cardLink:hover,
+.section--grain .cardLink:hover,
+#servicos .serviceCard:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--consult-shadow-hover);
+  border-color:rgba(31,91,59,.18);
+}
+
+.band--alt .split > div:last-child .cards3{
+  gap:18px !important;
+}
+
+.band--alt .split > div:last-child .cardLink{
+  min-height:164px !important;
+  border-radius:30px;
+  padding:26px 28px 24px !important;
+}
+
+.band--alt .split > div:last-child .cardLink::after{
+  position:absolute;
+  top:22px;
+  right:24px;
+  width:42px;
+  height:42px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  font-family:Inter, sans-serif;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.12em;
+  color:var(--consult-accent);
+  background:linear-gradient(180deg,#edf3ec,#dfe9e0);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.75);
+}
+.band--alt .split > div:last-child .cardLink:nth-child(1)::after{content:"01";}
+.band--alt .split > div:last-child .cardLink:nth-child(2)::after{content:"02";}
+.band--alt .split > div:last-child .cardLink:nth-child(3)::after{content:"03";}
+
+.band--alt .split > div:last-child .cardLink__title,
+.section--grain .cardLink__title,
+#servicos .serviceCard h3{
+  color:var(--consult-title) !important;
+  letter-spacing:-.028em;
+}
+
+.band--alt .split > div:last-child .cardLink__title{
+  font-size:clamp(30px,2vw,38px) !important;
+  line-height:.92 !important;
+  max-width:12ch !important;
+  padding-right:64px;
+}
+
+.band--alt .split > div:last-child .cardLink__text,
+.section--grain .cardLink__text,
+#servicos .serviceCard p,
+#servicos .bullets li{
+  color:var(--consult-text) !important;
+  opacity:1 !important;
+}
+
+.band--alt .split > div:last-child .cardLink__text{
+  font-size:17px !important;
+  line-height:1.65 !important;
+  max-width:34ch !important;
+}
+
+.band--alt .split > div:last-child .cardLink__meta,
+.section--grain .cardLink__meta{
+  color:var(--consult-meta) !important;
+  font-size:14px !important;
+  font-weight:700 !important;
+  letter-spacing:.01em;
+  line-height:1.5 !important;
+  border-top:1px solid rgba(31,56,40,.08);
+  padding-top:14px !important;
+}
+
+.section--grain .cards3,
+#servicos .cards3{
+  gap:26px;
+}
+
+.section--grain .cardLink,
+#servicos .serviceCard{
+  border-radius:32px;
+}
+
+.section--grain .cardLink{
+  padding:30px;
+  min-height:300px;
+  display:flex;
+  flex-direction:column;
+}
+
+.section--grain .cardLink:nth-child(1),
+#servicos .serviceCard:nth-child(1){
+  background:
+    linear-gradient(180deg, rgba(255,253,249,.98), rgba(247,240,230,.98)),
+    radial-gradient(circle at top left, rgba(58,124,87,.08), transparent 44%);
+}
+.section--grain .cardLink:nth-child(2),
+#servicos .serviceCard:nth-child(2){
+  background:
+    linear-gradient(180deg, rgba(255,253,249,.98), rgba(247,240,230,.98)),
+    radial-gradient(circle at top left, rgba(87,111,174,.07), transparent 44%);
+}
+.section--grain .cardLink:nth-child(3),
+#servicos .serviceCard:nth-child(3){
+  background:
+    linear-gradient(180deg, rgba(255,253,249,.98), rgba(247,240,230,.98)),
+    radial-gradient(circle at top left, rgba(161,117,187,.07), transparent 44%);
+}
+
+.section--grain .cardLink__title{
+  font-size:clamp(36px,2.5vw,52px);
+  line-height:.90;
+  max-width:11ch;
+  margin-bottom:16px;
+}
+
+.section--grain .cardLink__text{
+  font-size:18px;
+  line-height:1.65;
+  max-width:26ch;
+}
+
+.section--grain .cardLink__meta{
+  margin-top:auto;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  border-top:none;
+  padding-top:20px !important;
+}
+
+.section--grain .cardLink__meta::before{
+  content:"";
+  display:block;
+  flex-basis:100%;
+  height:1px;
+  background:rgba(31,56,40,.08);
+  margin-bottom:2px;
+}
+
+.section--grain .cardLink__meta{
+  text-transform:none;
+}
+
+#servicos .serviceCard{
+  padding:28px;
+}
+
+#servicos .serviceCard__icon{
+  width:64px;
+  height:64px;
+  border-radius:20px;
+  background:linear-gradient(180deg,#edf3ec,#dfe9e0);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.82);
+}
+
+#servicos .serviceCard h3{
+  font-size:clamp(30px,2vw,42px);
+  line-height:.93;
+  margin-bottom:12px;
+}
+
+#servicos .serviceCard p{
+  font-size:17px;
+  line-height:1.68;
+}
+
+#servicos .bullets{
+  gap:14px;
+  margin-top:22px;
+}
+
+#servicos .bullets li{
+  font-size:16px;
+  font-weight:600;
+  padding-left:38px;
+}
+
+#servicos .bullets li::before{
+  width:12px;
+  height:12px;
+  left:2px;
+  top:.48em;
+  background:var(--consult-accent);
+  box-shadow:0 0 0 8px rgba(31,91,59,.13);
+}
+
+.sectionHead h2{
+  max-width:13ch;
+}
+.section--grain .sectionHead p,
+#servicos .sectionHead p{
+  max-width:58ch;
+  color:var(--consult-text) !important;
+}
+
+@media (max-width: 1180px){
+  .band--alt .split > div:last-child .cardLink__title,
+  .section--grain .cardLink__title,
+  #servicos .serviceCard h3{
+    max-width:none !important;
+  }
+}
+
+@media (max-width: 900px){
+  .section--grain .cardLink,
+  #servicos .serviceCard,
+  .band--alt .split > div:last-child .cardLink{
+    min-height:auto !important;
+    padding:24px;
+    border-radius:26px;
+  }
+  .section--grain .cardLink__title,
+  .band--alt .split > div:last-child .cardLink__title,
+  #servicos .serviceCard h3{
+    font-size:clamp(28px,8vw,40px) !important;
+    padding-right:0;
+  }
+  .band--alt .split > div:last-child .cardLink::after{
+    position:static;
+    margin-bottom:14px;
+  }
+}
