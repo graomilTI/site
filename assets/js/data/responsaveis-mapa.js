@@ -35,20 +35,13 @@ window.RESPONSAVEIS_MAPA = {
 
   // Norte / Nordeste (novos)
   "PA": [
-    { nome: "Elizeu Lopes", sub: "Pará", fone: "(67) 9643-1000" },
-    { nome: "Kairo Oliveira", sub: "Pará", fone: "(63) 99120-1087" },
+    { nome: "Ronaldo Santos", sub: "Pará", fone: "(94) 99236-5299" },
   ],
   "TO": [
-    { nome: "Elizeu Lopes", sub: "Tocantins", fone: "(67) 9643-1000" },
     { nome: "Kairo Oliveira", sub: "Tocantins", fone: "(63) 99120-1087" },
   ],
-  "PI": [
-    { nome: "Elizeu Lopes", sub: "Piauí", fone: "(67) 9643-1000" },
-    { nome: "Kairo Oliveira", sub: "Piauí", fone: "(63) 99120-1087" },
-  ],
   "MA": [
-    { nome: "Kairo Oliveira", sub: "Maranhão", fone: "(63) 99120-1087" },
-    { nome: "Elizeu Lopes", sub: "Maranhão", fone: "(67) 9643-1000" },
+    { nome: "Manuel de Jesus", sub: "Maranhão", fone: "(99) 98848-6088" },
   ],
 
   // Já existentes (mantidos)
