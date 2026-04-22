@@ -1253,3 +1253,191 @@ body{
   .pfCard--pro{padding:22px 18px}
   .deliverablesModern__card{padding:20px 0 18px}
 }
+
+
+/* ===== CIRÚRGICO V4 — premium tech + orgânico ===== */
+:root{
+  --olive:#9aac73;
+  --olive-strong:#89a35f;
+  --text-soft:#d7e1dd;
+}
+
+/* superfícies menos quadradas e mais fluidas */
+.serviceCard,.cardLink,.card,.trustCard,.deliverablesModern__card,.pfCard,.mapLeft,.mapRight,.careerCallout,.proposalDeliver,.infoCard,.ctaStrip,.richTextBlock,.kpi{
+  border-radius:38px !important;
+}
+
+.serviceCard,.cardLink,.card,.trustCard,.deliverablesModern__card,.pfCard,.mapLeft,.mapRight,.careerCallout,.proposalDeliver,.infoCard,.ctaStrip,.richTextBlock{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.028), rgba(255,255,255,.012)),
+    radial-gradient(circle at 0% 0%, rgba(154,172,115,.08), transparent 34%),
+    radial-gradient(circle at 100% 100%, rgba(29,114,145,.08), transparent 38%) !important;
+  border:1px solid rgba(154,172,115,.09) !important;
+  box-shadow:0 22px 56px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.03) !important;
+}
+
+/* hero das internas mais elegante e menos pesado */
+.pageHero{
+  min-height:360px !important;
+}
+.pageHero .container{
+  min-height:240px !important;
+  padding-bottom:28px !important;
+}
+.pageHero h1{
+  max-width:8.2ch !important;
+  font-size:clamp(34px,4.8vw,76px) !important;
+  line-height:.94 !important;
+  letter-spacing:-.05em;
+}
+.pageHero p{
+  max-width:34ch !important;
+  font-size:clamp(16px,1.15vw,20px) !important;
+  line-height:1.6 !important;
+}
+.pageHero--contact{
+  background:
+    linear-gradient(90deg, rgba(4,12,16,.94) 0%, rgba(4,12,16,.82) 26%, rgba(4,12,16,.52) 54%, rgba(4,12,16,.18) 100%),
+    linear-gradient(180deg, rgba(6,15,20,.12), rgba(6,15,20,.48)),
+    url("../img/posts/atendimento.webp") center/cover no-repeat !important;
+}
+.pageHero::after,.hero::after{
+  opacity:.48 !important;
+  width:52% !important;
+  height:46% !important;
+}
+.breadcrumb{
+  background:rgba(255,255,255,.045) !important;
+  border:1px solid rgba(154,172,115,.14) !important;
+}
+
+/* contato com composições mais editoriais */
+.section--contactMain .grid3{
+  grid-template-columns:1.1fr .9fr .85fr;
+  gap:18px;
+}
+.infoCard{
+  padding:26px 24px !important;
+}
+.infoCard__title{
+  color:#eff5f1 !important;
+  font-size:20px !important;
+}
+.infoCard__big{
+  font-size:clamp(28px,2.6vw,48px) !important;
+  line-height:1 !important;
+  max-width:12ch;
+}
+.pill,.btn--ghost,.pillbtn--ghost{
+  background:rgba(255,255,255,.035) !important;
+  border-color:rgba(154,172,115,.12) !important;
+}
+
+/* mapa e cards laterais legíveis */
+.mapWrap{
+  grid-template-columns:minmax(0,1.12fr) minmax(340px,.88fr) !important;
+  gap:18px !important;
+}
+.mapLeft,.mapRight{
+  padding:30px 28px !important;
+}
+.mapTitle{max-width:none !important;}
+.mapCanvas{
+  min-height:540px !important;
+  border-radius:30px !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(92,136,170,.12), transparent 44%),
+    linear-gradient(180deg, rgba(255,255,255,.022), rgba(255,255,255,.01)) !important;
+}
+.contactsList .contactItem{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018)),
+    radial-gradient(circle at 0% 0%, rgba(154,172,115,.07), transparent 38%) !important;
+  border:1px solid rgba(154,172,115,.12) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.03) !important;
+}
+.contactsList .contactName,
+.contactsList .contactCity,
+.contactsList .contactBody,
+.contactsList .contactPhone,
+.contactsList .contactItem,
+.panelTag,
+.panelNote,
+#stateHint,
+.mapRight .muted{
+  color:#edf2ee !important;
+}
+.contactsList .contactCity,
+#stateHint,
+.panelNote,
+.mapRight .muted{
+  color:#afbeb7 !important;
+}
+.contactsList .contactAvatar{
+  background:linear-gradient(180deg, rgba(154,172,115,.18), rgba(154,172,115,.07)) !important;
+  color:#f4f8f2 !important;
+}
+.contactsList .contactPhone{
+  background:linear-gradient(135deg, #a7b97c, #8ea465) !important;
+  color:#10150f !important;
+  font-weight:900;
+}
+.panelNote{
+  background:rgba(255,255,255,.03) !important;
+}
+
+/* proposta e soluções menos em grade dura */
+.proposalFlow--pro,
+.proposalDeliver{
+  border-radius:40px !important;
+}
+.proposalFlow--pro{
+  padding:12px !important;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,.01)),
+    radial-gradient(circle at top left, rgba(154,172,115,.06), transparent 42%) !important;
+}
+.pfCard--pro{
+  padding:30px 24px 26px !important;
+}
+.pfPill{
+  background:rgba(255,255,255,.032) !important;
+  border-color:rgba(154,172,115,.1) !important;
+}
+.deliverablesModern--pro{
+  gap:16px !important;
+  border-top:none !important;
+}
+.deliverablesModern__card{
+  border-radius:28px !important;
+  border:1px solid rgba(154,172,115,.08) !important;
+  background:rgba(255,255,255,.018) !important;
+}
+.deliverablesModern__card:not(:last-child){
+  border-right:1px solid rgba(154,172,115,.08) !important;
+}
+
+/* correção de textos escuros em fundos escuros */
+.cardLink__title,.serviceCard h3,.card h3,.trustCard h3,.deliverablesModern__card h3,.infoCard__title,.proposalDeliver__head h3,.mapRight h3,.mapTitle,.panelTag{
+  color:#f7faf7 !important;
+}
+.cardLink__text,.serviceCard p,.card p,.trustCard p,.deliverablesModern__card p,.muted,.lead,.proposalCTA__hint,.contactCity{
+  color:#cfdad5 !important;
+}
+.chip--soft{
+  color:#eaf2eb !important;
+  border-color:rgba(154,172,115,.12) !important;
+  background:rgba(255,255,255,.04) !important;
+}
+
+/* home/soluções mais orgânico em telas médias */
+@media (max-width: 1180px){
+  .section--contactMain .grid3{grid-template-columns:1fr !important;}
+  .mapWrap{grid-template-columns:1fr !important;}
+}
+@media (max-width: 900px){
+  .pageHero{min-height:300px !important;}
+  .pageHero h1{max-width:9ch !important; font-size:clamp(30px,8vw,54px) !important;}
+  .proposalFlow--pro,.deliverablesModern--pro{grid-template-columns:1fr !important;}
+  .deliverablesModern__card:not(:last-child){border-right:none !important;}
+}
