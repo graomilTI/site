@@ -1441,3 +1441,375 @@ body{
   .proposalFlow--pro,.deliverablesModern--pro{grid-template-columns:1fr !important;}
   .deliverablesModern__card:not(:last-child){border-right:none !important;}
 }
+
+
+/* === EDITORIAL COMPLETE / AGROTECH ORGANIC OVERRIDES === */
+.pageHero,
+.section,
+.section--field,
+.section--proposal{
+  position:relative;
+  overflow:hidden;
+}
+
+.pageHero{
+  min-height:72vh;
+  display:flex;
+  align-items:flex-end;
+  padding:148px 0 70px;
+  background:
+    linear-gradient(90deg, rgba(5,10,12,.90) 0%, rgba(5,10,12,.82) 34%, rgba(5,10,12,.36) 63%, rgba(5,10,12,.12) 100%),
+    radial-gradient(circle at 16% 20%, rgba(154,172,115,.13), transparent 33%),
+    #071116;
+}
+.pageHero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-position:center;
+  background-size:cover;
+  opacity:.82;
+  z-index:0;
+}
+.pageHero::after,
+.section--editorial::after,
+.section--proposal::after,
+.section--contactMain::after{
+  content:"";
+  position:absolute;
+  inset:auto -8% -18% auto;
+  width:58vw;
+  height:58vw;
+  border:1px solid rgba(154,172,115,.18);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:0;
+}
+.pageHero .container,
+.section .container{
+  position:relative;
+  z-index:1;
+}
+.pageHero--solutions::before{
+  background-image:url('../img/bg-field.webp');
+}
+.pageHero--contact::before{
+  background-image:url('../img/atendimento.webp');
+}
+.pageHero--solutions h1,
+.pageHero--contact h1{
+  max-width:10ch;
+  font-size:clamp(54px, 6.2vw, 98px);
+  line-height:.96;
+  letter-spacing:-.045em;
+  text-wrap:balance;
+  margin:0;
+}
+.pageHero--contact h1{max-width:8ch;font-size:clamp(48px,5.3vw,84px)}
+.pageHero p.muted{
+  max-width:32ch;
+  font-size:clamp(18px,1.55vw,24px);
+  line-height:1.6;
+  color:#d9e3dc;
+  margin-top:18px;
+}
+.breadcrumb{
+  display:inline-flex;
+  min-height:42px;
+  align-items:center;
+  padding:0 16px;
+  margin-bottom:24px;
+  border-radius:999px;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.08);
+  color:#eef5ee;
+  backdrop-filter: blur(10px);
+}
+
+/* remove quadradões e converte para linguagem editorial */
+.serviceCard,
+.pfCard,
+.pfCard--pro,
+.deliverablesModern__card,
+.proposalDeliver,
+.infoCard,
+.mapLeft,
+.mapRight,
+.careerCallout,
+.cards3 > *,
+.grid3 > *{
+  background:transparent !important;
+  border:none !important;
+  box-shadow:none !important;
+  border-radius:0 !important;
+}
+
+#servicos,
+.section--proposal,
+.section--contactMain{
+  padding-top:46px;
+}
+
+.sectionHead{
+  margin-bottom:36px;
+  grid-template-columns:minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items:end;
+  gap:32px;
+  border-bottom:1px solid rgba(154,172,115,.12);
+  padding-bottom:22px;
+}
+.sectionHead h2,
+.proposalDeliver__head h3,
+.mapTitle{
+  max-width:11ch;
+  font-size:clamp(42px,4.2vw,72px);
+  line-height:.95;
+  letter-spacing:-.045em;
+}
+.sectionHead p,
+.proposalDeliver__head p{
+  max-width:56ch;
+  font-size:18px;
+}
+
+.cards3{
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:34px;
+}
+.serviceCard{
+  padding:0 0 16px !important;
+  min-height:auto;
+  border-bottom:1px solid rgba(154,172,115,.14) !important;
+}
+.serviceCard__top{display:block}
+.serviceCard__icon{
+  width:52px;height:52px;margin-bottom:16px;
+  border-radius:16px;
+  background:rgba(154,172,115,.08);
+  border:1px solid rgba(154,172,115,.15);
+}
+.serviceCard h3{
+  font-size:clamp(28px,2.35vw,42px);
+  line-height:1.02;
+  max-width:12ch;
+}
+.serviceCard p{max-width:30ch;margin-top:12px}
+.bullets{
+  margin-top:22px;
+  display:grid;
+  gap:10px;
+}
+.bullets li{
+  list-style:none;
+  position:relative;
+  padding-left:22px;
+  color:#d7e0da;
+}
+.bullets li::before{
+  content:"";
+  width:8px;height:8px;border-radius:50%;
+  background:#95ad6f;
+  position:absolute;left:0;top:.65em;
+  box-shadow:0 0 0 6px rgba(149,173,111,.08);
+}
+
+.proposalHead--compact{
+  border-top:1px solid rgba(154,172,115,.1);
+  border-bottom:1px solid rgba(154,172,115,.1);
+  padding:22px 0;
+}
+.proposalFlow--pro{
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:34px;
+  margin-top:42px;
+}
+.pfCard--pro{
+  padding:0 0 14px !important;
+  border-bottom:1px solid rgba(154,172,115,.14) !important;
+}
+.pfTop--clean{align-items:flex-start;gap:16px}
+.pfBadge{
+  width:46px;height:46px;border-radius:50%;
+  background:rgba(154,172,115,.08);
+  border:1px solid rgba(154,172,115,.16);
+  color:#dce8d0;
+}
+.pfCard--pro h3{
+  font-size:clamp(32px,2.9vw,48px);
+  line-height:.96;
+  letter-spacing:-.04em;
+  max-width:9ch;
+}
+.pfChecks{margin-top:20px;gap:14px}
+.pfPill{
+  min-height:48px;
+  padding:0 18px;
+  border-radius:999px;
+  background:rgba(255,255,255,.028);
+  border:1px solid rgba(255,255,255,.08);
+  color:#edf4ef;
+}
+
+.proposalDeliver{
+  margin-top:48px;
+  padding-top:28px;
+  border-top:1px solid rgba(154,172,115,.12) !important;
+}
+.deliverablesModern--pro{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:34px;
+  margin-top:30px;
+}
+.deliverablesModern__card{
+  padding:0 0 10px !important;
+  border-bottom:1px solid rgba(154,172,115,.12) !important;
+  min-height:auto;
+}
+.deliverablesModern__icon{
+  width:44px;height:44px;border-radius:14px;
+  background:rgba(154,172,115,.08);
+  border:1px solid rgba(154,172,115,.15);
+  display:grid;place-items:center;
+  margin-bottom:16px;
+}
+.deliverablesModern__card h3{
+  font-size:clamp(30px,2.5vw,42px);
+  line-height:1.02;
+  letter-spacing:-.04em;
+  max-width:12ch;
+}
+.deliverablesModern__card p{max-width:30ch}
+.chip--soft{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  color:#dce7df;
+}
+
+/* contato: hero menor e bloco de dados orgânico */
+.section--contactMain .grid3{
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:32px;
+  margin:0 0 42px;
+  padding-bottom:20px;
+  border-bottom:1px solid rgba(154,172,115,.1);
+}
+.infoCard{
+  padding:0 0 10px !important;
+  border-bottom:1px solid rgba(154,172,115,.12) !important;
+}
+.infoCard__title{
+  color:#95ad6f;
+  font-size:14px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.infoCard__big{
+  margin:10px 0 10px;
+  font-size:clamp(28px,2.8vw,54px);
+  line-height:1;
+  letter-spacing:-.035em;
+}
+.infoCard__actions{margin-top:18px}
+.pillRow{margin-top:18px}
+.pill{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  color:#edf4ef;
+}
+.mapWrap{
+  grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);
+  gap:48px;
+  align-items:start;
+}
+.mapLeft,.mapRight{padding:0 !important}
+.mapLeft{
+  border-right:1px solid rgba(154,172,115,.12);
+  padding-right:38px !important;
+}
+.mapHead{margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid rgba(154,172,115,.08)}
+.badge,.panelTag{
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.08);
+  color:#dce7df;
+}
+.mapCanvas{
+  min-height:620px;
+  border-radius:34px !important;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(154,172,115,.08), transparent 28%),
+    linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.012));
+  border:1px solid rgba(154,172,115,.12) !important;
+}
+.contactsList{display:grid;gap:14px;margin-top:22px}
+.contactsList .contactItem{
+  padding:18px 18px 18px 16px;
+  border-radius:22px;
+  border:1px solid rgba(154,172,115,.11);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)),
+    radial-gradient(circle at top left, rgba(154,172,115,.06), transparent 50%);
+  display:grid;
+  grid-template-columns:62px 1fr;
+  gap:14px;
+}
+.contactsList .contactAvatar{
+  width:62px;height:62px;border-radius:18px;
+  background:rgba(154,172,115,.08);
+  border:1px solid rgba(154,172,115,.15);
+  color:#f1f6ed;
+}
+.contactsList .contactName{color:#f6faf6 !important;font-weight:800}
+.contactsList .contactCity{color:#b9c4bf !important}
+.contactsList .contactPhone{
+  display:inline-flex;
+  min-height:44px;
+  align-items:center;
+  padding:0 18px;
+  margin-top:12px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#8fa96a,#7f975d);
+  color:#11170f !important;
+  font-weight:800;
+}
+.panelNote{
+  margin-top:18px;
+  padding:16px 18px;
+  border-radius:18px;
+  background:rgba(255,255,255,.028);
+  border:1px solid rgba(255,255,255,.06);
+  color:#dbe5de;
+}
+.careerCallout{
+  margin-top:56px;
+  padding:28px 0 0 !important;
+  border-top:1px solid rgba(154,172,115,.12) !important;
+}
+.careerCallout__email{font-size:clamp(24px,2vw,34px);letter-spacing:-.03em}
+
+/* orgânico geral */
+.topbar{
+  background:linear-gradient(180deg, rgba(4,10,12,.96), rgba(4,10,12,.84));
+  backdrop-filter: blur(16px);
+}
+.topbar__inner{min-height:108px}
+.brand__logo{height:78px;width:auto}
+.container{max-width:1240px}
+
+@media (max-width: 1100px){
+  .cards3,
+  .proposalFlow--pro,
+  .deliverablesModern--pro,
+  .section--contactMain .grid3,
+  .mapWrap{grid-template-columns:1fr}
+  .mapLeft{border-right:none;padding-right:0 !important;padding-bottom:28px !important;border-bottom:1px solid rgba(154,172,115,.12)}
+  .pageHero--solutions h1,
+  .pageHero--contact h1{max-width:none;font-size:clamp(42px,9vw,70px)}
+}
+@media (max-width: 720px){
+  .pageHero{min-height:auto;padding:128px 0 44px}
+  .pageHero--contact h1,.pageHero--solutions h1{font-size:clamp(36px,11vw,54px)}
+  .sectionHead h2,.proposalDeliver__head h3,.mapTitle{font-size:clamp(34px,10vw,48px)}
+  .serviceCard h3,.pfCard--pro h3,.deliverablesModern__card h3{font-size:clamp(26px,8vw,36px);max-width:none}
+  .mapCanvas{min-height:420px}
+}
