@@ -992,3 +992,264 @@ main{ padding-top:110px; }
   .pageHero h1{max-width:unset}
   .hero__copy h1{max-width:unset}
 }
+
+
+/* ===== CIRÚRGICO PREMIUM TECH / ORGÂNICO ===== */
+:root{
+  --bg:#061118;
+  --bg-2:#0a151c;
+  --panel-soft:rgba(10,20,27,.56);
+  --panel-deep:rgba(9,18,24,.78);
+  --olive:#9aac73;
+  --olive-2:#849a60;
+  --text-soft:#d8e2e0;
+  --muted-2:#a4b2ae;
+}
+body{
+  background:
+    radial-gradient(1100px 560px at 8% 0%, rgba(154,172,115,.07), transparent 58%),
+    radial-gradient(900px 520px at 92% 8%, rgba(215,170,86,.05), transparent 52%),
+    linear-gradient(180deg,#051017 0%,#07131a 36%,#061017 100%);
+}
+.topbar{
+  background:linear-gradient(180deg, rgba(4,12,16,.94), rgba(4,12,16,.78));
+  border-bottom:1px solid rgba(154,172,115,.09);
+}
+.pillbtn--careers,.btn,.btn--primary{
+  background:linear-gradient(135deg,#9aac73,#879b64);
+  color:#0d140f;
+  box-shadow:0 16px 34px rgba(154,172,115,.18), inset 0 1px 0 rgba(255,255,255,.14);
+}
+.pillbtn--ghost,.btn--ghost,.pill,.chip{
+  border-color:rgba(154,172,115,.14);
+  background:rgba(255,255,255,.03);
+}
+.iconbtn:hover,.nav__link:hover::after,.nav__link.active::after{background:linear-gradient(90deg,var(--olive),#c2d59e)}
+.hero--campo{
+  background:
+    linear-gradient(90deg, rgba(4,12,16,.9) 0%, rgba(4,12,16,.68) 36%, rgba(4,12,16,.34) 100%),
+    linear-gradient(180deg, rgba(6,15,20,.24), rgba(6,15,20,.54)),
+    url("../img/g1000-hero.jpg") center/cover no-repeat;
+}
+.pageHero{
+  min-height:420px;
+  display:flex;
+  align-items:flex-end;
+}
+.pageHero::after,.hero::after{
+  content:"";
+  position:absolute;
+  inset:auto -6% 10% auto;
+  width:58%;
+  height:52%;
+  border:1px solid rgba(154,172,115,.32);
+  border-left:none;
+  border-bottom:none;
+  border-radius:999px 999px 0 0;
+  pointer-events:none;
+  opacity:.75;
+}
+.pageHero--solutions{
+  background:
+    linear-gradient(90deg, rgba(4,12,16,.9) 0%, rgba(4,12,16,.68) 34%, rgba(4,12,16,.28) 100%),
+    linear-gradient(180deg, rgba(6,15,20,.18), rgba(6,15,20,.52)),
+    url("../img/servicos/poscolheita.webp") center/cover no-repeat;
+}
+.pageHero--qualidade{
+  background:
+    linear-gradient(90deg, rgba(4,12,16,.9) 0%, rgba(4,12,16,.68) 34%, rgba(4,12,16,.28) 100%),
+    linear-gradient(180deg, rgba(6,15,20,.18), rgba(6,15,20,.52)),
+    url("../img/servicos/qualidade.webp") center/cover no-repeat;
+}
+.pageHero--sobre{
+  background:
+    linear-gradient(90deg, rgba(4,12,16,.9) 0%, rgba(4,12,16,.68) 34%, rgba(4,12,16,.28) 100%),
+    linear-gradient(180deg, rgba(6,15,20,.18), rgba(6,15,20,.52)),
+    url("../img/g1000-about.jpg") center/cover no-repeat;
+}
+.pageHero--contact{
+  background:
+    linear-gradient(90deg, rgba(4,12,16,.9) 0%, rgba(4,12,16,.68) 34%, rgba(4,12,16,.28) 100%),
+    linear-gradient(180deg, rgba(6,15,20,.18), rgba(6,15,20,.52)),
+    url("../img/posts/atendimento.webp") center/cover no-repeat;
+}
+.pageHero .container{min-height:290px;padding-bottom:20px}
+.pageHero h1{max-width:11ch;text-wrap:balance}
+.pageHero p{color:var(--text-soft)}
+
+/* menos quadradão nas páginas internas */
+.serviceCard,.cardLink,.card,.trustCard,.deliverablesModern__card,.pfCard,.mapLeft,.mapRight,.careerCallout,.proposalDeliver,.infoCard,.ctaStrip{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.024), rgba(255,255,255,.012)),
+    radial-gradient(circle at top left, rgba(154,172,115,.06), transparent 56%);
+  border:1px solid rgba(154,172,115,.1);
+  box-shadow:0 22px 50px rgba(0,0,0,.18);
+  border-radius:34px;
+}
+.sectionHead h2,.proposalDeliver__head h3,.mapTitle{max-width:10ch;text-wrap:balance}
+.cardLink__text,.serviceCard p,.card p,.trustCard p,.muted,.lead{color:var(--text-soft)}
+
+/* serviços e fluxos mais editoriais */
+.proposalFlow--pro{
+  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+  border:1px solid rgba(154,172,115,.1);
+  border-radius:36px;
+  padding:10px;
+  gap:0;
+}
+.pfCard--pro{
+  min-height:0;
+  background:transparent;
+  border:none;
+  box-shadow:none;
+  border-radius:26px;
+  padding:28px 24px 24px;
+  position:relative;
+}
+.pfCard--pro::before{display:none}
+.pfCard--pro:not(:last-child)::after{
+  content:"";
+  position:absolute;
+  top:22px;
+  right:0;
+  width:1px;
+  height:calc(100% - 44px);
+  background:linear-gradient(180deg, transparent, rgba(154,172,115,.22), transparent);
+}
+.pfBadge{
+  background:rgba(154,172,115,.1);
+  border-color:rgba(154,172,115,.18);
+  color:var(--olive);
+}
+.pfTop--clean h3{max-width:9ch}
+.pfChecks{gap:12px}
+.pfPill{
+  width:100%;
+  background:rgba(255,255,255,.028);
+  border:1px solid rgba(154,172,115,.12);
+  color:#edf3ee;
+  font-size:17px;
+}
+.pfPill::before{background:linear-gradient(135deg,#56c97a,#3fae64)}
+
+.proposalDeliver{
+  margin-top:24px;
+  padding:30px;
+}
+.proposalDeliver__head{
+  grid-template-columns:minmax(0,300px) 1fr;
+  align-items:center;
+  margin-bottom:12px;
+}
+.deliverablesModern--pro{
+  gap:0;
+  border-top:1px solid rgba(154,172,115,.08);
+  margin-top:12px;
+}
+.deliverablesModern__card{
+  background:transparent;
+  border:none;
+  box-shadow:none;
+  border-radius:0;
+  min-height:0;
+  padding:24px 22px 18px;
+}
+.deliverablesModern__card::before{display:none}
+.deliverablesModern__card:not(:last-child){border-right:1px solid rgba(154,172,115,.08)}
+.deliverablesModern__icon{font-size:22px;opacity:.9}
+.deliverablesModern__card h3{font-size:clamp(22px,1.8vw,34px);line-height:1.02}
+.deliverablesModern__card p{font-size:16px;line-height:1.72}
+
+/* cards laterais do mapa */
+.mapWrap{align-items:start;gap:20px}
+.mapLeft,.mapRight{padding:30px}
+.mapLeft{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)),
+    radial-gradient(circle at 12% 0%, rgba(64,124,177,.12), transparent 46%);
+}
+.mapRight{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,.01)),
+    radial-gradient(circle at 100% 100%, rgba(154,172,115,.08), transparent 42%);
+}
+.mapCanvas{
+  border-style:solid;
+  border-color:rgba(154,172,115,.1);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(92,136,170,.1), transparent 44%),
+    linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,.01));
+}
+.mapRight h3,#stateHint,.panelTag,.panelNote{color:var(--text-soft)}
+.contactsList{gap:12px}
+.contactsList .contactItem{
+  padding:18px 18px 18px 16px;
+  border-radius:24px;
+  border:1px solid rgba(154,172,115,.1);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.028), rgba(255,255,255,.012)),
+    radial-gradient(circle at top left, rgba(154,172,115,.06), transparent 50%);
+  grid-template-columns:62px 1fr;
+  box-shadow:none;
+}
+.contactsList .contactAvatar{
+  width:62px;
+  height:62px;
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(154,172,115,.16), rgba(154,172,115,.08));
+  color:#eaf3e6;
+  border:1px solid rgba(154,172,115,.14);
+}
+.contactsList .contactName{color:#f2f6f2}
+.contactsList .contactCity{color:#9eaca7}
+.contactsList .contactPhone{
+  min-height:44px;
+  margin-top:12px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#9aac73,#849a60);
+  color:#11170f;
+  box-shadow:none;
+}
+.panelNote{
+  margin-top:16px;
+  background:rgba(255,255,255,.024);
+  border:1px solid rgba(154,172,115,.1);
+  border-radius:20px;
+}
+
+/* menos cards na área de contato superior */
+.section--contactMain .grid3{
+  gap:16px;
+  grid-template-columns:1.2fr .9fr .8fr;
+}
+.infoCard{
+  padding:24px 26px;
+  border-radius:30px;
+  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+}
+.infoCard__big{font-size:clamp(30px,2.6vw,50px)}
+
+/* suaviza quadradões em soluções */
+.cards3{gap:18px}
+.serviceCard{
+  padding:24px 24px 22px;
+  min-height:100%;
+}
+.serviceCard__top{gap:14px}
+.serviceCard h3{font-size:clamp(24px,2vw,33px);line-height:1.02}
+.serviceCard .bullets{margin-top:16px;gap:10px}
+.section--proposal{padding-top:24px}
+
+@media (max-width: 1180px){
+  .proposalFlow--pro{padding:0}
+  .pfCard--pro:not(:last-child)::after,.deliverablesModern__card:not(:last-child){border-right:none}
+  .pfCard--pro{border-bottom:1px solid rgba(154,172,115,.08)}
+  .section--contactMain .grid3{grid-template-columns:1fr}
+}
+@media (max-width: 760px){
+  .pageHero{min-height:350px}
+  .pageHero .container{min-height:240px}
+  .mapLeft,.mapRight,.proposalDeliver,.serviceCard,.infoCard{padding:22px}
+  .pfCard--pro{padding:22px 18px}
+  .deliverablesModern__card{padding:20px 0 18px}
+}
