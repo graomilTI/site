@@ -2853,3 +2853,220 @@ main{padding-top:var(--header-h) !important;}
   .refinedCard__media{height:210px!important;}
   .refinedMapLegend{left:16px!important;right:16px!important;max-width:none!important;}
 }
+
+
+
+/* ===== 2026-04 header/home polish ===== */
+.topbar{
+  background:linear-gradient(180deg, rgba(4,9,11,.98), rgba(4,9,11,.88));
+}
+.topbar__inner{
+  min-height:100px;
+  gap:24px;
+}
+.brand__logo{
+  height:88px !important;
+  width:auto;
+}
+.nav{
+  gap:24px;
+}
+.nav__link{
+  font-size:16px !important;
+  font-weight:700;
+  letter-spacing:-.01em;
+}
+.topbar__actions{
+  gap:10px;
+}
+.iconbtn{
+  width:44px;
+  height:44px;
+  border-radius:16px;
+}
+.pillbtn,.btn,.pill,.chip{
+  min-height:46px;
+  padding:0 20px;
+}
+
+.heroRefined{
+  min-height:min(76vh,760px);
+}
+.heroRefined__bg{
+  background:
+    linear-gradient(90deg, rgba(3,8,10,.95) 0%, rgba(3,8,10,.82) 31%, rgba(3,8,10,.56) 58%, rgba(3,8,10,.28) 100%),
+    linear-gradient(180deg, rgba(6,12,15,.18), rgba(6,12,15,.52)),
+    url('../img/g1000-hero.jpg') center/cover no-repeat;
+}
+.heroRefined__inner{
+  grid-template-columns:minmax(0,1.12fr) minmax(360px,.88fr);
+  gap:44px;
+  min-height:min(76vh,760px);
+  padding:56px 0 44px;
+}
+.heroRefined__copy{
+  max-width:560px;
+}
+.heroRefined__copy::after{
+  right:-28px;
+  top:18%;
+  height:48%;
+  opacity:.5;
+}
+.heroRefined__eyebrow{
+  margin-bottom:14px;
+  font-size:13px;
+  letter-spacing:.20em;
+}
+.heroRefined__copy h1{
+  font-size:clamp(42px,4.8vw,72px) !important;
+  line-height:.95;
+  letter-spacing:-.045em;
+  max-width:8.2ch;
+}
+.heroRefined__copy p{
+  margin-top:18px;
+  font-size:clamp(17px,1.2vw,21px) !important;
+  line-height:1.62;
+  max-width:28ch;
+}
+.heroRefined__actions{
+  margin-top:24px;
+}
+.heroRefined__proofs{
+  margin-top:18px;
+  gap:10px;
+}
+.heroRefined__proofs span{
+  min-height:36px;
+  padding:0 14px;
+  font-size:13px;
+}
+
+.heroRefined__side{
+  align-self:center;
+}
+.heroBridgeCard{
+  width:min(100%,430px);
+  padding:24px;
+  border-radius:28px;
+  background:linear-gradient(180deg, rgba(8,14,18,.78), rgba(8,14,18,.92));
+}
+.heroBridgeCard__eyebrow{
+  margin-bottom:12px;
+  font-size:12px;
+}
+.heroBridgeCard h2{
+  font-size:clamp(26px,2.3vw,40px) !important;
+  line-height:1.02;
+  max-width:11ch;
+}
+.heroBridgeCard p{
+  margin-top:14px;
+  font-size:16px;
+  line-height:1.65;
+  max-width:29ch;
+}
+.heroBridgeCard__grid{
+  gap:12px;
+  margin-top:20px;
+  padding-top:16px;
+}
+.heroBridgeMini{
+  padding:16px;
+  border-radius:18px;
+}
+.heroBridgeMini strong{
+  font-size:16px;
+}
+.heroBridgeMini span{
+  margin-top:6px;
+  font-size:14px;
+  line-height:1.5;
+  max-width:none;
+}
+
+.footerBrand{
+  display:block;
+}
+.footerBrand__logo{
+  display:none !important;
+}
+.footerBrand p{
+  max-width:38ch;
+  margin:0;
+}
+
+@media (max-width: 1180px){
+  .topbar__inner{
+    min-height:92px;
+  }
+  .brand__logo{
+    height:82px !important;
+  }
+  .heroRefined__inner{
+    grid-template-columns:minmax(0,1fr);
+    gap:24px;
+    padding:52px 0 42px;
+    min-height:auto;
+  }
+  .heroRefined__copy{
+    max-width:700px;
+  }
+  .heroRefined__copy::after,
+  .heroRefined__side::before{
+    display:none;
+  }
+  .heroRefined__copy h1{
+    max-width:10ch;
+  }
+  .heroRefined__copy p{
+    max-width:38ch;
+  }
+  .heroRefined__side{
+    justify-content:flex-start;
+  }
+  .heroBridgeCard{
+    width:min(100%,640px);
+  }
+}
+
+@media (max-width: 760px){
+  .topbar__inner{
+    min-height:84px;
+  }
+  .brand__logo{
+    height:70px !important;
+  }
+  main{
+    padding-top:84px;
+  }
+  .heroRefined__inner{
+    padding:44px 0 34px;
+    gap:18px;
+  }
+  .heroRefined__copy h1{
+    font-size:clamp(36px,13vw,56px) !important;
+    max-width:8.6ch;
+  }
+  .heroRefined__copy p{
+    font-size:16px !important;
+    max-width:100%;
+  }
+  .heroBridgeCard{
+    padding:20px;
+    border-radius:24px;
+  }
+  .heroBridgeCard h2{
+    max-width:100%;
+    font-size:clamp(24px,8vw,34px) !important;
+  }
+  .heroBridgeCard p{
+    font-size:15px;
+    max-width:100%;
+  }
+  .footerBrand p{
+    max-width:100%;
+  }
+}
+
