@@ -1713,3 +1713,155 @@ body{background:radial-gradient(900px 460px at 12% 0%, rgba(148,169,110,.10), tr
 [data-anim],.flowVertical__item,.editorialNote,.miniFlow__item,.aboutTimeline article{opacity:0;transform:translateY(24px);filter:blur(6px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1),filter .7s ease}[data-anim].is-visible,.flowVertical__item.is-visible,.editorialNote.is-visible,.miniFlow__item.is-visible,.aboutTimeline article.is-visible{opacity:1;transform:none;filter:none}.pillbtn,.btn,.iconbtn,.chip,.pfPill,.contactPhone{transition:transform .22s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease}.pillbtn:hover,.btn:hover,.iconbtn:hover,.contactPhone:hover{transform:translateY(-2px) scale(1.01)}.hero__copy,.pageHero .container{will-change:transform}
 @media (max-width:1180px){.editorialRail,.aboutTimeline,.page-home .section--field .cards3,.page-home .section--grain .cards3,.page-solucoes #servicos .cards3,.page-contato .grid3,.page-qualidade .qualityColumns,.page-solucoes .proposalFlow--pro,.page-solucoes .deliverablesModern--pro{grid-template-columns:1fr 1fr}.qualityIntro,.page-contato .mapWrap{grid-template-columns:1fr}}
 @media (max-width:760px){.section,.band{padding:64px 0}.editorialRail,.aboutTimeline,.page-home .section--field .cards3,.page-home .section--grain .cards3,.page-solucoes #servicos .cards3,.page-contato .grid3,.page-qualidade .qualityColumns,.page-solucoes .proposalFlow--pro,.page-solucoes .deliverablesModern--pro,.miniFlow{grid-template-columns:1fr}.page-home .kpiRow{grid-template-columns:1fr}.flowVertical__item{grid-template-columns:54px 1fr;gap:16px}.flowVertical::before{left:17px}.page-contato .mapCanvas{min-height:380px}}
+
+
+/* ===== ORGANIC AGROTECH REFINEMENT V2 ===== */
+:root{
+  --olive:#96ab72;
+  --olive-2:#839760;
+  --ink:#06131a;
+  --text-soft:#bfd0d5;
+}
+body{
+  background:
+    radial-gradient(900px 420px at 12% 0%, rgba(150,171,114,.08), transparent 58%),
+    radial-gradient(780px 380px at 88% 12%, rgba(199,150,74,.07), transparent 54%),
+    linear-gradient(180deg, #041118 0%, #03131b 50%, #041119 100%);
+}
+.hero::after,.pageHero::after{opacity:.75}
+.hero__copy h1,.pageHero h1{letter-spacing:-.05em;text-wrap:balance}
+.hero__copy .tag,.kicker,.eyebrow,.ribbon,.badge,.panelTag,.breadcrumb,.chip,.pfPill{
+  background:rgba(255,255,255,.035);
+  border-color:rgba(255,255,255,.07);
+  color:#edf4f2;
+}
+.hero__copy .tag,.kicker,.eyebrow,.ribbon,.badge,.panelTag{box-shadow:0 0 0 1px rgba(255,255,255,.02) inset}
+.btn--primary,.pillbtn--careers,.contactPhone{background:linear-gradient(135deg,var(--olive),var(--olive-2)); color:#11180f; box-shadow:0 12px 28px rgba(150,171,114,.18)}
+.btn--ghost,.pillbtn--ghost,.pill{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.07)}
+
+/* remove card-heavy feeling globally on target pages */
+.page-home .cardLink,.page-home .serviceCard,.page-home .trustCard,
+.page-solucoes .serviceCard,.page-solucoes .pfCard,.page-solucoes .proposalDeliver,.page-solucoes .deliverablesModern__card,
+.page-qualidade .qualityColumns > div,
+.page-sobre .richTextBlock,
+.page-contato .infoCard,.page-contato .mapLeft,.page-contato .mapRight,.page-contato .careerCallout{
+  background:none !important;
+  box-shadow:none !important;
+  border:none !important;
+  border-radius:0 !important;
+}
+.page-home .cardLink::before,.page-home .serviceCard::before,.page-home .trustCard::before,
+.page-solucoes .serviceCard::before,.page-solucoes .pfCard::before,.page-solucoes .proposalDeliver::before,.page-solucoes .deliverablesModern__card::before,
+.page-qualidade .qualityColumns > div::before,
+.page-contato .infoCard::before,.page-contato .mapLeft::before,.page-contato .mapRight::before,.page-contato .careerCallout::before{display:none !important}
+
+/* home editorial rail bug fix */
+.editorialRail{grid-template-columns:repeat(4,minmax(0,1fr));gap:34px;padding-top:0}
+.editorialRail::before{display:none !important}
+.editorialNote{padding:22px 0 0;position:relative}
+.editorialNote::before{content:"";position:absolute;left:0;right:10%;top:0;height:1px;border-radius:999px;background:linear-gradient(90deg, rgba(206,160,87,.55), rgba(150,171,114,.24), rgba(150,171,114,0))}
+.editorialNote h3{margin:14px 0 10px;font-size:clamp(22px,1.7vw,30px)}
+.editorialNote p{max-width:none}
+
+/* home sections more editorial */
+.page-home .section--field .cards3,.page-home .section--grain .cards3,.page-home .trustGrid{gap:42px}
+.page-home .cardLink,.page-home .serviceCard,.page-home .trustCard{padding:0 0 18px !important;position:relative}
+.page-home .cardLink::after,.page-home .serviceCard::after,.page-home .trustCard::after{content:"";position:absolute;left:0;right:14%;bottom:0;height:1px;background:linear-gradient(90deg, rgba(150,171,114,.34), rgba(150,171,114,.04))}
+.page-home .trustCard{padding-top:18px !important}
+.page-home .trustCard h3{font-size:clamp(24px,1.9vw,34px);margin:0 0 12px}
+.page-home .trustCard p{font-size:16px;line-height:1.78;color:var(--text-soft)}
+.page-home .trustIcon{width:auto;height:auto;border:none;background:none;padding:0;margin-bottom:12px;font-size:22px;opacity:.85}
+.page-home .ctaStrip{padding:26px 0 0 !important;border-top:1px solid rgba(150,171,114,.14)!important;background:none!important}
+.page-home .ctaStrip::after{display:none!important}
+
+/* solutions as flowing sequence instead of cards */
+.page-solucoes .proposalFlow--pro{position:relative;gap:48px;padding-top:34px}
+.page-solucoes .proposalFlow--pro::before{content:"";position:absolute;left:2%;right:2%;top:12px;height:1px;background:linear-gradient(90deg, rgba(150,171,114,0), rgba(150,171,114,.55), rgba(150,171,114,0))}
+.page-solucoes .pfCard--pro{padding-top:8px !important;position:relative}
+.page-solucoes .pfCard--pro::after{content:"";position:absolute;left:20px;top:0;width:1px;height:20px;background:rgba(150,171,114,.34)}
+.page-solucoes .pfTop--clean h3{font-size:clamp(28px,2.2vw,40px);line-height:.98}
+.page-solucoes .pfChecks{gap:14px}
+.page-solucoes .pfPill{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.055)}
+.page-solucoes .proposalDeliver{padding-top:42px !important;margin-top:52px;border-top:1px solid rgba(150,171,114,.16)!important}
+.page-solucoes .proposalDeliver__head{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:34px;align-items:end}
+.page-solucoes .proposalDeliver__head h3{font-size:clamp(34px,3vw,56px);line-height:.98}
+.page-solucoes .deliverablesModern--pro{gap:44px;margin-top:22px}
+.page-solucoes .deliverablesModern__card{padding:6px 0 18px !important;position:relative}
+.page-solucoes .deliverablesModern__card:not(:last-child){border-right:none !important}
+.page-solucoes .deliverablesModern__card::after{content:"";position:absolute;left:0;right:12%;bottom:0;height:1px;background:linear-gradient(90deg, rgba(150,171,114,.34), rgba(150,171,114,0)) !important}
+.page-solucoes .deliverablesModern__icon{margin-bottom:14px;color:var(--olive)}
+
+/* quality more cinematic / less boxed */
+.page-qualidade .hero--service{
+  background:
+    linear-gradient(180deg, rgba(5,17,23,.26), rgba(5,17,23,.62)),
+    url("../img/g1000-about.jpg") center/cover no-repeat;
+}
+.page-qualidade .qualityIntro{margin-bottom:46px}
+.page-qualidade .qualityIntro h2{max-width:9ch}
+.page-qualidade .qualityColumns{gap:42px}
+.page-qualidade .qualityColumns > div{padding:0 0 16px !important;position:relative}
+.page-qualidade .qualityColumns > div::after{content:"";position:absolute;left:0;right:18%;bottom:0;height:1px;background:linear-gradient(90deg, rgba(150,171,114,.34), rgba(150,171,114,0))}
+
+/* about page narrative */
+.page-sobre .pageHero{
+  background:
+    linear-gradient(180deg, rgba(5,17,23,.24), rgba(5,17,23,.54)),
+    url("assets/img/g1000-about.jpg") center/cover no-repeat;
+}
+.page-sobre .richTextBlock--narrow{max-width:980px;padding:0 !important}
+.page-sobre .richTextBlock--narrow p{font-size:clamp(18px,1.35vw,21px);line-height:1.9;color:var(--text-soft)}
+.page-sobre .aboutTimeline{gap:34px;margin-top:52px;padding-top:0}
+.page-sobre .aboutTimeline::before{display:none !important}
+.page-sobre .aboutTimeline article{padding:22px 0 0;position:relative}
+.page-sobre .aboutTimeline article::before{content:"";position:absolute;left:0;right:10%;top:0;height:1px;background:linear-gradient(90deg, rgba(206,160,87,.45), rgba(150,171,114,.2), rgba(150,171,114,0));border-radius:999px;box-shadow:none !important}
+.page-sobre .aboutTimeline__year{margin-bottom:16px}
+
+/* contact hero and map become lighter and more fluid */
+.page-contato .pageHero{
+  min-height:260px;
+  background:
+    linear-gradient(90deg, rgba(3,11,15,.88), rgba(3,11,15,.46) 58%, rgba(3,11,15,.18)),
+    url("assets/img/atendimento.webp") center/cover no-repeat;
+}
+.page-contato .pageHero .container{min-height:180px}
+.page-contato .pageHero h1{font-size:clamp(30px,4vw,54px);max-width:8ch}
+.page-contato .pageHero p{max-width:34ch;font-size:18px}
+.page-contato .grid3{gap:36px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.page-contato .infoCard{padding:0 0 20px !important;position:relative}
+.page-contato .infoCard::after{content:"";position:absolute;left:0;right:12%;bottom:0;height:1px;background:linear-gradient(90deg, rgba(150,171,114,.34), rgba(150,171,114,0))}
+.page-contato .infoCard__title{font-size:clamp(24px,1.8vw,32px)}
+.page-contato .infoCard__big{font-size:clamp(24px,2vw,40px);line-height:1.02}
+.page-contato .miniFlow{gap:24px;padding:20px 0 10px;border-top:1px solid rgba(150,171,114,.14);border-bottom:none}
+.page-contato .miniFlow__item{padding:0;position:relative}
+.page-contato .miniFlow__item::after{content:"";position:absolute;left:54px;right:-10px;top:19px;height:1px;background:linear-gradient(90deg, rgba(150,171,114,.32), rgba(150,171,114,0))}
+.page-contato .miniFlow__item:last-child::after{display:none}
+.page-contato .mapWrap{grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr);gap:44px;align-items:start;position:relative}
+.page-contato .mapWrap::before{content:"";position:absolute;left:calc(56% + 6px);top:8px;bottom:8px;width:1px;background:linear-gradient(180deg, rgba(150,171,114,0), rgba(150,171,114,.22), rgba(150,171,114,0))}
+.page-contato .mapLeft,.page-contato .mapRight{padding:0 !important}
+.page-contato .mapCanvas{min-height:560px;background:linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,.008));border:1px solid rgba(255,255,255,.05);border-radius:38px}
+.page-contato .mapHead{margin-bottom:22px}
+.page-contato .mapTitle{font-size:clamp(40px,3vw,58px);line-height:.98}
+.page-contato .panelTag{background:rgba(255,255,255,.03);color:#eef5f3}
+.page-contato .contactsList{display:flex;flex-direction:column;gap:16px;margin-top:24px}
+.page-contato .contactItem{background:linear-gradient(180deg, rgba(255,255,255,.042), rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.06);border-radius:24px;padding:18px;backdrop-filter:blur(12px)}
+.page-contato .contactName{color:var(--text) !important}
+.page-contato .contactCity{color:var(--text-soft) !important}
+.page-contato .panelNote{background:none;border:none;padding:10px 0 0;color:var(--text-soft)}
+.page-contato .careerCallout{padding-top:30px !important;border-top:1px solid rgba(150,171,114,.14) !important}
+.page-contato .careerCallout h2{font-size:clamp(34px,3vw,52px);line-height:.98;max-width:10ch}
+.page-contato .careerCallout__email{display:inline-flex;margin-top:12px;padding-bottom:6px;border-bottom:1px solid rgba(150,171,114,.32)}
+
+/* responsive */
+@media (max-width: 1180px){
+  .editorialRail,.page-home .section--field .cards3,.page-home .section--grain .cards3,.page-home .trustGrid,.page-solucoes .proposalFlow--pro,.page-solucoes .deliverablesModern--pro,.page-contato .grid3,.page-sobre .aboutTimeline,.page-qualidade .qualityColumns{grid-template-columns:1fr 1fr}
+  .page-solucoes .proposalDeliver__head,.qualityIntro,.page-contato .mapWrap{grid-template-columns:1fr}
+  .page-contato .mapWrap::before{display:none}
+}
+@media (max-width: 760px){
+  .editorialRail,.page-home .section--field .cards3,.page-home .section--grain .cards3,.page-home .trustGrid,.page-solucoes .proposalFlow--pro,.page-solucoes .deliverablesModern--pro,.page-contato .grid3,.page-sobre .aboutTimeline,.page-qualidade .qualityColumns,.page-contato .miniFlow{grid-template-columns:1fr}
+  .page-home .kpiRow{grid-template-columns:1fr}
+  .page-contato .miniFlow__item::after{display:none}
+  .page-contato .mapCanvas{min-height:420px}
+  .page-contato .pageHero h1{max-width:none}
+}
