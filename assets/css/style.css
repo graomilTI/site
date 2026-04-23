@@ -2774,3 +2774,27 @@ main{padding-top:var(--header-h) !important;}
   .page-contato .mapCanvas{min-height:380px !important;}
   .footer__bottom--brutal{flex-direction:column; align-items:flex-start;}
 }
+
+
+/* ===== BIG TECH FINAL POLISH ===== */
+.heroStatCard__item strong{font-size:clamp(24px,2vw,36px)!important;line-height:1.02!important;}
+.heroStatCard__item span{max-width:24ch!important;}
+.refinedCards{align-items:stretch!important;}
+.refinedCard{overflow:hidden;position:relative;min-height:360px!important;transition:transform .35s ease, box-shadow .35s ease,border-color .35s ease;box-shadow:0 16px 48px rgba(0,0,0,.18);}
+.refinedCard:hover{transform:translateY(-6px);box-shadow:0 24px 64px rgba(0,0,0,.26);border-color:rgba(120,207,127,.24);}
+.refinedCard__media{height:190px!important;background-size:cover!important;background-position:center center!important;position:relative;isolation:isolate;}
+.refinedCard__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,10,14,.08) 0%,rgba(3,10,14,.28) 62%,rgba(3,10,14,.58) 100%);z-index:1;}
+.refinedCard__body{position:relative;z-index:2;padding:26px 22px 24px!important;}
+.refinedCard__body h3{max-width:9ch!important;line-height:.98!important;letter-spacing:-.03em;}
+.refinedCard__body p{max-width:19ch!important;font-size:17px!important;line-height:1.65!important;}
+.refinedMapVisual{overflow:hidden;}
+.refinedMapVisual__texture{opacity:.28!important;filter:saturate(.8) blur(.3px);}
+.refinedMapLegend{max-width:240px!important;right:18px!important;bottom:18px!important;}
+.refinedMapLegend--single span{font-size:14px!important;font-weight:700;color:#eef5f0!important;}
+.refinedMapLegend--single i{margin-top:4px!important;}
+.refinedBullets li:last-child{display:none;}
+@media (max-width: 760px){
+  .refinedCard{min-height:auto!important;}
+  .refinedCard__media{height:210px!important;}
+  .refinedMapLegend{left:16px!important;right:16px!important;max-width:none!important;}
+}
