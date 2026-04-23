@@ -1807,7 +1807,7 @@ body{
 .page-sobre .pageHero{
   background:
     linear-gradient(180deg, rgba(5,17,23,.24), rgba(5,17,23,.54)),
-    url("assets/img/g1000-about.jpg") center/cover no-repeat;
+    url("../img/g1000-about.jpg") center/cover no-repeat;
 }
 .page-sobre .richTextBlock--narrow{max-width:980px;padding:0 !important}
 .page-sobre .richTextBlock--narrow p{font-size:clamp(18px,1.35vw,21px);line-height:1.9;color:var(--text-soft)}
@@ -1822,7 +1822,7 @@ body{
   min-height:260px;
   background:
     linear-gradient(90deg, rgba(3,11,15,.88), rgba(3,11,15,.46) 58%, rgba(3,11,15,.18)),
-    url("assets/img/atendimento.webp") center/cover no-repeat;
+    url("../img/atendimento.webp") center/cover no-repeat;
 }
 .page-contato .pageHero .container{min-height:180px}
 .page-contato .pageHero h1{font-size:clamp(30px,4vw,54px);max-width:8ch}
@@ -2492,4 +2492,272 @@ main{padding-top:94px}
   .refinedMapVisual{min-height:300px}
   .refinedMapVisual__shape{inset:12% 12% 15% 12%}
   .refinedMapLegend{right:12px;left:12px;bottom:12px}
+}
+
+
+/* ===== Premium refinement v10 ===== */
+:root{
+  --header-h:108px;
+}
+body{overflow-x:hidden}
+.topbar{
+  border-bottom:1px solid rgba(255,255,255,.06);
+  backdrop-filter:blur(16px);
+}
+.topbar__inner{
+  min-height:var(--header-h) !important;
+  grid-template-columns:auto 1fr auto;
+  gap:30px;
+}
+main{padding-top:var(--header-h) !important;}
+.brand{
+  display:flex;
+  align-items:center;
+  min-width:0;
+}
+.brand__logo{
+  height:92px !important;
+  width:auto;
+  max-width:min(22vw,280px);
+  object-fit:contain;
+  filter:drop-shadow(0 10px 26px rgba(0,0,0,.3));
+}
+.nav{justify-self:center; gap:28px;}
+.nav__link{font-size:17px; letter-spacing:-.02em;}
+.topbar__actions{gap:12px; align-items:center;}
+.iconbtn{width:56px;height:56px;flex:0 0 56px;}
+.pillbtn{min-height:56px; padding:0 22px; font-size:17px;}
+.pillbtn--careers{padding-inline:28px;}
+.pillbtn--ghost{background:rgba(255,255,255,.028);}
+.container{width:min(var(--max), calc(100% - 56px));}
+.section--compact{padding:58px 0 !important;}
+.refinedHeading{margin-bottom:24px;}
+.refinedHeading h2{font-size:clamp(30px,3vw,46px); max-width:12ch;}
+.heroRefined{min-height:min(70vh,700px) !important;}
+.heroRefined__bg{
+  background:
+    linear-gradient(90deg, rgba(3,8,10,.94) 0%, rgba(3,8,10,.76) 34%, rgba(3,8,10,.42) 60%, rgba(3,8,10,.18) 100%),
+    linear-gradient(180deg, rgba(6,12,15,.2), rgba(6,12,15,.54)),
+    url('../img/g1000-hero.jpg') center right/cover no-repeat !important;
+}
+.heroRefined__inner{
+  min-height:min(70vh,700px) !important;
+  align-items:center;
+  gap:34px;
+  padding:54px 0 42px !important;
+}
+.heroRefined__copy{max-width:620px;}
+.heroRefined__copy h1{
+  font-size:clamp(42px,5vw,78px) !important;
+  line-height:.94;
+  max-width:8.2ch !important;
+}
+.heroRefined__copy p{
+  margin-top:18px;
+  font-size:clamp(17px,1.2vw,20px) !important;
+  line-height:1.62;
+  max-width:29ch;
+}
+.heroRefined__actions{margin-top:26px;}
+.heroStatCard{width:min(100%,390px); border-radius:26px;}
+.heroStatCard__item{min-height:142px; padding:24px 22px;}
+.heroStatCard__item strong{font-size:clamp(26px,2.1vw,40px);}
+.heroStatCard__item span{font-size:14px; max-width:14ch;}
+.refinedCards{gap:20px;}
+.refinedCard{min-height:320px; border-radius:26px;}
+.refinedCard__media{height:168px; background-position:center;}
+.refinedCard__body{padding:22px 20px 24px;}
+.refinedCard__body h3{font-size:clamp(22px,1.55vw,28px); max-width:10ch;}
+.refinedCard__body p{margin-top:12px; font-size:15px; line-height:1.65; max-width:20ch;}
+.refinedMapWrap{
+  gap:30px;
+  padding:30px;
+  border-radius:32px;
+}
+.refinedMapCopy h2,
+.refinedConfidence__copy h2{font-size:clamp(30px,2.8vw,44px) !important;}
+.refinedMapVisual{
+  min-height:380px;
+  background:
+    radial-gradient(480px 220px at 58% 42%, rgba(93,187,99,.08), transparent 55%),
+    linear-gradient(180deg, rgba(7,13,16,.78), rgba(7,13,16,.96));
+}
+.refinedMapVisual__texture{
+  background:
+    radial-gradient(600px 280px at 48% 50%, rgba(93,187,99,.08), transparent 58%),
+    linear-gradient(180deg, rgba(3,8,10,.18), rgba(3,8,10,.4)),
+    url('../img/bg/sec1.webp') center/cover no-repeat;
+  opacity:.18;
+}
+.refinedMapVisual__shape{inset:11% 16% 14% 18%; opacity:.88; filter:drop-shadow(0 18px 38px rgba(0,0,0,.34)) brightness(.86) saturate(.82);}
+.mapDot{width:13px;height:13px; box-shadow:0 0 0 7px rgba(136,249,143,.08),0 0 18px rgba(136,249,143,.4);}
+.refinedMapLegend{background:rgba(5,11,14,.78); border-color:rgba(255,255,255,.07);}
+.refinedConfidence__inner{gap:30px;}
+.refinedConfidence__media{
+  min-height:310px;
+  background:
+    linear-gradient(180deg, rgba(3,8,10,.14), rgba(3,8,10,.58)),
+    url('../img/g1000-about.jpg') center/cover no-repeat !important;
+}
+.refinedMiniGrid article{padding:18px; border-radius:20px;}
+.pageHero,
+.hero.hero--service{padding-top:44px !important;}
+.pageHero .container{min-height:220px !important; padding-bottom:12px !important;}
+.pageHero h1{font-size:clamp(34px,4.2vw,60px) !important; max-width:8.5ch !important;}
+.pageHero p{max-width:34ch !important; font-size:clamp(16px,1.1vw,19px) !important;}
+.page-solucoes .pageHero,
+.page-sobre .pageHero{
+  background:
+    linear-gradient(90deg, rgba(3,10,13,.92) 0%, rgba(3,10,13,.72) 38%, rgba(3,10,13,.24) 72%, rgba(3,10,13,.08) 100%),
+    linear-gradient(180deg, rgba(6,12,15,.16), rgba(6,12,15,.44)),
+    url('../img/g1000-about.jpg') center/cover no-repeat !important;
+}
+.page-contato .pageHero{
+  background:
+    linear-gradient(90deg, rgba(3,10,13,.92) 0%, rgba(3,10,13,.74) 42%, rgba(3,10,13,.24) 78%, rgba(3,10,13,.1) 100%),
+    linear-gradient(180deg, rgba(6,12,15,.14), rgba(6,12,15,.42)),
+    url('../img/atendimento.webp') center/cover no-repeat !important;
+}
+.page-qualidade .hero--service{
+  background:
+    linear-gradient(90deg, rgba(3,10,13,.92) 0%, rgba(3,10,13,.76) 42%, rgba(3,10,13,.26) 76%, rgba(3,10,13,.1) 100%),
+    linear-gradient(180deg, rgba(6,12,15,.12), rgba(6,12,15,.5)),
+    url('../img/g1000-about.jpg') center/cover no-repeat !important;
+}
+.page-sobre .sectionHead,
+.page-solucoes .sectionHead,
+.page-qualidade .qualityIntro{margin-bottom:28px !important;}
+.page-sobre .richTextBlock--narrow{
+  max-width:840px !important;
+  padding:0 !important;
+  margin:0 0 34px !important;
+}
+.page-sobre .richTextBlock--narrow p{
+  font-size:clamp(17px,1.15vw,19px) !important;
+  line-height:1.8 !important;
+  max-width:60ch;
+}
+.page-sobre .aboutTimeline{gap:28px !important; margin-top:28px !important;}
+.page-sobre .aboutTimeline article{padding-top:18px !important;}
+.page-sobre .aboutTimeline h3{font-size:clamp(24px,1.9vw,32px);}
+.page-solucoes .proposalHead--pro{align-items:center; gap:24px;}
+.page-solucoes .proposalCTA--pro{justify-self:end; max-width:480px;}
+.page-solucoes .proposalFlow--pro{gap:24px !important; padding-top:28px !important;}
+.page-solucoes .pfCard--pro{padding-top:6px !important; min-width:0;}
+.page-solucoes .pfTop--clean{align-items:flex-start; gap:12px;}
+.page-solucoes .pfTop--clean h3{font-size:clamp(24px,1.9vw,34px) !important; max-width:7.5ch;}
+.page-solucoes .pfChecks{gap:12px; margin-top:18px;}
+.page-solucoes .pfPill,
+.pfPill{
+  width:100% !important;
+  max-width:none !important;
+  min-height:56px;
+  padding:14px 16px 14px 60px !important;
+  white-space:normal;
+  overflow:visible;
+  line-height:1.25;
+  font-size:17px !important;
+  font-weight:700;
+  border-radius:999px;
+  align-items:center;
+}
+.page-solucoes .pfPill::before,
+.pfPill::before{
+  left:18px !important;
+  width:24px !important;
+  height:24px !important;
+  box-shadow:0 0 0 6px rgba(34,197,94,.1);
+}
+.page-solucoes .proposalDeliver{padding-top:32px !important; margin-top:34px !important;}
+.page-solucoes .proposalDeliver__head{grid-template-columns:minmax(0,.72fr) minmax(0,1fr) !important; gap:26px !important; align-items:end;}
+.page-solucoes .proposalDeliver__head h3{font-size:clamp(30px,2.6vw,42px) !important;}
+.page-solucoes .deliverablesModern--pro{gap:28px !important; margin-top:18px !important;}
+.page-solucoes .deliverablesModern__card h3{font-size:clamp(24px,1.8vw,32px);}
+.page-qualidade .qualityIntro{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr) !important; gap:24px !important;}
+.page-qualidade .qualityIntro h2{font-size:clamp(30px,2.8vw,44px);}
+.page-qualidade .flowVertical{gap:22px;}
+.page-qualidade .flowVertical__item{gap:18px;}
+.page-qualidade .flowVertical__item h3{font-size:clamp(24px,1.8vw,30px);}
+.page-qualidade .flowVertical__item p,
+.page-qualidade .qualityColumns p,
+.page-contato .muted,
+.page-solucoes .muted{font-size:16px; line-height:1.7;}
+.page-contato .grid3{gap:28px !important;}
+.page-contato .infoCard__actions{margin-top:18px;}
+.page-contato .miniFlow{gap:20px !important;}
+.page-contato .miniFlow__item strong{font-size:17px !important;}
+.page-contato .mapWrap{gap:32px !important;}
+.page-contato .mapLeft,
+.page-contato .mapRight,
+.page-contato .careerCallout{padding:26px !important;}
+.page-contato .mapCanvas{
+  min-height:520px !important;
+  border-radius:32px !important;
+  background:
+    radial-gradient(520px 220px at 50% 16%, rgba(88,178,96,.12), transparent 58%),
+    linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)) !important;
+}
+.page-contato .mapTitle{font-size:clamp(34px,2.8vw,46px) !important;}
+.page-contato .mapRight h3{font-size:clamp(28px,2.3vw,40px) !important; line-height:1.02 !important;}
+.page-contato .contactItem{padding:16px 18px !important;}
+.page-contato .panelNote{padding-top:14px !important;}
+.footer--brutal{padding-top:18px !important; padding-bottom:34px !important;}
+.footer__inner--brutal{padding:28px 30px !important; gap:32px;}
+.footerBrand__logo{height:86px !important; margin-bottom:16px !important;}
+.footerBrand p{font-size:17px; line-height:1.7;}
+.footerCols{grid-template-columns:repeat(2,minmax(0,1fr)); gap:34px;}
+.footerCols a,.footerCols span{font-size:16px;}
+.footer__bottom--brutal{margin-top:16px !important; padding:16px 18px !important;}
+@media (max-width: 1180px){
+  :root{ --header-h:100px; }
+  .brand__logo{height:84px !important; max-width:240px;}
+  .nav{gap:22px;}
+  .page-solucoes .proposalFlow--pro,
+  .page-solucoes .deliverablesModern--pro,
+  .page-contato .grid3,
+  .page-qualidade .qualityColumns,
+  .refinedCards{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+  .page-solucoes .proposalDeliver__head,
+  .page-qualidade .qualityIntro,
+  .page-contato .mapWrap,
+  .refinedMapWrap,
+  .refinedConfidence__inner,
+  .heroRefined__inner{grid-template-columns:1fr !important;}
+  .page-solucoes .proposalCTA--pro{justify-self:start;}
+}
+@media (max-width: 860px){
+  :root{ --header-h:86px; }
+  .container{width:min(var(--max), calc(100% - 28px));}
+  .topbar__inner{min-height:var(--header-h) !important; gap:12px; grid-template-columns:auto 1fr auto !important;}
+  .brand__logo{height:68px !important; max-width:200px;}
+  .nav,.topbar__actions{display:none !important;}
+  .burger{display:block;}
+  main{padding-top:var(--header-h) !important;}
+  .heroRefined__inner{padding:42px 0 34px !important; gap:22px !important;}
+  .heroRefined__copy h1{font-size:clamp(36px,13vw,56px) !important; max-width:8ch !important;}
+  .heroRefined__copy p{max-width:none;}
+  .heroStatCard{grid-template-columns:1fr !important;}
+  .heroStatCard__item + .heroStatCard__item{border-left:none !important; border-top:1px solid rgba(255,255,255,.08) !important;}
+  .refinedCards,
+  .refinedMiniGrid,
+  .page-solucoes .proposalFlow--pro,
+  .page-solucoes .deliverablesModern--pro,
+  .page-contato .grid3,
+  .page-contato .miniFlow,
+  .page-sobre .aboutTimeline,
+  .page-qualidade .qualityColumns{grid-template-columns:1fr !important;}
+  .pageHero,
+  .hero.hero--service{padding-top:28px !important;}
+  .pageHero h1{max-width:none !important;}
+  .page-solucoes .proposalFlow--pro::before,
+  .page-solucoes .pfCard--pro::after,
+  .page-contato .miniFlow__item::after,
+  .page-contato .mapWrap::before{display:none !important;}
+  .page-contato .mapLeft,
+  .page-contato .mapRight,
+  .page-contato .careerCallout,
+  .refinedMapWrap,
+  .footer__inner--brutal{padding:22px !important;}
+  .page-contato .mapCanvas{min-height:380px !important;}
+  .footer__bottom--brutal{flex-direction:column; align-items:flex-start;}
 }
