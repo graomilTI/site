@@ -127,13 +127,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const activateState = (states, current) => {
     states.forEach(el => { el.classList.remove('active'); el.style.fill = '#3c596b'; el.style.stroke = '#9fbcce'; });
     current.classList.add('active');
-    current.style.fill = '#22c55e';
+    current.style.fill = '#74d37c';
     current.style.stroke = '#ffffff';
     renderContacts(String(current.dataset.uf || '').toUpperCase());
   };
 
   const loadMap = async () => {
-    const response = await fetch('assets/img/br-states.svg', { cache: 'no-store' });
+    const response = await fetch('/assets/img/br-states.svg', { cache: 'no-store' });
     if (!response.ok) throw new Error(`Falha ao carregar SVG: ${response.status}`);
     mapMount.innerHTML = await response.text();
     const states = Array.from(mapMount.querySelectorAll('.uf, [data-uf]'));
@@ -144,10 +144,10 @@ document.addEventListener('DOMContentLoaded', () => {
       stateEl.removeAttribute('role');
       stateEl.setAttribute('aria-label', `Selecionar estado ${stateNames[uf] || uf}`);
       stateEl.addEventListener('mouseenter', () => {
-        if (!stateEl.classList.contains('active')) { stateEl.style.fill = '#2f855a'; stateEl.style.stroke = '#eefef4'; }
+        if (!stateEl.classList.contains('active')) { stateEl.style.fill = '#3c8d4d'; stateEl.style.stroke = '#edf8ee'; }
       });
       stateEl.addEventListener('mouseleave', () => {
-        if (!stateEl.classList.contains('active')) { stateEl.style.fill = '#3c596b'; stateEl.style.stroke = '#9fbcce'; }
+        if (!stateEl.classList.contains('active')) { stateEl.style.fill = '#243238'; stateEl.style.stroke = '#6b8b74'; }
       });
       stateEl.addEventListener('click', () => activateState(states, stateEl));
     });
