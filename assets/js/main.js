@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const loadMap = async () => {
-    const response = await fetch('/assets/img/br-states.svg', { cache: 'no-store' });
+    const response = await fetch('assets/img/br-states.svg', { cache: 'no-store' });
     if (!response.ok) throw new Error(`Falha ao carregar SVG: ${response.status}`);
     mapMount.innerHTML = await response.text();
     const states = Array.from(mapMount.querySelectorAll('.uf, [data-uf]'));
