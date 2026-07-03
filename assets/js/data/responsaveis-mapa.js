@@ -34,7 +34,7 @@ window.RESPONSAVEIS_MAPA = {
 
   // Norte / Nordeste (novos)
   "PA": [
-    { nome: "Ronaldo Santos", sub: "Pará", fone: "(94) 99236-5299" },
+    { nome: "Jadson Saraiva", sub: "Pará", fone: "(63) 63 99216-7795" },
   ],
   "TO": [
     { nome: "Kairo Oliveira", sub: "Tocantins", fone: "(63) 99120-1087" },
